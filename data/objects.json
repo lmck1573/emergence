@@ -1,0 +1,72 @@
+{
+  "objects": [
+	{
+	  "object_id": "livingroom_tv",
+	  "region_id": "livingroom",
+	  "display_name": "电视",
+	  "click_area": { "x": 0, "y": 0, "w": 100, "h": 100 },
+	  "click_feedback": "sfx_click",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_livingroom_tv",
+		  "operation_label": null,
+		  "grants": ["hobby_movie", "topic_movie"]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "livingroom_empty_pot",
+	  "region_id": "livingroom",
+	  "display_name": "空花盆",
+	  "click_area": { "x": 0, "y": 0, "w": 100, "h": 100 },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_livingroom_empty_pot",
+		  "operation_label": null,
+		  "grants": ["exp_epiphyllum"]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "livingroom_document",
+	  "region_id": "livingroom",
+	  "display_name": "茶几上的文件",
+	  "click_area": { "x": 0, "y": 0, "w": 100, "h": 100 },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_livingroom_document",
+		  "operation_label": null,
+		  "grants": ["topic_missing_you"]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "livingroom_tea_egg",
+	  "region_id": "livingroom",
+	  "display_name": "茶叶蛋",
+	  "click_area": { "x": 0, "y": 0, "w": 100, "h": 100 },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_livingroom_tea_egg",
+		  "operation_label": null,
+		  "grants": ["exp_breakfast"]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	}
+  ]
+}

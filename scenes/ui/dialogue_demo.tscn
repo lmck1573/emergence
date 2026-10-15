@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dpai5lc4bws8f"]
+
+[ext_resource type="Script" uid="uid://dnl3fmd3ks42d" path="res://scripts/ui/dialogue_demo.gd" id="1_teku3"]
+[ext_resource type="PackedScene" uid="uid://b8qu3vf4io3ay" path="res://scenes/ui/dialogue_system.tscn" id="2_11fwn"]
+
+[node name="DialogueDemo" type="Control" unique_id=1410479899]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_teku3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=135246594]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.169, 0.169, 0.169, 1)
+
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=99999634]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 40.0
+offset_right = 280.0
+offset_bottom = 84.0
+
+[node name="MovieButton" type="Button" parent="Buttons" unique_id=1548615668]
+layout_mode = 2
+text = "电影"
+
+[node name="MissingYouButton" type="Button" parent="Buttons" unique_id=1204853487]
+layout_mode = 2
+text = "对你的思念"
+
+[node name="HerTasteButton" type="Button" parent="Buttons" unique_id=1943637897]
+layout_mode = 2
+text = "她的口味"
+
+[node name="DialogueSystem" parent="." unique_id=1821200973 instance=ExtResource("2_11fwn")]
+layout_mode = 1
+grow_horizontal = 2
+grow_vertical = 2

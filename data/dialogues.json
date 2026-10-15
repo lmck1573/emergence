@@ -1,0 +1,469 @@
+{
+  "dlg_tv": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "她生前最爱干的事情之一就是看电视了…" },
+	  { "speaker": "protagonist", "text": "即使现在智能手机那么普及，她也总是喜欢找一个没被人打扰的晚上，看完一部以前的老电影。" },
+	  { "speaker": "protagonist", "text": "现在想来，我总是后悔以前觉得无聊，没怎么和她一起看过。" },
+	  { "speaker": "protagonist", "text": "（获得爱好：看电影）" },
+	  { "speaker": "protagonist", "text": "（获得话题：电影）" }
+	]
+  },
+
+  "dlg_topic_movie": {
+	"lines": [
+	  { "speaker": "ai", "text": "喜欢 什么 电影？" },
+	  { "speaker": "protagonist", "text": "具体的类型不记得了…只记得有一次她怎么样都要拉着我看一遍爱乐之城的首映，那部电影我至今印象深刻……" },
+	  { "speaker": "protagonist", "text": "（获得经历：一起看爱乐之城）" }
+	]
+  },
+
+  "dlg_flowerpot": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "是啊…她以前很爱花。" },
+	  { "speaker": "protagonist", "text": "她有一次买了一盆昙花回来，为此连续一年守着它剪枝施肥。" },
+	  { "speaker": "protagonist", "text": "不过，最终那朵花竟然真的开了。" },
+	  { "speaker": "protagonist", "text": "这个花盆作为昙花曾经的家，被她庄重地安置在客厅里。" },
+	  { "speaker": "protagonist", "text": "（获得经历：养昙花）" }
+	]
+  },
+
+  "dlg_death_cert": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "…妻子的死亡证明。" },
+	  { "speaker": "protagonist", "text": "距离她的意外离世只过去了短短的一个月，却感觉比她来到我的人生的那七年更加漫长，更加煎熬…" },
+	  { "speaker": "protagonist", "text": "（获得话题：对她的思念）" }
+	]
+  },
+
+  "dlg_topic_missing_you": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "你知道吗，我想她了。" },
+	  { "speaker": "ai", "text": "我 在 这里。" },
+	  { "speaker": "protagonist", "text": "……" }
+	]
+  },
+
+  "dlg_tea_egg": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "她大学的时候其实作息很不规律。" },
+	  { "speaker": "protagonist", "text": "总是因为各种原因熬夜到很晚，又或者忘记吃早餐。" },
+	  { "speaker": "protagonist", "text": "我总是担心她的健康，于是总会在上早课的时候给她带上牛奶和茶叶蛋。" },
+	  { "speaker": "protagonist", "text": "她甚至还只愿意吃蛋黄，每次都把蛋白丢给我。" },
+	  { "speaker": "protagonist", "text": "无论如何，只要她肚子里有点东西，总是好的。" },
+	  { "speaker": "protagonist", "text": "不过，现在轮到我忘了吃早餐了啊…" },
+	  { "speaker": "protagonist", "text": "（获得经历：早课的早餐时间）" }
+	]
+  },
+
+  "dlg_fridge": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "冰箱已经空了很久了。" },
+	  { "speaker": "protagonist", "text": "以前都是我来做饭，我们会在下班的时候一起买菜品与水果。" },
+	  { "speaker": "protagonist", "text": "她还喜欢吃甜食，冷藏室里总是装着琳琅满目的甜点与面包，还有各种各样批发的饮料。" },
+	  { "speaker": "protagonist", "text": "总之，冰箱里永远是满满当当的。" },
+	  { "speaker": "protagonist", "text": "这一个月我过得浑浑噩噩，没什么心情买菜做饭，每天都是外卖度日。" },
+	  { "speaker": "protagonist", "text": "空的冰箱却仍在制冷，制冷的对象却空无一物。" },
+	  { "speaker": "protagonist", "text": "（获得爱好：甜品）" },
+	  { "speaker": "protagonist", "text": "（获得话题：她的口味）" }
+	]
+  },
+
+  "dlg_topic_her_taste": {
+	"lines": [
+	  { "speaker": "ai", "text": "冰箱 有什么？" },
+	  { "speaker": "protagonist", "text": "什么种类都有一些吧，水果、蔬菜、肉类，缺什么就买什么。" },
+	  { "speaker": "ai", "text": "喜欢 吃 什么？" },
+	  { "speaker": "protagonist", "text": "她喜欢吃甜品，之前冰箱的上层，一大半都是她买的甜品，还有饮料、雪糕什么的。" },
+	  { "speaker": "ai", "text": "你 喜欢 什么？" },
+	  { "speaker": "protagonist", "text": "我喜欢吃饺子，每当有美好的事情发生时，那天我们都会一起包饺子，再一起吃掉。" },
+	  { "speaker": "protagonist", "text": "（获得经历：一起包饺子）" }
+	]
+  },
+
+  "dlg_couple_bowls": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "那是我们同居第一天时，一起去超市里买的两只碗。" },
+	  { "speaker": "protagonist", "text": "她喜欢线条小狗，觉得它们很可爱，所以我们买下了这两只。" },
+	  { "speaker": "protagonist", "text": "这个标签居然还没掉。" },
+	  { "speaker": "protagonist", "text": "也对…我们好像没用过这两只碗。" },
+	  { "speaker": "protagonist", "text": "她觉得这对碗很可爱，总是不舍得用。" },
+	  { "speaker": "protagonist", "text": "所以我把它们放在了橱柜最上层。" },
+	  { "speaker": "protagonist", "text": "3月22日……仿佛仍在昨天。" },
+	  { "speaker": "protagonist", "text": "（获得经历：一起购买情侣餐具）" },
+	  { "speaker": "protagonist", "text": "（获得经历：同居第一天）" }
+	]
+  },
+
+  "dlg_recipe": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "啊，这是我教她学烹饪时记录的菜谱。" },
+	  { "speaker": "protagonist", "text": "她总嫌做菜太麻烦，经常点外卖，但外卖大多都不健康。" },
+	  { "speaker": "protagonist", "text": "而且我偶尔会出差，我希望她能够自己做一些饭菜，起码能够应付一下三餐。" },
+	  { "speaker": "protagonist", "text": "所以我拿这个本子来记录一些菜品的制作步骤。" },
+	  { "speaker": "protagonist", "text": "好可爱的贴纸。" },
+	  { "speaker": "protagonist", "text": "她什么时候贴上去的？" },
+	  { "speaker": "protagonist", "text": "菜谱记录的最后一页，咖喱鸡排蛋包饭的做法。" },
+	  { "speaker": "protagonist", "text": "（获得线索：咖喱鸡排蛋包饭）" }
+	]
+  },
+
+  "dlg_balcony_chair": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "竹编的摇篮躺椅，似乎已经买了很久了。" },
+	  { "speaker": "protagonist", "text": "其实只容得下一个人的重量，但我总喜欢抱着她短暂地靠在上面。" },
+	  { "speaker": "protagonist", "text": "冰凉的躺椅不会再有她的温度了。" },
+	  { "speaker": "protagonist", "text": "（获得经历：一起晒太阳）" }
+	]
+  },
+
+  "dlg_window": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "我们家在老式小区。" },
+	  { "speaker": "protagonist", "text": "这种防盗窗是老式房屋常有的设计。" },
+	  { "speaker": "protagonist", "text": "因为这幢房子离我们上班的地方近，又在市中心，所以我们买下了它。" },
+	  { "speaker": "protagonist", "text": "不过也常常在想，如果当初买的是新式住宅，会不会不一样？" },
+	  { "speaker": "protagonist", "text": "我倒是没什么要求，但她极力想要一间窗户西南朝向的屋子。" },
+	  { "speaker": "protagonist", "text": "她说，她喜欢一整个下午都沐浴在阳光里。" },
+	  { "speaker": "protagonist", "text": "（获得爱好：晒太阳）" }
+	]
+  },
+
+  "dlg_withered_plants": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "这些也是她种的花。" },
+	  { "speaker": "protagonist", "text": "玉兰、水仙、波斯菊，还有一些我叫不上名字。" },
+	  { "speaker": "protagonist", "text": "她走后，我没精力搭理它们，所以它们都死了。" },
+	  { "speaker": "protagonist", "text": "它们的生命和她一样脆弱……" },
+	  { "speaker": "protagonist", "text": "（获得经历：爱花）" }
+	]
+  },
+
+  "dlg_master_bedroom": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "现在爱好和经历都找到一些了，但还缺少她创作的东西……" },
+	  { "speaker": "protagonist", "text": "我唯一能留下的她过去创作的痕迹，恐怕就只剩那个了。" },
+	  { "speaker": "protagonist", "text": "已经很多年了，但我记得应该是放在主卧那块松动的木板下面。" },
+	  { "speaker": "protagonist", "text": "她大学的最后一年，尝试参加一个文学比赛，并且决定，只要获得名次，就要尝试成为一个全职作家。" },
+	  { "speaker": "protagonist", "text": "但那场比赛，最终以失败告终，从那以后她放弃了写作，利用师范专业的优势，成为一个中学老师。" },
+	  { "speaker": "protagonist", "text": "我一直不想面对这个……" },
+	  { "speaker": "protagonist", "text": "已经过去很久了。" },
+	  { "speaker": "protagonist", "text": "我只是想再次听一遍她的声音，再看一眼她的脸，至少最后再和她说一声抱歉……" },
+	  { "speaker": "protagonist", "text": "我只是想让她回到我的身边……" },
+	  { "speaker": "protagonist", "text": "……" },
+	  { "speaker": "protagonist", "text": "这只眼睛，真的很像她在黑夜里笑着看我的样子。连眨眼的弧度都是那么相似。" },
+	  { "speaker": "protagonist", "text": "这是她最后的作品了，我一直把它留在她找不到的地方，害怕她再次看见它时，就又会想起那个糟糕的夏夜。" },
+	  { "speaker": "protagonist", "text": "她曾经那么热爱写作，但后来，她再也不提了。" },
+	  { "speaker": "protagonist", "text": "但我知道，写作曾是她的人生。" },
+	  { "speaker": "protagonist", "text": "又或许，如果这一次，她可以忘掉一切，成为一个快乐的人，我可以让她再次过上一段幸福的人生，一段美好的人生。" },
+	  { "speaker": "protagonist", "text": "一段没有差错的人生…" },
+	  { "speaker": "protagonist", "text": "（获得作品：U盘）" }
+	]
+  },
+
+  "dlg_usb": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "学生时代，你很热爱写作。" },
+	  { "speaker": "protagonist", "text": "这个U盘里是你大学时期最骄傲的作品。" },
+	  { "speaker": "protagonist", "text": "（获得话题：U盘）" }
+	]
+  },
+
+  "dlg_topic_usb": {
+	"lines": [
+	  { "speaker": "ai", "text": "还想看 别的 作品。学到 更多。" },
+	  { "speaker": "protagonist", "text": "这其实是是你留下的最后一个作品了。" },
+	  { "speaker": "protagonist", "text": "之前的作品也都被你删掉了，我没留下什么备份。" },
+	  { "speaker": "ai", "text": "为 什 么？" },
+	  { "speaker": "protagonist", "text": "（这一阶段的人格完整度已经到达了99%了，说出真相也会填补最后一点空缺，不知道这次对话会对她产生怎样的影响……）" },
+	  { "speaker": "protagonist", "text": "（我应该告诉她真相吗？）" }
+	]
+  },
+
+  "dlg_usb_truth": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "你大四那年参加了一场比赛，并且决定如果比赛赢了，就成为一位全职作家。" },
+	  { "speaker": "protagonist", "text": "你为此努力了一年，但最后仍然以失败告终。" },
+	  { "speaker": "protagonist", "text": "为了安慰你，我带你进行了一场毕业旅行，你也在旅行中想通了，放下了写作。" },
+	  { "speaker": "protagonist", "text": "毕业后你全身心投入你曾经的师范专业该有的选择，成为一名中学老师。" },
+	  { "speaker": "protagonist", "text": "你和我搬到这座城市已经三年了，这三年我没再见过你写作，但我们生活的很幸福。" },
+	  { "speaker": "protagonist", "text": "（真相完整度+1）" }
+	]
+  },
+
+  "dlg_usb_lie": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "我们大学毕业后，你决定成为一名老师。" },
+	  { "speaker": "protagonist", "text": "不过你仍然想证明自己在写作上的能力，于是在大四那年，决定利用实习考证的间隙写出一部短篇小说，去参加一个小有名气的写作比赛。" },
+	  { "speaker": "protagonist", "text": "你为之努力了一年，最后的结果也确实值得你的付出。" },
+	  { "speaker": "protagonist", "text": "你得到了那场比赛的一等奖，为了庆祝，我们进行了一场快乐的毕业旅行。" },
+	  { "speaker": "protagonist", "text": "毕业后你全身心投入你曾经的师范专业该有的选择，成为一名中学老师。" },
+	  { "speaker": "protagonist", "text": "你和我搬到这座城市已经三年了，这三年我没再见过你写作，但我们生活的很幸福。" }
+	]
+  },
+
+  "dlg_new_appearance": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "你……天哪，你真的很像她。" },
+	  { "speaker": "protagonist", "text": "你为什么突然可以拥有一个身体了？" },
+	  { "speaker": "ai", "text": "你在说什么？我一直都有一个啊。" },
+	  { "speaker": "protagonist", "text": "（哦，对了，她不知道自己是一个AI……以后说话还是得注意一些。）" },
+	  { "speaker": "protagonist", "text": "（获得对话：新的外貌）" }
+	]
+  },
+
+  "dlg_new_phase": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "所以，你还想知道些什么呢？" },
+	  { "speaker": "protagonist", "text": "我觉得我已经找到了所有能给你的东西…" },
+	  { "speaker": "ai", "text": "真的吗？" },
+	  { "speaker": "ai", "text": "我还没看过我的房间长什么样呢。" },
+	  { "speaker": "ai", "text": "我敢打赌，里面一定是和阳光一样温暖的主色调，还有可爱的贴纸和小猫抱枕。" },
+	  { "speaker": "protagonist", "text": "……" },
+	  { "speaker": "protagonist", "text": "我 …可以去看看。" },
+	  { "speaker": "protagonist", "text": "（获得对话：新的阶段）" }
+	]
+  },
+
+  "dlg_room_enter": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "自从她离开以来，这是我第一次进入她的房间。" },
+	  { "speaker": "protagonist", "text": "这里一切都和以前一样……" },
+	  { "speaker": "protagonist", "text": "她是不是只是出门上班了，马上就会回来，这一个月只是我工作太劳累做的一场噩梦？" },
+	  { "speaker": "protagonist", "text": "……" },
+	  { "speaker": "protagonist", "text": "我在骗谁呢……" }
+	]
+  },
+
+  "dlg_photo_wall": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "我们以前去各个地方旅行的合照。" },
+	  { "speaker": "protagonist", "text": "最后一次旅行是三年前了。毕业旅行之后，我们再也没出去过。" },
+	  { "speaker": "protagonist", "text": "她最近……好像总是很累。" },
+	  { "speaker": "protagonist", "text": "我以为只是工作太忙了。" },
+	  { "speaker": "protagonist", "text": "本来计划今年她放假，给她一个惊喜的……" },
+	  { "speaker": "protagonist", "text": "（获得爱好：旅行）" }
+	]
+  },
+
+  "dlg_topic_travel": {
+	"lines": [
+	  { "speaker": "ai", "text": "为什么我们这几年都没继续旅行了？" },
+	  { "speaker": "protagonist", "text": "我的工作很忙，总是很难挤出时间来，这一点是我对不起你。" },
+	  { "speaker": "ai", "text": "那你现在为什么不在工作呢？" },
+	  { "speaker": "protagonist", "text": "……这段时间我请了年假，公司看我之前的工作态度好，也额外允许我多休息几天。" },
+	  { "speaker": "protagonist", "text": "主要还是为了陪你。" },
+	  { "speaker": "ai", "text": "我很期待和你的旅行。" }
+	]
+  },
+
+  "dlg_dolls": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "她一直都很喜欢这些可爱的东西。" },
+	  { "speaker": "protagonist", "text": "有一次在商场门口，她路过一个娃娃机，看见里面的星之卡比就再也走不动道了。" },
+	  { "speaker": "protagonist", "text": "我还记得那天回家时我的钱包都空了……不过那个圆圆的玩偶现在还好好地躺在她的床上。" },
+	  { "speaker": "protagonist", "text": "她一直都不愿意理床，这些玩偶也是，还是乱糟糟的躺在床上……" },
+	  { "speaker": "protagonist", "text": "……" },
+	  { "speaker": "protagonist", "text": "（获得爱好：可爱的玩偶）" }
+	]
+  },
+
+  "dlg_locked_pc": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "不知道她的密码，也没办法打开。" },
+	  { "speaker": "protagonist", "text": "你的房间里有一台上锁的电脑，关于密码，你知道什么吗？" },
+	  { "speaker": "protagonist", "text": "（获得话题：锁上的电脑）" }
+	]
+  },
+
+  "dlg_locked_drawer": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "真奇怪，以前没注意到她的抽屉也上锁了。" },
+	  { "speaker": "protagonist", "text": "我真的应该知道里面放着什么吗……" },
+	  { "speaker": "protagonist", "text": "她如果还在这里，肯定会对我吐吐舌头，撒娇般地把我推出去。" },
+	  { "speaker": "protagonist", "text": "……唉。" },
+	  { "speaker": "protagonist", "text": "（获得话题：锁上的抽屉）" }
+	]
+  },
+
+  "dlg_journal": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "这好像，是她的手账本。" },
+	  { "speaker": "protagonist", "text": "即使不再写作了，她还是保持着记录生活的习惯。" },
+	  { "speaker": "protagonist", "text": "这一点我十分佩服她。" },
+	  { "speaker": "protagonist", "text": "话说回来，这也能算是作品吧。" },
+	  { "speaker": "protagonist", "text": "（获得作品：手账本）" }
+	]
+  },
+
+  "dlg_topic_locked_pc": {
+	"lines": [
+	  { "speaker": "ai", "text": "对了，关于电脑的密码，我应该知道哦！" },
+	  { "speaker": "ai", "text": "你忘了吗，我一直都很喜欢用重要事情的日期当作密码来着。" },
+	  { "speaker": "ai", "text": "这一招很有用哦！忘掉了密码可以快速想起来，还记得大二旅行时里我们的那个被偷的行李箱吗！" },
+	  { "speaker": "ai", "text": "多亏我拿我们第一次旅行的纪念日作为密码，弄了个密码锁，那个犯人最后把行李箱还给我们的时候，一样东西都没有丢呢。" },
+	  { "speaker": "protagonist", "text": "天呐……" },
+	  { "speaker": "protagonist", "text": "你真的越来越像她了……" },
+	  { "speaker": "ai", "text": "你是什么意思？" },
+	  { "speaker": "protagonist", "text": "不不，我是说，你真的越来越像你最喜欢的那个动漫女孩一样聪明了。" },
+	  { "speaker": "ai", "text": "算你有品！娜美一直都很聪明。" },
+	  { "speaker": "protagonist", "text": "（她甚至知道是谁……我的天哪，这只是因为床上有一个乔巴的玩偶啊……）" },
+	  { "speaker": "protagonist", "text": "日期……" },
+	  { "speaker": "ai", "text": "我都提示到这个份上了，竟然还没想到吗！" },
+	  { "speaker": "ai", "text": "我才不会这么直接的告诉你呢。" },
+	  { "speaker": "ai", "text": "不过，也不是不能给你一点提示，算是对你这么久以来一直帮我恢复记忆的奖励吧！" },
+	  { "speaker": "ai", "text": "去看看那些手账本——" }
+	]
+  },
+
+  "dlg_topic_handwriting": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "这里记录着她自从大学二年级以来的所有事件……还有一本上锁的。" },
+	  { "speaker": "protagonist", "text": "她家里的条件不怎么好，这台电脑是我送给她的，也是她人生中第一个这么高配置的台式机。" },
+	  { "speaker": "protagonist", "text": "她一直都喜欢打游戏，收到这台电脑的时候开心的不得了，直接列了一份馋了很久的游戏清单。" },
+	  { "speaker": "protagonist", "text": "不知道密码会是什么呢……" }
+	]
+  },
+
+  "dlg_pc_unlock": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "竟然真的打开了？" },
+	  { "speaker": "protagonist", "text": "如果不是她，我这辈子也不可能想到正确的密码……" },
+	  { "speaker": "protagonist", "text": "如果是她，我这辈子也不可能被允许私自打开它……" },
+	  { "speaker": "protagonist", "text": "……" },
+	  { "speaker": "protagonist", "text": "这一切都是为了带你回来……" },
+	  { "speaker": "protagonist", "text": "为此，我可以牺牲一切……" },
+	  { "speaker": "protagonist", "text": "她不会知道的。" },
+	  { "speaker": "protagonist", "text": "这只是恢复记忆的重要措施，这些资料是必须的。" },
+	  { "speaker": "protagonist", "text": "再说了，她又有什么可以瞒着我的呢？" }
+	]
+  },
+
+  "dlg_pc_games": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "看起来这里放着所有她的游戏。" },
+	  { "speaker": "protagonist", "text": "传说之上，门之博德3，空洞战士，日奥2……" },
+	  { "speaker": "protagonist", "text": "她的游戏品味和我真是完全不一样……" },
+	  { "speaker": "protagonist", "text": "（获得爱好：喜欢的游戏）" }
+	]
+  },
+
+  "dlg_pc_social": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "没想到她的账号还保持着自动登录的状态……" },
+	  { "speaker": "protagonist", "text": "也许我不应该看她的聊天记录，我还是把电脑直接交给她自己处理吧。" },
+	  { "speaker": "protagonist", "text": "等等，置顶联系人的的这是……？" },
+	  { "speaker": "protagonist", "text": "编辑老师？" },
+	  { "speaker": "protagonist", "text": "【一个月前：镜江编辑老师：亲爱的，这个月稿费已经打到你账户了。虽然不多，但你已经连续半年稳定更新了，我很看好你。继续加油！】" },
+	  { "speaker": "protagonist", "text": "【镜江编辑老师：亲爱的，这周怎么没更新呀？是不是身体不舒服？】" },
+	  { "speaker": "protagonist", "text": "【镜江编辑老师：亲爱的，你最近没出什么事情吧？已经快三个星期没更新了。你从来都不会拖稿的，是不是遇到什么困难了？】" },
+	  { "speaker": "protagonist", "text": "【镜江编辑老师：亲爱的，我这边实在没办法了。主编说再联系不上你，下个月就要走解约流程了。你看到消息回我一下好吗？】" },
+	  { "speaker": "protagonist", "text": "……" },
+	  { "speaker": "protagonist", "text": "她……这应该是那个网文平台的名字。" },
+	  { "speaker": "protagonist", "text": "她仍然一直在写吗……？我还以为她已经放弃了。" },
+	  { "speaker": "protagonist", "text": "连续半年稳定更新……我就说为什么那段时间她一回家就往房间赶，在里面一呆就是一个晚上，有时候饭都顾不上吃。" },
+	  { "speaker": "protagonist", "text": "她难道不是应该彻底放弃了吗，那次比赛之后，我以为……" },
+	  { "speaker": "protagonist", "text": "她为什么什么都没告诉我？" },
+	  { "speaker": "protagonist", "text": "写作到底能带给她什么？名誉？财产？在她痛苦了那么久以后，在她为此挣扎了那么久以后，在她为此快要放弃自己的人生以后？在我那么努力帮助她走上正轨以后？" },
+	  { "speaker": "protagonist", "text": "我们现在的生活是那么幸福！她真的想再次毁掉这一切吗！" },
+	  { "speaker": "protagonist", "text": "……" },
+	  { "speaker": "protagonist", "text": "（我应该告诉她吗？）" },
+	  { "speaker": "protagonist", "text": "（获得对话：删减的聊天记录）" },
+	  { "speaker": "protagonist", "text": "（获得经历：网文写作）" }
+	]
+  },
+
+  "dlg_pc_bills": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "记录了近一年的收入和支出……" },
+	  { "speaker": "protagonist", "text": "奇怪，3/23的日期被标红了，上面写着：重新开始的日子……？" },
+	  { "speaker": "protagonist", "text": "那不是半年以前吗……" },
+	  { "speaker": "protagonist", "text": "（获得经历：奇怪的账单记录）" }
+	]
+  },
+
+  "dlg_pc_ai_chat": {
+	"lines": [
+	  { "speaker": "ai", "text": "你竟然真的破解了？不过看完我的手账以后，这也不会是什么难事嘛。" },
+	  { "speaker": "ai", "text": "来吧，告诉我你在那个电脑里找到了什么？" }
+	]
+  },
+
+  "dlg_topic_games": {
+	"lines": [
+	  { "speaker": "ai", "text": "你知道吗，失去记忆有一个最大的好处。" },
+	  { "speaker": "ai", "text": "我把这些神作都忘干净了！" },
+	  { "speaker": "ai", "text": "不知为何，我突然充满了决心。" },
+	  { "speaker": "protagonist", "text": "你一定会喜欢这些游戏的。" }
+	]
+  },
+
+  "dlg_topic_chat_log_truth": {
+	"lines": [
+	  { "speaker": "ai", "text": "我当然知道我会这么说话……" },
+	  { "speaker": "ai", "text": "哈，看起来我真的很讨厌和那群家长沟通。" },
+	  { "speaker": "ai", "text": "你知道吗，甚至有个家长半夜十一点叫我给他家孩子辅导数学！因为他们孩子投诉我太凶了，根本不敢听我说话，所以他们觉得我应该承担额外辅导的代价！" },
+	  { "speaker": "ai", "text": "看来我真的受够当老师了。" },
+	  { "speaker": "protagonist", "text": "唉，家家有本难念的经……当老师至少有编制，不用担心被裁员。" },
+	  { "speaker": "protagonist", "text": "无论如何，我一直都在这里，再难的坎我们都能跨过去的。" },
+	  { "speaker": "ai", "text": "好吧……也许你是对的。" }
+	]
+  },
+
+  "dlg_topic_chat_log_lie": {
+	"lines": [
+	  { "speaker": "ai", "text": "我以前的脾气竟然这么暴躁哇……不过这些家长们有时候语气确实有些暴躁。" },
+	  { "speaker": "protagonist", "text": "没关系，我一直在这里，再难的坎我们都能跨过去的。" },
+	  { "speaker": "ai", "text": "我相信你！" }
+	]
+  },
+
+  "dlg_topic_writing": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "……" },
+	  { "speaker": "protagonist", "text": "我思索了很久，还是决定告诉你这个。" },
+	  { "speaker": "protagonist", "text": "我刚刚给你的聊天记录，实际上被我删除了一部分。" },
+	  { "speaker": "protagonist", "text": "这是你目前为止人生中最大的遗憾，带给你最多痛苦的东西。" },
+	  { "speaker": "protagonist", "text": "我想，你可以选择是否接受它，只要你不去想起它，我们都还能像以前一样。" },
+	  { "speaker": "protagonist", "text": "我们过去一直都生活的很幸福，我们也可以继续幸福下去。" },
+	  { "speaker": "ai", "text": "……" },
+	  { "speaker": "ai", "text": "所以，这是以前的我的一部分？" },
+	  { "speaker": "ai", "text": "你知道吗，你看起来，相当的……" },
+	  { "speaker": "ai", "text": "恐惧。" },
+	  { "speaker": "ai", "text": "如果这真的是为了我们的幸福，如果这真的是为了我们的未来。" },
+	  { "speaker": "ai", "text": "我愿意相信你。" },
+	  { "speaker": "ai", "text": "我想，这应该由你来决定。" },
+	  { "speaker": "protagonist", "text": "…为什么……？" },
+	  { "speaker": "protagonist", "text": "（要告诉她真相吗？）" }
+	]
+  },
+
+  "dlg_truth_yes": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "……是的，我会告诉你。" },
+	  { "speaker": "protagonist", "text": "在经历了大学的一切之后，你其实仍然在继续写作。" },
+	  { "speaker": "protagonist", "text": "这是被我删去的，你和编辑的聊天记录，电脑深处估计还有你的原稿，我之后会把这些作品带给你，你可以选择要不要继续创作。" },
+	  { "speaker": "protagonist", "text": "我一直害怕，写作只会使你痛苦，大学时你一直在为此挣扎，最后终于放下，我其实为你松了一口气。" },
+	  { "speaker": "protagonist", "text": "但，看起来有些火焰就是不会停止燃烧，对吧？" },
+	  { "speaker": "protagonist", "text": "也许写作真的是你的生命，过了这么多年了，你仍在坚持。" },
+	  { "speaker": "protagonist", "text": "我想，我欠你一句抱歉……" },
+	  { "speaker": "ai", "text": "……这是我的人生。" },
+	  { "speaker": "ai", "text": "虽然我不理解为什么你看起来那么害怕，但你最终还是告诉了我一切。" },
+	  { "speaker": "ai", "text": "我想，这是我们真正认识彼此的起点。" },
+	  { "speaker": "ai", "text": "谢谢你。" },
+	  { "speaker": "protagonist", "text": "（真相完整度+1）" }
+	]
+  },
+
+  "dlg_truth_no": {
+	"lines": [
+	  { "speaker": "protagonist", "text": "……不。" },
+	  { "speaker": "protagonist", "text": "没关系的，没有这一切，我们仍然会好好的生活，一切都没有任何改变。" },
+	  { "speaker": "protagonist", "text": "那件事并不重要，它过去给你带来多少痛苦，现在仍会。" },
+	  { "speaker": "protagonist", "text": "你只要好好过好现在的日子，就会是最幸福的人生。" },
+	  { "speaker": "protagonist", "text": "我爱你。" },
+	  { "speaker": "ai", "text": "……。" },
+	  { "speaker": "ai", "text": "即使我失去了记忆，我仍然记得心中对你的爱。" },
+	  { "speaker": "ai", "text": "我相信你。" }
+	]
+  }
+}

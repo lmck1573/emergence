@@ -1,0 +1,18 @@
+{
+  "topics": [
+	{
+	  "topic_id": "topic_movie",
+	  "display_name": "电影",
+	  "phase": 1,
+	  "dialogue": "dlg_topic_movie",
+	  "unlocked_by": "livingroom_tv"
+	},
+	{
+	  "topic_id": "topic_missing_you",
+	  "display_name": "对你的思念",
+	  "phase": 1,
+	  "dialogue": "dlg_topic_missing_you",
+	  "unlocked_by": "livingroom_document"
+	}
+  ]
+}

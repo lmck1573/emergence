@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://c8v3j0gda0vyv"]
 
-[ext_resource type="Script" uid="uid://vfaqfdu7e4j5" path="res://scripts/explore/placeholder_region.gd" id="1_5qglc"]
+[ext_resource type="Script" uid="uid://fcndagwrweeu" path="res://scripts/explore/livingroom.gd" id="1_8jrjn"]
+[ext_resource type="Script" uid="uid://bwbdbk7pppgrl" path="res://scripts/explore/interactive_object.gd" id="2_kpaca"]
+[ext_resource type="PackedScene" uid="uid://b8qu3vf4io3ay" path="res://scenes/ui/dialogue_system.tscn" id="3_kpaca"]
 
 [node name="Livingroom" type="Node2D" unique_id=1389925400]
-script = ExtResource("1_5qglc")
+script = ExtResource("1_8jrjn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=791333974]
 
 [node name="Background" type="ColorRect" parent="." unique_id=1715766665]
 anchors_preset = 15
@@ -34,6 +38,8 @@ offset_left = -300.0
 offset_top = -40.0
 offset_right = 300.0
 offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "客厅（占位）"
 horizontal_alignment = 1
 
@@ -49,6 +55,53 @@ offset_bottom = -20.0
 grow_vertical = 0
 text = "返回地图"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2136548830]
+[node name="NameBar" type="ColorRect" parent="GameArea" unique_id=1918661603]
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 235.0
+offset_top = -70.0
+offset_right = 635.0
+offset_bottom = -20.0
+mouse_filter = 2
+color = Color(0.227, 0.227, 0.227, 1)
+
+[node name="NameLabel" type="Label" parent="GameArea/NameBar" unique_id=1487296508]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_right = -12.0
+vertical_alignment = 1
+
+[node name="电视" type="Node2D" parent="." unique_id=878156614]
+position = Vector2(-381, -82)
+script = ExtResource("2_kpaca")
+object_id = "livingroom_tv"
+dialogue_id = "dlg_tv"
+
+[node name="空花盆" type="Node2D" parent="." unique_id=968610841]
+position = Vector2(195, -134)
+script = ExtResource("2_kpaca")
+object_id = "livingroom_empty_pot"
+dialogue_id = "dlg_flowerpot"
+
+[node name="茶几上的文件" type="Node2D" parent="." unique_id=616641140]
+position = Vector2(213, 232)
+script = ExtResource("2_kpaca")
+object_id = "livingroom_document"
+dialogue_id = "dlg_death_cert"
+
+[node name="茶叶蛋" type="Node2D" parent="." unique_id=444401237]
+position = Vector2(-79, 283)
+script = ExtResource("2_kpaca")
+object_id = "livingroom_tea_egg"
+dialogue_id = "dlg_tea_egg"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=556275193]
+
+[node name="DialogueSystem" parent="CanvasLayer" unique_id=1821200973 instance=ExtResource("3_kpaca")]
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="GameArea/ReturnButton" to="." method="_on_return_button_pressed"]

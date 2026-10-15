@@ -1,0 +1,31 @@
+{
+  "contents": [
+	{
+	  "content_id": "hobby_movie",
+	  "type": "hobby",
+	  "display_name": "看电影",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	},
+	{
+	  "content_id": "exp_epiphyllum",
+	  "type": "exp",
+	  "display_name": "养昙花",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	},
+	{
+	  "content_id": "exp_breakfast",
+	  "type": "exp",
+	  "display_name": "早课的早餐时间",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	}
+  ]
+}

@@ -21,5 +21,3 @@ offset_bottom = 480.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1351119973]
 position = Vector2(960, 540)
-
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=1443827626]

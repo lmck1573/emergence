@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b8qu3vf4io3ay"]
+
+[ext_resource type="Script" uid="uid://ba1d0suuxqtjr" path="res://scripts/ui/dialogue_system.gd" id="1_r2koh"]
+
+[node name="DialogueSystem" type="Control" unique_id=1821200973]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_r2koh")
+
+[node name="ClickCatcher" type="Control" parent="." unique_id=860692457]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ProtagonistDialogue" type="PanelContainer" parent="." unique_id=466167380]
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -220.0
+offset_right = 760.0
+offset_bottom = -60.0
+mouse_filter = 2
+
+[node name="Text" type="Label" parent="ProtagonistDialogue" unique_id=1520778874]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="AIDialogue" type="PanelContainer" parent="." unique_id=989464488]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -760.0
+offset_top = 60.0
+offset_right = -60.0
+offset_bottom = 220.0
+mouse_filter = 2
+
+[node name="Text" type="Label" parent="AIDialogue" unique_id=856396988]
+modulate = Color(0.5, 0.843, 1, 1)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="SystemDialogue" type="PanelContainer" parent="." unique_id=1526558768]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -760.0
+offset_top = 60.0
+offset_right = -60.0
+offset_bottom = 220.0
+mouse_filter = 2
+
+[node name="Text" type="Label" parent="SystemDialogue" unique_id=24477578]
+modulate = Color(0.6, 0.6, 0.6, 1)
+layout_mode = 2
+autowrap_mode = 3
