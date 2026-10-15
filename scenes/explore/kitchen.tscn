@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dtgrmwlw6t6iy"]
+
+[ext_resource type="Script" uid="uid://vfaqfdu7e4j5" path="res://scripts/explore/placeholder_region.gd" id="1_353hf"]
+
+[node name="Kitchen" type="Node2D" unique_id=1971271294]
+script = ExtResource("1_353hf")
+
+[node name="Background" type="ColorRect" parent="." unique_id=431837742]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.353, 0.478, 0.541, 1)
+
+[node name="Title" type="Label" parent="." unique_id=2018171449]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -40.0
+offset_right = 300.0
+offset_bottom = 40.0
+text = "厨房（占位）"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="." unique_id=115579900]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 590.0
+offset_right = 226.0
+offset_bottom = 650.0
+grow_vertical = 0
+text = "返回地图"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

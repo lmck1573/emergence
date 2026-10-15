@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c0xb5bxxtagt0"]
+
+[ext_resource type="Texture2D" uid="uid://d6fhwivpfgie" path="res://artassests/tetsmap.png" id="1_ng1fx"]
+[ext_resource type="Script" uid="uid://b8b3nklj5q5tw" path="res://scripts/explore/map_point.gd" id="2_reeyo"]
+[ext_resource type="PackedScene" uid="uid://c8v3j0gda0vyv" path="res://scenes/explore/livingroom.tscn" id="3_dha4t"]
+[ext_resource type="PackedScene" uid="uid://dtgrmwlw6t6iy" path="res://scenes/explore/kitchen.tscn" id="4_7dl68"]
+[ext_resource type="PackedScene" uid="uid://xtwe3qlgkhu" path="res://scenes/explore/balcony.tscn" id="5_ppmjs"]
+
+[node name="HouseOverview" type="Node2D" unique_id=1036976434]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=386435328]
+position = Vector2(558.5, 323.375)
+scale = Vector2(0.5735887, 0.55320853)
+texture = ExtResource("1_ng1fx")
+
+[node name="客厅" type="Node2D" parent="." unique_id=1350699084]
+position = Vector2(453, 355)
+script = ExtResource("2_reeyo")
+target_scene = ExtResource("3_dha4t")
+
+[node name="厨房" type="Node2D" parent="." unique_id=1502807221]
+position = Vector2(563, 327)
+script = ExtResource("2_reeyo")
+target_scene = ExtResource("4_7dl68")
+
+[node name="阳台" type="Node2D" parent="." unique_id=1542956147]
+position = Vector2(684, 357)
+script = ExtResource("2_reeyo")
+target_scene = ExtResource("5_ppmjs")
