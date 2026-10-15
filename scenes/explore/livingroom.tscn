@@ -9,9 +9,22 @@ script = ExtResource("1_5qglc")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color(0.169, 0.169, 0.169, 1)
+
+[node name="GameArea" type="ColorRect" parent="." unique_id=2121805100]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -480.0
+offset_right = 480.0
+offset_bottom = 480.0
 color = Color(0.541, 0.435, 0.302, 1)
 
-[node name="Title" type="Label" parent="." unique_id=1062314004]
+[node name="Title" type="Label" parent="GameArea" unique_id=1062314004]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -24,15 +37,18 @@ offset_bottom = 40.0
 text = "客厅（占位）"
 horizontal_alignment = 1
 
-[node name="ReturnButton" type="Button" parent="." unique_id=1615677241]
+[node name="ReturnButton" type="Button" parent="GameArea" unique_id=1615677241]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = 562.0
-offset_right = 225.0
-offset_bottom = 622.0
+offset_left = 20.0
+offset_top = -70.0
+offset_right = 220.0
+offset_bottom = -20.0
 grow_vertical = 0
 text = "返回地图"
 
-[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2136548830]
+
+[connection signal="pressed" from="GameArea/ReturnButton" to="." method="_on_return_button_pressed"]

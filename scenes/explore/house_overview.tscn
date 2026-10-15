@@ -13,17 +13,22 @@ position = Vector2(558.5, 323.375)
 scale = Vector2(0.5735887, 0.55320853)
 texture = ExtResource("1_ng1fx")
 
-[node name="客厅" type="Node2D" parent="." unique_id=1350699084]
-position = Vector2(453, 355)
+[node name="客厅" type="Node2D" parent="Background" unique_id=1350699084]
+position = Vector2(-183.92969, 57.166504)
+scale = Vector2(1.7434094, 1.8076366)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("3_dha4t")
 
-[node name="厨房" type="Node2D" parent="." unique_id=1502807221]
-position = Vector2(563, 327)
+[node name="厨房" type="Node2D" parent="Background" unique_id=1502807221]
+position = Vector2(7.845337, 6.5526733)
+scale = Vector2(1.7434094, 1.8076366)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("4_7dl68")
 
-[node name="阳台" type="Node2D" parent="." unique_id=1542956147]
-position = Vector2(684, 357)
+[node name="阳台" type="Node2D" parent="Background" unique_id=1542956147]
+position = Vector2(218.79791, 60.7818)
+scale = Vector2(1.7434094, 1.8076366)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("5_ppmjs")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=448829495]
