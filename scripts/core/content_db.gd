@@ -64,7 +64,10 @@ static func _load_topics() -> void:
 
 
 static func _load_fulltexts() -> void:
-	var data: Dictionary = _read_json("res://data/fulltexts.json")
+	var path: String = "res://data/fulltexts.json"
+	if not FileAccess.file_exists(path):
+		return
+	var data: Dictionary = _read_json(path)
 	for entry: Variant in data.get("fulltexts", []):
 		var f: Dictionary = entry
 		_fulltexts[f.get("text_id", "")] = f
@@ -95,6 +98,19 @@ static func get_object_grants(object_id: String) -> Array[String]:
 	return grants
 
 
+static func get_object_step_grants(object_id: String, step_id: String) -> Array[String]:
+	var obj: Dictionary = get_object(object_id)
+	var grants: Array[String] = []
+	for step: Variant in obj.get("steps", []):
+		if not step is Dictionary or step.get("step_id", "") != step_id:
+			continue
+		for grant_id: Variant in step.get("grants", []):
+			if grant_id is String:
+				grants.append(grant_id)
+		break
+	return grants
+
+
 static func get_first_step_id(object_id: String) -> String:
 	var obj: Dictionary = get_object(object_id)
 	var steps: Array = obj.get("steps", [])
@@ -111,6 +127,18 @@ static func get_content(content_id: String) -> Dictionary:
 static func get_topic(topic_id: String) -> Dictionary:
 	_ensure_loaded()
 	return _topics.get(topic_id, {})
+
+
+static func get_feed_item_count(phase: int) -> int:
+	_ensure_loaded()
+	var count: int = 0
+	for item: Variant in _contents.values():
+		if item is Dictionary and int(item.get("phase", 1)) == phase:
+			count += 1
+	for item: Variant in _topics.values():
+		if item is Dictionary and int(item.get("phase", 1)) == phase:
+			count += 1
+	return count
 
 
 static func get_fulltext_pages(text_id: String) -> Array:

@@ -8,6 +8,10 @@ signal object_clicked(object_id: String)
 @onready var _dialogue: DialogueSystem = find_child("DialogueSystem", true, false) as DialogueSystem
 
 var _dialogue_playing: bool = false
+var _pending_object_id: String = ""
+var _pending_dialogue_id: String = ""
+var _active_object_id: String = ""
+var _active_dialogue_id: String = ""
 
 
 func _ready() -> void:
@@ -44,12 +48,25 @@ func _on_object_clicked(object_id: String, dialogue_id: String) -> void:
 	object_clicked.emit(object_id)
 	_name_label.text = ""
 	if dialogue_id != "":
+		_pending_object_id = object_id
+		_pending_dialogue_id = dialogue_id
 		_dialogue.play_dialogue(dialogue_id)
 
 
-func _on_dialogue_started(_dialogue_id: String) -> void:
+func _on_dialogue_started(dialogue_id: String) -> void:
 	_dialogue_playing = true
+	if dialogue_id == _pending_dialogue_id:
+		_active_object_id = _pending_object_id
+		_active_dialogue_id = dialogue_id
 
 
-func _on_dialogue_finished(_dialogue_id: String) -> void:
+func _on_dialogue_finished(dialogue_id: String) -> void:
 	_dialogue_playing = false
+	if dialogue_id == _active_dialogue_id and _active_object_id != "":
+		var step_id: String = ContentDB.get_first_step_id(_active_object_id)
+		if not step_id.is_empty():
+			EventBus.object_step_completed.emit(_active_object_id, step_id)
+	_pending_object_id = ""
+	_pending_dialogue_id = ""
+	_active_object_id = ""
+	_active_dialogue_id = ""
