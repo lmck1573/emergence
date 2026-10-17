@@ -159,10 +159,10 @@ text = "退出"
 
 [node name="Toolbar" type="Control" parent="Layout" unique_id=92646083]
 anchors_preset = 0
-offset_left = 504.0
+offset_left = 600.0
 offset_top = 925.0
-offset_right = 664.0
-offset_bottom = 1000.0
+offset_right = 710.0
+offset_bottom = 975.0
 mouse_filter = 2
 
 [node name="Buttons" type="HBoxContainer" parent="Layout/Toolbar" unique_id=2028528664]
@@ -171,15 +171,15 @@ mouse_filter = 2
 theme_override_constants/separation = 10
 
 [node name="FeedButton" type="Button" parent="Layout/Toolbar/Buttons" unique_id=1534051005]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 tooltip_text = "投喂已获得的经历、爱好或作品"
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 14
 text = "投喂"
 
 [node name="TopicButton" type="Button" parent="Layout/Toolbar/Buttons" unique_id=1833947260]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 tooltip_text = "选择已解锁的话题重复对话"
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 14
 text = "对话"

@@ -130,6 +130,17 @@ layout_mode = 1
 [node name="FeedToolbar" parent="Overlay" unique_id=1491831638 instance=ExtResource("3_0egci")]
 layout_mode = 1
 
+[node name="SoundButton" type="Button" parent="Overlay" unique_id=603812799]
+z_index = 20
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 540.0
+offset_top = 1000.0
+offset_right = 590.0
+offset_bottom = 1050.0
+theme_override_font_sizes/font_size = 10
+text = "开"
+
 [node name="ContentFlow" type="Node" parent="." unique_id=1926092644]
 script = ExtResource("4_o6t5g")
 

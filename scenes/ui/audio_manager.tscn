@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://j4e8rlkq4j6"]
+
+[ext_resource type="Script" uid="uid://bwa8erq0rg8gn" path="res://scripts/autoload/audio_manager.gd" id="1_ycret"]
+
+[node name="AudioManager" type="Node" unique_id=964710217]
+script = ExtResource("1_ycret")
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1576058029]
+
+[node name="Effect" type="AudioStreamPlayer" parent="." unique_id=403898078]
+
+[node name="UI" type="AudioStreamPlayer" parent="." unique_id=2000256759]
+
+[node name="Character" type="AudioStreamPlayer" parent="." unique_id=633999685]

@@ -28,6 +28,7 @@ var _typing: bool = false
 var _type_accum: float = 0.0
 var _dialogue_id: String = ""
 var _is_playing: bool = false
+var _current_speaker: String = "system"
 
 
 func _ready() -> void:
@@ -89,8 +90,9 @@ func _show_next_line() -> void:
 	var line: Dictionary = _lines[_current_index]
 	_current_index += 1
 	_hide_all_boxes()
-	_current_box = _box_for_speaker(str(line.get("speaker", "system")))
-	_panel_for_speaker(str(line.get("speaker", "system"))).visible = true
+	_current_speaker = str(line.get("speaker", "system"))
+	_current_box = _box_for_speaker(_current_speaker)
+	_panel_for_speaker(_current_speaker).visible = true
 	_current_box.visible = true
 	_full_text = str(line.get("text", ""))
 	_typed_count = 0
@@ -137,6 +139,7 @@ func _process(delta: float) -> void:
 		_type_accum -= TYPE_SPEED
 		_typed_count += 1
 		_current_box.visible_characters = _typed_count
+		EventBus.character_sound_requested.emit(_current_speaker)
 	if _typed_count >= _full_text.length():
 		_typing = false
 
@@ -147,6 +150,7 @@ func _on_click_catcher_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var mb := event as InputEventMouseButton
 		if mb.button_index == MOUSE_BUTTON_LEFT and mb.pressed:
+			EventBus.audio_cue_requested.emit("sfx_click")
 			_advance()
 
 

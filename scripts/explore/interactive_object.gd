@@ -13,6 +13,7 @@ signal clicked(object_id: String, dialogue_id: String)
 @export var radius: float = 30.0
 var _blocked: bool = false
 var _rect: Rect2 = Rect2(-50, -50, 100, 100)
+var _hovering: bool = false
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -26,6 +27,9 @@ func _ready() -> void:
 
 func _lock(blocked: bool) -> void:
 	_blocked = blocked
+	if blocked and _hovering:
+		_hovering = false
+		unhovered.emit()
 
 func _refresh() -> void:
 	if object_id == "livingroom_document":
@@ -38,10 +42,25 @@ func _draw() -> void:
 	draw_rect(_rect, Color(0.35, 0.8, 0.45, 0.65))
 	draw_rect(_rect, Color.WHITE, false, 2.0)
 
+func _process(_delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+	var inside: bool = not _blocked and is_visible_in_tree() and _rect.has_point(get_local_mouse_position())
+	if inside == _hovering:
+		return
+	_hovering = inside
+	if inside:
+		hovered.emit(str(ContentDB.get_object(object_id).get("display_name", "")))
+		EventBus.audio_cue_requested.emit("sfx_hover")
+	else:
+		unhovered.emit()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if Engine.is_editor_hint() or _blocked or not is_visible_in_tree():
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if _rect.has_point(get_local_mouse_position()):
 			get_viewport().set_input_as_handled()
+			var feedback: String = str(ContentDB.get_object(object_id).get("click_feedback", "sfx_click"))
+			EventBus.audio_cue_requested.emit("sfx_click" if feedback == "sfx_none" else feedback)
 			clicked.emit(object_id, dialogue_id)

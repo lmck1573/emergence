@@ -9,4 +9,9 @@ func _ready() -> void:
 
 
 func _on_start_pressed() -> void:
+	EventBus.game_started.emit()
 	get_tree().change_scene_to_file("res://scenes/ui/ai_interface.tscn")
+
+
+
+

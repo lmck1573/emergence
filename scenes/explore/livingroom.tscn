@@ -50,20 +50,20 @@ text = "客厅（占位）"
 horizontal_alignment = 1
 
 [node name="ReturnButton" type="Button" parent="GameArea" unique_id=1615677241]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
-offset_left = 1.0
-offset_top = 965.0
-offset_right = 201.0
-offset_bottom = 1015.0
+offset_top = 865.0
+offset_right = 50.0
+offset_bottom = 915.0
 
 [node name="NameBar" type="ColorRect" parent="GameArea" unique_id=1918661603]
 layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
-offset_top = -70.0
+offset_top = -160.0
 offset_right = 220.0
-offset_bottom = -20.0
+offset_bottom = -110.0
 mouse_filter = 2
 color = Color(0.227, 0.227, 0.227, 1)
 
@@ -84,29 +84,11 @@ script = ExtResource("2_kpaca")
 object_id = "livingroom_tv"
 dialogue_id = "dlg_tv"
 
-[node name="Label" type="Label" parent="电视" unique_id=601907650]
-offset_left = -100.0
-offset_top = 60.0
-offset_right = 100.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 24
-text = "电视"
-horizontal_alignment = 1
-
 [node name="空花盆" type="Node2D" parent="." unique_id=968610841]
 position = Vector2(195, -134)
 script = ExtResource("2_kpaca")
 object_id = "livingroom_empty_pot"
 dialogue_id = "dlg_flowerpot"
-
-[node name="Label" type="Label" parent="空花盆" unique_id=69840107]
-offset_left = -100.0
-offset_top = 60.0
-offset_right = 100.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 24
-text = "空花盆"
-horizontal_alignment = 1
 
 [node name="茶几上的文件" type="Node2D" parent="." unique_id=616641140]
 position = Vector2(213, 232)
@@ -114,29 +96,11 @@ script = ExtResource("2_kpaca")
 object_id = "livingroom_document"
 dialogue_id = "dlg_death_cert"
 
-[node name="Label" type="Label" parent="茶几上的文件" unique_id=371784178]
-offset_left = -100.0
-offset_top = 60.0
-offset_right = 100.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 24
-text = "茶几上的文件"
-horizontal_alignment = 1
-
 [node name="茶叶蛋" type="Node2D" parent="." unique_id=444401237]
 position = Vector2(-79, 283)
 script = ExtResource("2_kpaca")
 object_id = "livingroom_tea_egg"
 dialogue_id = "dlg_tea_egg"
-
-[node name="Label" type="Label" parent="茶叶蛋" unique_id=1472794341]
-offset_left = -100.0
-offset_top = 60.0
-offset_right = 100.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 24
-text = "茶叶蛋"
-horizontal_alignment = 1
 
 [node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("3_eou28")]
 

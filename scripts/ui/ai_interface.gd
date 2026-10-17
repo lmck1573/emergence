@@ -38,10 +38,16 @@ func _lock(blocked: bool) -> void:
 	_completeness.visible = not blocked
 
 func _save() -> void:
+	EventBus.audio_cue_requested.emit("sfx_save")
 	EventBus.toast_requested.emit("已保存" if GameState.save() else "保存失败")
 
 func _return() -> void:
 	GameState.data["current_scene"] = "house_overview"
 	GameState.commit()
 	get_tree().change_scene_to_file("res://scenes/explore/house_overview.tscn")
+
+
+
+
+
 

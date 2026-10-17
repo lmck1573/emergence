@@ -13,6 +13,7 @@ extends CanvasLayer
 @onready var _toast: Label = $Overlay/Toast
 @onready var _timer: Timer = $ToastTimer
 @onready var _fade: ColorRect = $Overlay/Fade
+@onready var _sound_button: Button = $Overlay/SoundButton
 @onready var _dialogue: DialogueSystem = $Overlay/DialogueSystem
 var _pages: Array[String] = []
 var _page: int = 0
@@ -23,6 +24,7 @@ var _event_id: String = ""
 var _toast_queue: Array[String] = []
 var _ending: bool = false
 var _inspection_dialogue: String = ""
+var _muted: bool = false
 ## Canonical dialogue ranges exclude script directions and split investigation steps.
 const INVESTIGATION_DIALOGUES: Dictionary = {
 	"ft_livingroom_tv": ["dlg_tv", 0, 3],
@@ -30,8 +32,7 @@ const INVESTIGATION_DIALOGUES: Dictionary = {
 	"ft_livingroom_document": ["dlg_death_cert", 0, 2],
 	"ft_livingroom_tea_egg": ["dlg_tea_egg", 0, 6],
 	"ft_kitchen_fridge": ["dlg_fridge", 0, 6],
-	"ft_bowls_look": ["dlg_couple_bowls", 0, 2],
-	"ft_bowls_flip": ["dlg_couple_bowls", 2, 7],
+	"ft_bowls_look": ["dlg_couple_bowls", 0, 7],
 	"ft_balcony_lounger": ["dlg_balcony_chair", 0, 3],
 	"ft_balcony_window": ["dlg_window", 0, 6],
 	"ft_balcony_flowerpots": ["dlg_withered_plants", 0, 4],
@@ -54,6 +55,11 @@ func _ready() -> void:
 	_yes.pressed.connect(_choose.bind("yes"))
 	_no.pressed.connect(_choose.bind("no"))
 	_timer.timeout.connect(_pop_toast)
+	_sound_button.pressed.connect(_toggle_sound)
+	EventBus.modal_changed.connect(_on_modal_changed)
+	EventBus.audio_mute_changed.connect(_on_audio_mute_changed)
+	_muted = bool(GameState.data.get("settings", {}).get("muted", false))
+	_sync_sound_button()
 
 func _open_text(id: String, next_label: String, can_previous: bool) -> void:
 	_text_id = id
@@ -64,6 +70,9 @@ func _open_text(id: String, next_label: String, can_previous: bool) -> void:
 	_reader.hide()
 	_scroll.show()
 	_reader.self_modulate.a = 1.0
+	var reader_color: Color = _reader.color
+	reader_color.a = 1.0
+	_reader.color = reader_color
 	if INVESTIGATION_DIALOGUES.has(id):
 		var selection: Array[Variant] = INVESTIGATION_DIALOGUES[id]
 		_inspection_dialogue = str(selection[0])
@@ -91,7 +100,9 @@ func _dialogue_finished(id: String) -> void:
 	if not _next_label.is_empty():
 		# Reuse editor-authored navigation without the full-screen reading background.
 		_scroll.hide()
-		_reader.self_modulate.a = 0.0
+		var reader_color: Color = _reader.color
+		reader_color.a = 0.0
+		_reader.color = reader_color
 		_reader.show()
 		_refresh_page()
 	else:
@@ -122,6 +133,9 @@ func _previous_page() -> void:
 func _close_text() -> void:
 	var id: String = _text_id
 	_reader.hide()
+	var reader_color: Color = _reader.color
+	reader_color.a = 1.0
+	_reader.color = reader_color
 	_text_id = ""
 	# Empty ID reports early close; only the last page counts as read.
 	EventBus.fulltext_finished.emit(id if _page >= _pages.size() - 1 else "")
@@ -141,6 +155,19 @@ func _show_toast(message: String) -> void:
 	_toast_queue.append(message)
 	if _timer.is_stopped():
 		_pop_toast()
+
+func _on_modal_changed(blocked: bool) -> void:
+	_sound_button.visible = not blocked
+
+func _toggle_sound() -> void:
+	EventBus.audio_mute_requested.emit(not _muted)
+
+func _on_audio_mute_changed(muted: bool) -> void:
+	_muted = muted
+	_sync_sound_button()
+
+func _sync_sound_button() -> void:
+	_sound_button.text = "关" if _muted else "开"
 
 func _pop_toast() -> void:
 	if _toast_queue.is_empty():
@@ -170,4 +197,9 @@ func _end() -> void:
 	await tween.finished
 	EventBus.ending_finished.emit()
 	get_tree().change_scene_to_file("res://scenes/ui/start_screen.tscn")
+
+
+
+
+
 

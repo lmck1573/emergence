@@ -49,3 +49,15 @@ signal ending_requested()
 signal ending_finished()
 ## An opening document was selected.
 signal opening_requested(key: String, text_id: String)
+## A one-shot audio cue was requested.
+signal audio_cue_requested(cue_id: String)
+## A dialogue character sound was requested.
+signal character_sound_requested(speaker: String)
+## A phase-specific background track was requested.
+signal phase_bgm_requested(phase: int)
+## The global audio mute state was changed.
+signal audio_mute_requested(muted: bool)
+## The global audio mute state changed.
+signal audio_mute_changed(muted: bool)
+## A new game session began.
+signal game_started()
