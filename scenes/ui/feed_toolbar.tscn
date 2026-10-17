@@ -1,12 +1,185 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://yg3hd2nusa6g"]
 
-[ext_resource type="Script" path="res://scripts/ui/feed_toolbar.gd" id="1_feed"]
+[ext_resource type="Script" uid="uid://bfe2mfrueljlc" path="res://scripts/ui/feed_toolbar.gd" id="1_feed"]
 
-[node name="FeedToolbar" type="Control"]
+[node name="FeedToolbar" type="Control" unique_id=1491831638]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_feed")
+
+[node name="Layout" type="Control" parent="." unique_id=70435206]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Blocker" type="Control" parent="Layout" unique_id=311753420]
+visible = false
+z_index = -1
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="FeedPanel" type="PanelContainer" parent="Layout" unique_id=375135308]
+visible = false
+custom_minimum_size = Vector2(320, 250)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 650.0
+offset_right = 504.0
+offset_bottom = 650.0
+
+[node name="PanelContent" type="VBoxContainer" parent="Layout/FeedPanel" unique_id=30228677]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="Layout/FeedPanel/PanelContent" unique_id=63134296]
+layout_mode = 2
+text = "投喂"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Layout/FeedPanel/PanelContent" unique_id=1432450329]
+custom_minimum_size = Vector2(300, 210)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Items" type="VBoxContainer" parent="Layout/FeedPanel/PanelContent/ScrollContainer" unique_id=952644899]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="hobby_movie" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=584985803]
+visible = false
+layout_mode = 2
+text = "hobby_movie"
+
+[node name="hobby_sweets" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=607405618]
+visible = false
+layout_mode = 2
+text = "hobby_sweets"
+
+[node name="hobby_sunbath" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=739871533]
+visible = false
+layout_mode = 2
+text = "hobby_sunbath"
+
+[node name="exp_epiphyllum" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=1711781967]
+visible = false
+layout_mode = 2
+text = "exp_epiphyllum"
+
+[node name="exp_breakfast" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=846002326]
+visible = false
+layout_mode = 2
+text = "exp_breakfast"
+
+[node name="exp_couple_bowls" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=1959795083]
+visible = false
+layout_mode = 2
+text = "exp_couple_bowls"
+
+[node name="exp_sunbath" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=509063249]
+visible = false
+layout_mode = 2
+text = "exp_sunbath"
+
+[node name="exp_flowers" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=488787053]
+visible = false
+layout_mode = 2
+text = "exp_flowers"
+
+[node name="exp_lalaland" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=1303497538]
+visible = false
+layout_mode = 2
+text = "exp_lalaland"
+
+[node name="exp_dumplings" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=1833181483]
+visible = false
+layout_mode = 2
+text = "exp_dumplings"
+
+[node name="Close" type="Button" parent="Layout/FeedPanel/PanelContent" unique_id=2022474687]
+layout_mode = 2
+text = "退出"
+
+[node name="TopicPanel" type="PanelContainer" parent="Layout" unique_id=144093934]
+visible = false
+custom_minimum_size = Vector2(320, 250)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 650.0
+offset_right = 504.0
+offset_bottom = 650.0
+
+[node name="PanelContent" type="VBoxContainer" parent="Layout/TopicPanel" unique_id=306486156]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="Layout/TopicPanel/PanelContent" unique_id=962542203]
+layout_mode = 2
+text = "话题"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Layout/TopicPanel/PanelContent" unique_id=1237077754]
+custom_minimum_size = Vector2(300, 210)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Items" type="VBoxContainer" parent="Layout/TopicPanel/PanelContent/ScrollContainer" unique_id=143750357]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="topic_movie" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1369035242]
+visible = false
+layout_mode = 2
+text = "topic_movie"
+
+[node name="topic_missing_you" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1117727703]
+visible = false
+layout_mode = 2
+text = "topic_missing_you"
+
+[node name="topic_her_taste" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1865928038]
+visible = false
+layout_mode = 2
+text = "topic_her_taste"
+
+[node name="topic_usb" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1957387261]
+visible = false
+layout_mode = 2
+text = "topic_usb"
+
+[node name="Close" type="Button" parent="Layout/TopicPanel/PanelContent" unique_id=1898309420]
+layout_mode = 2
+text = "退出"
+
+[node name="Toolbar" type="Control" parent="Layout" unique_id=92646083]
+anchors_preset = 0
+offset_left = 504.0
+offset_top = 925.0
+offset_right = 664.0
+offset_bottom = 1000.0
+mouse_filter = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Layout/Toolbar" unique_id=2028528664]
+layout_mode = 0
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="FeedButton" type="Button" parent="Layout/Toolbar/Buttons" unique_id=1534051005]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+tooltip_text = "投喂已获得的经历、爱好或作品"
+theme_override_font_sizes/font_size = 24
+text = "投喂"
+
+[node name="TopicButton" type="Button" parent="Layout/Toolbar/Buttons" unique_id=1833947260]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+tooltip_text = "选择已解锁的话题重复对话"
+theme_override_font_sizes/font_size = 24
+text = "对话"

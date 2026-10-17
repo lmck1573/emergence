@@ -1,0 +1,169 @@
+{
+  "events": [
+    {
+      "event_id": "event_opening_complete",
+      "trigger": "on_game_state_changed",
+      "priority": 10,
+      "once": true,
+      "phase": 1,
+      "conditions": {
+        "all": [
+          {
+            "type": "opening_read",
+            "key": "agreement"
+          },
+          {
+            "type": "opening_read",
+            "key": "guide"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_region:house_overview"
+      ]
+    },
+    {
+      "event_id": "event_unlock_master_bedroom",
+      "trigger": "on_game_state_changed",
+      "priority": 90,
+      "once": true,
+      "phase": 1,
+      "conditions": {
+        "all": [
+          {
+            "type": "opening_read",
+            "key": "agreement"
+          },
+          {
+            "type": "opening_read",
+            "key": "guide"
+          },
+          {
+            "type": "object_investigated",
+            "id": "livingroom_tv"
+          },
+          {
+            "type": "object_investigated",
+            "id": "livingroom_empty_pot"
+          },
+          {
+            "type": "object_investigated",
+            "id": "livingroom_document"
+          },
+          {
+            "type": "object_investigated",
+            "id": "livingroom_tea_egg"
+          },
+          {
+            "type": "object_investigated",
+            "id": "kitchen_fridge"
+          },
+          {
+            "type": "object_investigated",
+            "id": "kitchen_couple_bowls"
+          },
+          {
+            "type": "object_investigated",
+            "id": "kitchen_recipe_book"
+          },
+          {
+            "type": "object_investigated",
+            "id": "balcony_lounger"
+          },
+          {
+            "type": "object_investigated",
+            "id": "balcony_cushion"
+          },
+          {
+            "type": "object_investigated",
+            "id": "balcony_window"
+          },
+          {
+            "type": "object_investigated",
+            "id": "balcony_flowerpots"
+          },
+          {
+            "type": "content_fed",
+            "id": "hobby_movie"
+          },
+          {
+            "type": "content_fed",
+            "id": "hobby_sweets"
+          },
+          {
+            "type": "content_fed",
+            "id": "hobby_sunbath"
+          },
+          {
+            "type": "content_fed",
+            "id": "exp_epiphyllum"
+          },
+          {
+            "type": "content_fed",
+            "id": "exp_breakfast"
+          },
+          {
+            "type": "content_fed",
+            "id": "exp_couple_bowls"
+          },
+          {
+            "type": "content_fed",
+            "id": "exp_sunbath"
+          },
+          {
+            "type": "content_fed",
+            "id": "exp_flowers"
+          },
+          {
+            "type": "content_fed",
+            "id": "exp_lalaland"
+          },
+          {
+            "type": "content_fed",
+            "id": "exp_dumplings"
+          }
+        ]
+      },
+      "effects": [
+        "play_fulltext:ft_unlock_master_bedroom",
+        "unlock_region:master_bedroom"
+      ]
+    },
+    {
+      "event_id": "event_phase1_usb_topic",
+      "trigger": "on_game_state_changed",
+      "priority": 80,
+      "once": true,
+      "phase": 1,
+      "conditions": {
+        "all": [
+          {
+            "type": "content_obtained",
+            "id": "work_usb"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_topic:topic_usb"
+      ]
+    },
+    {
+      "event_id": "event_phase1_end",
+      "trigger": "on_game_state_changed",
+      "priority": 100,
+      "once": true,
+      "phase": 1,
+      "conditions": {
+        "all": [
+          {
+            "type": "content_fed",
+            "id": "work_usb"
+          }
+        ]
+      },
+      "effects": [
+        "play_effect:black_flash"
+      ]
+    }
+  ]
+}

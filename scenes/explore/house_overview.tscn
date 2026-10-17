@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://c8v3j0gda0vyv" path="res://scenes/explore/livingroom.tscn" id="3_dha4t"]
 [ext_resource type="PackedScene" uid="uid://dtgrmwlw6t6iy" path="res://scenes/explore/kitchen.tscn" id="4_7dl68"]
 [ext_resource type="PackedScene" uid="uid://xtwe3qlgkhu" path="res://scenes/explore/balcony.tscn" id="5_ppmjs"]
+[ext_resource type="PackedScene" uid="uid://bm1epakqvxbbm" path="res://scenes/ui/ai_interface.tscn" id="6_reeyo"]
+[ext_resource type="PackedScene" uid="uid://w6cyelv363co" path="res://scenes/explore/master_bedroom.tscn" id="7_7dl68"]
+[ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="8_ppmjs"]
 
 [node name="HouseOverview" type="Node2D" unique_id=1036976434]
 
@@ -12,6 +15,7 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 color = Color(0.169, 0.169, 0.169, 1)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=386435328]
@@ -22,16 +26,33 @@ texture = ExtResource("1_ng1fx")
 position = Vector2(-340, 160)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("3_dha4t")
+region_id = "livingroom"
 
 [node name="厨房" type="Node2D" parent="Background" unique_id=1502807221]
 position = Vector2(140, 60)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("4_7dl68")
+region_id = "kitchen"
 
 [node name="阳台" type="Node2D" parent="Background" unique_id=1542956147]
 position = Vector2(340, 310)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("5_ppmjs")
+region_id = "balcony"
+
+[node name="电脑" type="Node2D" parent="Background" unique_id=565965814]
+position = Vector2(0, -40)
+script = ExtResource("2_reeyo")
+target_scene = ExtResource("6_reeyo")
+region_id = "ai_interface"
+
+[node name="主卧" type="Node2D" parent="Background" unique_id=2129479238]
+position = Vector2(-230, -250)
+script = ExtResource("2_reeyo")
+target_scene = ExtResource("7_7dl68")
+region_id = "master_bedroom"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=448829495]
 position = Vector2(960, 540)
+
+[node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("8_ppmjs")]

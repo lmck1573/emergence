@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://w6cyelv363co"]
+
+[ext_resource type="Script" uid="uid://c5qtmxuhu3ryf" path="res://scripts/explore/room_controller.gd" id="1_efqqh"]
+[ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="2_rg6um"]
+[ext_resource type="Script" uid="uid://bwbdbk7pppgrl" path="res://scripts/explore/interactive_object.gd" id="3_me7kd"]
+
+[node name="Kitchen" type="Node2D" unique_id=1971271294]
+script = ExtResource("1_efqqh")
+
+[node name="Background" type="ColorRect" parent="." unique_id=431837742]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+color = Color(0.169, 0.169, 0.169, 1)
+
+[node name="GameArea" type="ColorRect" parent="." unique_id=1400089972]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -480.0
+offset_right = 480.0
+offset_bottom = 480.0
+mouse_filter = 2
+color = Color(0.353, 0.478, 0.541, 1)
+
+[node name="Title" type="Label" parent="GameArea" unique_id=2018171449]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -40.0
+offset_right = 300.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "主卧（占位）"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="GameArea" unique_id=115579900]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 968.0
+offset_right = 224.0
+offset_bottom = 1018.0
+grow_vertical = 0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1806611542]
+
+[node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("2_rg6um")]
+
+[node name="master_floorboard" type="Node2D" parent="." unique_id=906982254]
+position = Vector2(0, 100)
+script = ExtResource("3_me7kd")
+object_id = "master_floorboard"
+
+[node name="Label" type="Label" parent="master_floorboard" unique_id=2091018417]
+offset_left = -75.0
+offset_top = 60.0
+offset_right = 75.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 24
+text = "松动的木板"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="GameArea/ReturnButton" to="." method="_on_return_button_pressed"]

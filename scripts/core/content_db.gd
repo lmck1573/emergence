@@ -113,7 +113,8 @@ static func get_object_step_grants(object_id: String, step_id: String) -> Array[
 
 static func get_first_step_id(object_id: String) -> String:
 	var obj: Dictionary = get_object(object_id)
-	var steps: Array = obj.get("steps", [])
+	var steps: Array[Dictionary] = []
+	steps.assign( obj.get("steps", []))
 	if steps.is_empty():
 		return ""
 	return steps[0].get("step_id", "")
@@ -132,18 +133,17 @@ static func get_topic(topic_id: String) -> Dictionary:
 static func get_feed_item_count(phase: int) -> int:
 	_ensure_loaded()
 	var count: int = 0
-	for item: Variant in _contents.values():
-		if item is Dictionary and int(item.get("phase", 1)) == phase:
-			count += 1
-	for item: Variant in _topics.values():
-		if item is Dictionary and int(item.get("phase", 1)) == phase:
+	for item: Dictionary in _contents.values():
+		if int(item.get("phase", 1)) == phase and bool(item.get("feedable", false)):
 			count += 1
 	return count
 
 
-static func get_fulltext_pages(text_id: String) -> Array:
+static func get_fulltext_pages(text_id: String) -> Array[String]:
 	_ensure_loaded()
-	return _fulltexts.get(text_id, {}).get("pages", [])
+	var pages: Array[String] = []
+	pages.assign(_fulltexts.get(text_id, {}).get("pages", []))
+	return pages
 
 
 static func get_dialogue(dialogue_id: String) -> Dictionary:
@@ -161,3 +161,17 @@ static func get_grant_toast_text(grant_id: String) -> String:
 		var type_label: String = TYPE_LABELS.get(c.get("type", ""), str(c.get("type", "")))
 		return "获得%s：%s" % [type_label, c.get("display_name", grant_id)]
 	return "获得：%s" % grant_id
+
+
+static func get_events() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	result.assign(_read_json("res://data/events.json").get("events", []))
+	result.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return int(a["priority"]) > int(b["priority"]))
+	return result
+
+
+static func get_region(region_id: String) -> Dictionary:
+	for region: Dictionary in _read_json("res://data/scenes.json").get("regions", []):
+		if region.get("region_id") == region_id:
+			return region
+	return {}

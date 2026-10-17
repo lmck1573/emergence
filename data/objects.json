@@ -4,7 +4,12 @@
 	  "object_id": "livingroom_tv",
 	  "region_id": "livingroom",
 	  "display_name": "电视",
-	  "click_area": { "x": 0, "y": 0, "w": 100, "h": 100 },
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
 	  "click_feedback": "sfx_click",
 	  "conditions": [],
 	  "steps": [
@@ -12,7 +17,10 @@
 		  "step_id": "look",
 		  "text_ref": "ft_livingroom_tv",
 		  "operation_label": null,
-		  "grants": ["hobby_movie", "topic_movie"]
+		  "grants": [
+			"hobby_movie",
+            "topic_movie"
+		  ]
 		}
 	  ],
 	  "repeat_text_policy": "last_step"
@@ -21,7 +29,12 @@
 	  "object_id": "livingroom_empty_pot",
 	  "region_id": "livingroom",
 	  "display_name": "空花盆",
-	  "click_area": { "x": 0, "y": 0, "w": 100, "h": 100 },
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
 	  "click_feedback": "sfx_none",
 	  "conditions": [],
 	  "steps": [
@@ -29,7 +42,9 @@
 		  "step_id": "look",
 		  "text_ref": "ft_livingroom_empty_pot",
 		  "operation_label": null,
-		  "grants": ["exp_epiphyllum"]
+		  "grants": [
+            "exp_epiphyllum"
+		  ]
 		}
 	  ],
 	  "repeat_text_policy": "last_step"
@@ -38,7 +53,12 @@
 	  "object_id": "livingroom_document",
 	  "region_id": "livingroom",
 	  "display_name": "茶几上的文件",
-	  "click_area": { "x": 0, "y": 0, "w": 100, "h": 100 },
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
 	  "click_feedback": "sfx_none",
 	  "conditions": [],
 	  "steps": [
@@ -46,7 +66,9 @@
 		  "step_id": "look",
 		  "text_ref": "ft_livingroom_document",
 		  "operation_label": null,
-		  "grants": ["topic_missing_you"]
+		  "grants": [
+            "topic_missing_you"
+		  ]
 		}
 	  ],
 	  "repeat_text_policy": "last_step"
@@ -55,7 +77,12 @@
 	  "object_id": "livingroom_tea_egg",
 	  "region_id": "livingroom",
 	  "display_name": "茶叶蛋",
-	  "click_area": { "x": 0, "y": 0, "w": 100, "h": 100 },
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
 	  "click_feedback": "sfx_none",
 	  "conditions": [],
 	  "steps": [
@@ -63,7 +90,466 @@
 		  "step_id": "look",
 		  "text_ref": "ft_livingroom_tea_egg",
 		  "operation_label": null,
-		  "grants": ["exp_breakfast"]
+		  "grants": [
+            "exp_breakfast"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "kitchen_fridge",
+	  "region_id": "kitchen",
+	  "display_name": "冰箱",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_fridge_open",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_kitchen_fridge",
+		  "operation_label": null,
+		  "grants": [
+			"hobby_sweets",
+            "topic_her_taste"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "kitchen_couple_bowls",
+	  "region_id": "kitchen",
+	  "display_name": "情侣餐具",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_bowls_look",
+		  "operation_label": null,
+		  "grants": []
+		},
+		{
+		  "step_id": "flip",
+		  "text_ref": "ft_bowls_flip",
+		  "operation_label": "翻面",
+		  "grants": [
+			"exp_couple_bowls",
+            "clue_cohabitation"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "kitchen_recipe_book",
+	  "region_id": "kitchen",
+	  "display_name": "活页本",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_recipe_look",
+		  "operation_label": null,
+		  "grants": []
+		},
+		{
+		  "step_id": "open",
+		  "text_ref": "ft_recipe_page1",
+		  "operation_label": "翻开",
+		  "grants": []
+		},
+		{
+		  "step_id": "next_page",
+		  "text_ref": "ft_recipe_page2",
+		  "operation_label": "继续翻页",
+		  "grants": [
+            "clue_curry_rice"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "first_step"
+	},
+	{
+	  "object_id": "balcony_lounger",
+	  "region_id": "balcony",
+	  "display_name": "摇篮躺椅",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_lounger_rock",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_balcony_lounger",
+		  "operation_label": null,
+		  "grants": [
+            "exp_sunbath"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "balcony_cushion",
+	  "region_id": "balcony",
+	  "display_name": "抱枕",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_balcony_cushion",
+		  "operation_label": null,
+		  "grants": []
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "balcony_window",
+	  "region_id": "balcony",
+	  "display_name": "老式防盗窗",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_window_creak",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_balcony_window",
+		  "operation_label": null,
+		  "grants": [
+            "hobby_sunbath"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "balcony_flowerpots",
+	  "region_id": "balcony",
+	  "display_name": "一排花盆",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_balcony_flowerpots",
+		  "operation_label": null,
+		  "grants": [
+            "exp_flowers"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "master_floorboard",
+	  "region_id": "master_bedroom",
+	  "display_name": "松动的木板",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_floorboard_creak",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_master_floorboard",
+		  "operation_label": null,
+		  "grants": [
+            "work_usb"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "girls_room_photo_wall",
+	  "region_id": "girls_room",
+	  "display_name": "照片墙",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [
+        "phase2_started"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_girls_room_photo_wall",
+		  "operation_label": null,
+		  "grants": [
+            "hobby_travel"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "girls_room_dolls",
+	  "region_id": "girls_room",
+	  "display_name": "玩偶",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [
+        "phase2_started"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_girls_room_dolls",
+		  "operation_label": null,
+		  "grants": [
+            "hobby_cute_dolls"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "girls_room_pc",
+	  "region_id": "girls_room",
+	  "display_name": "女主的电脑",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_click",
+	  "conditions": [
+        "phase2_started"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_girls_room_pc",
+		  "operation_label": null,
+		  "grants": [
+            "topic_locked_pc"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "girls_room_locked_drawer",
+	  "region_id": "girls_room",
+	  "display_name": "上锁的抽屉",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [
+        "phase2_started"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_girls_room_locked_drawer",
+		  "operation_label": null,
+		  "grants": [
+            "topic_locked_drawer"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "girls_room_journal",
+	  "region_id": "girls_room",
+	  "display_name": "手账本",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [
+        "phase2_started"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_girls_room_journal",
+		  "operation_label": null,
+		  "grants": [
+            "work_journal"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "girls_room_pc_unlock",
+	  "region_id": "girls_room",
+	  "display_name": "电脑解锁点",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [
+		"has_clicked:girls_room_pc",
+		"has_clicked:girls_room_journal",
+        "topic_locked_pc_resolved"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_pc_unlock",
+		  "operation_label": null,
+		  "grants": []
+		},
+		{
+		  "step_id": "password_input",
+		  "text_ref": "ui_password_wheel",
+		  "operation_label": "输入密码",
+		  "grants": []
+		},
+		{
+		  "step_id": "unlocked",
+		  "text_ref": "ft_pc_unlock_after",
+		  "operation_label": null,
+		  "grants": []
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "pc_folder_games",
+	  "region_id": "girls_room",
+	  "display_name": "游戏文件夹",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [
+        "pc_unlocked"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_pc_games",
+		  "operation_label": null,
+		  "grants": [
+            "hobby_games"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "pc_folder_social",
+	  "region_id": "girls_room",
+	  "display_name": "社交账号",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [
+        "pc_unlocked"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_pc_social",
+		  "operation_label": null,
+		  "grants": [
+			"exp_web_novel",
+            "dlg_removed_chat_log"
+		  ]
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "pc_folder_bills",
+	  "region_id": "girls_room",
+	  "display_name": "账单记录",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [
+        "pc_unlocked"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_pc_bills",
+		  "operation_label": null,
+		  "grants": [
+            "exp_strange_bill"
+		  ]
 		}
 	  ],
 	  "repeat_text_policy": "last_step"

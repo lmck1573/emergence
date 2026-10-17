@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bm1epakqvxbbm"]
+
+[ext_resource type="Script" uid="uid://bq6tll05ertnx" path="res://scripts/ui/ai_interface.gd" id="1_tybk1"]
+[ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="2_t87ol"]
+
+[node name="AIInterface" type="Control" unique_id=609504264]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tybk1")
+
+[node name="Layout" type="Control" parent="." unique_id=1260990043]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Layout" unique_id=600312392]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.1254902, 0.15686275, 0.1764706, 1)
+
+[node name="GameArea" type="ColorRect" parent="Layout" unique_id=1803697387]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+color = Color(0.20392157, 0.2784314, 0.30980393, 1)
+
+[node name="AIPlaceholder" type="PanelContainer" parent="Layout/GameArea" unique_id=242507773]
+custom_minimum_size = Vector2(260, 340)
+layout_mode = 0
+offset_left = 350.0
+offset_top = 180.0
+offset_right = 350.0
+offset_bottom = 180.0
+
+[node name="PlaceholderLabel" type="Label" parent="Layout/GameArea/AIPlaceholder" unique_id=327137421]
+layout_mode = 2
+text = "AI形象占位"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AgreementButton" type="Button" parent="Layout/GameArea" unique_id=1305848572]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 600.0
+offset_right = 620.0
+offset_bottom = 650.0
+text = "Emergence服务协议"
+
+[node name="GuideButton" type="Button" parent="Layout/GameArea" unique_id=1932703799]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 665.0
+offset_right = 620.0
+offset_bottom = 715.0
+text = "人格计划培育指南"
+
+[node name="ReturnButton" type="Button" parent="Layout" unique_id=576749066]
+visible = false
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 1028.0
+offset_right = 504.0
+offset_bottom = 1028.0
+
+[node name="SaveButton" type="Button" parent="Layout" unique_id=1247842079]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 1028.0
+offset_right = 1216.0
+offset_bottom = 1028.0
+text = "存档"
+
+[node name="CompletenessButton" type="Button" parent="Layout" unique_id=1099689687]
+layout_mode = 0
+offset_left = 1464.0
+offset_top = 160.0
+offset_right = 1714.0
+offset_bottom = 220.0
+text = "人格完整度：0%"
+
+[node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("2_t87ol")]

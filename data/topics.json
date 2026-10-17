@@ -13,6 +13,20 @@
 	  "phase": 1,
 	  "dialogue": "dlg_topic_missing_you",
 	  "unlocked_by": "livingroom_document"
+	},
+	{
+	  "topic_id": "topic_her_taste",
+	  "display_name": "她的口味",
+	  "phase": 1,
+	  "dialogue": "dlg_topic_her_taste",
+	  "unlocked_by": "kitchen_fridge"
+	},
+	{
+	  "topic_id": "topic_usb",
+	  "display_name": "U盘",
+	  "phase": 1,
+	  "dialogue": "dlg_topic_usb",
+	  "unlocked_by": "event_phase1_usb_topic"
 	}
   ]
 }

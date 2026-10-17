@@ -1,0 +1,52 @@
+{
+  "regions": [
+    {
+      "region_id": "ai_interface",
+      "display_name": "AI交互界面",
+      "scene_path": "res://scenes/ui/ai_interface.tscn",
+      "parent": "house_overview",
+      "unlock_event": null,
+      "phase": 1
+    },
+    {
+      "region_id": "house_overview",
+      "display_name": "地图",
+      "scene_path": "res://scenes/explore/house_overview.tscn",
+      "parent": null,
+      "unlock_event": "event_opening_complete",
+      "phase": 1
+    },
+    {
+      "region_id": "livingroom",
+      "display_name": "客厅",
+      "scene_path": "res://scenes/explore/livingroom.tscn",
+      "parent": "house_overview",
+      "unlock_event": null,
+      "phase": 1
+    },
+    {
+      "region_id": "kitchen",
+      "display_name": "厨房",
+      "scene_path": "res://scenes/explore/kitchen.tscn",
+      "parent": "house_overview",
+      "unlock_event": null,
+      "phase": 1
+    },
+    {
+      "region_id": "balcony",
+      "display_name": "阳台",
+      "scene_path": "res://scenes/explore/balcony.tscn",
+      "parent": "house_overview",
+      "unlock_event": null,
+      "phase": 1
+    },
+    {
+      "region_id": "master_bedroom",
+      "display_name": "主卧",
+      "scene_path": "res://scenes/explore/master_bedroom.tscn",
+      "parent": "house_overview",
+      "unlock_event": "event_unlock_master_bedroom",
+      "phase": 1
+    }
+  ]
+}

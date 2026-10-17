@@ -1,28 +1,32 @@
 @tool
 extends Node2D
-## 地图上的可点击切换点：绘制一个蓝色圆圈，左键点击后切换到 target_scene。
-## 脚本带 @tool，蓝圈在编辑器中也会显示，可直接拖动本节点来摆放位置。
-
-## 点击后要切换到的目标场景。
+## Editor-positioned map destination.
 @export var target_scene: PackedScene
-## 蓝色圆圈的半径（像素），同时作为点击判定半径。
+@export var region_id: String = ""
 @export var radius: float = 24.0
+var _blocked: bool = false
+
+func _ready() -> void:
+	if not Engine.is_editor_hint():
+		EventBus.modal_changed.connect(_lock)
+
+func _lock(blocked: bool) -> void:
+	_blocked = blocked
 
 func _draw() -> void:
 	draw_circle(Vector2.ZERO, radius, Color(0.2, 0.55, 1.0, 0.85))
-	draw_arc(Vector2.ZERO, radius, 0.0, TAU, 48, Color(1.0, 1.0, 1.0, 0.9), 2.0)
+	draw_arc(Vector2.ZERO, radius, 0.0, TAU, 48, Color.WHITE, 2.0)
 
-func _input(event: InputEvent) -> void:
-	if Engine.is_editor_hint():
+func _unhandled_input(event: InputEvent) -> void:
+	if Engine.is_editor_hint() or _blocked:
 		return
-	if event is InputEventMouseButton:
-		var mouse_button := event as InputEventMouseButton
-		if mouse_button.button_index == MOUSE_BUTTON_LEFT and mouse_button.pressed:
-			if global_position.distance_to(get_global_mouse_position()) <= radius:
-				_switch_scene()
-
-func _switch_scene() -> void:
-	if target_scene == null:
-		push_warning("MapPoint 未配置 target_scene：%s" % name)
-		return
-	get_tree().change_scene_to_packed(target_scene)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if global_position.distance_to(get_global_mouse_position()) <= radius:
+			get_viewport().set_input_as_handled()
+			if not region_id.is_empty() and not GameState.is_region_unlocked(region_id):
+				EventBus.toast_requested.emit("暂时无法进入")
+				return
+			if target_scene != null:
+				GameState.data["current_scene"] = region_id
+				GameState.commit()
+				get_tree().change_scene_to_packed(target_scene)

@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://d2knf2vsdlute"]
+
+[ext_resource type="Script" uid="uid://dp7nlek3577ph" path="res://scripts/ui/story_ui.gd" id="1_n1y5b"]
+[ext_resource type="PackedScene" uid="uid://b8qu3vf4io3ay" path="res://scenes/ui/dialogue_system.tscn" id="2_usul1"]
+[ext_resource type="PackedScene" uid="uid://yg3hd2nusa6g" path="res://scenes/ui/feed_toolbar.tscn" id="3_0egci"]
+[ext_resource type="Script" uid="uid://ctfucqdo0krrs" path="res://scripts/content/content_flow.gd" id="4_o6t5g"]
+[ext_resource type="Script" uid="uid://cdowdcrkqx3d" path="res://scripts/events/event_controller.gd" id="5_jfhmg"]
+
+[node name="StoryUI" type="CanvasLayer" unique_id=729731323]
+script = ExtResource("1_n1y5b")
+
+[node name="Overlay" type="Control" parent="." unique_id=712061862]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Reader" type="ColorRect" parent="Overlay" unique_id=1332367816]
+visible = false
+z_index = 30
+layout_mode = 0
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+color = Color(0.1, 0.12, 0.15, 1)
+
+[node name="Scroll" type="ScrollContainer" parent="Overlay/Reader" unique_id=17530983]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 50.0
+offset_right = 900.0
+offset_bottom = 830.0
+horizontal_scroll_mode = 0
+
+[node name="Text" type="Label" parent="Overlay/Reader/Scroll" unique_id=1855439714]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "调查文本"
+autowrap_mode = 3
+
+[node name="Exit" type="Button" parent="Overlay/Reader" unique_id=930630460]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 860.0
+offset_right = 200.0
+offset_bottom = 920.0
+text = "退出"
+
+[node name="Previous" type="Button" parent="Overlay/Reader" unique_id=1386385874]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 860.0
+offset_right = 650.0
+offset_bottom = 920.0
+text = "上一页"
+
+[node name="Next" type="Button" parent="Overlay/Reader" unique_id=1752634494]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 860.0
+offset_right = 900.0
+offset_bottom = 920.0
+text = "下一页"
+
+[node name="Choice" type="ColorRect" parent="Overlay" unique_id=626710836]
+visible = false
+z_index = 40
+layout_mode = 0
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+color = Color(0.05, 0.05, 0.06, 0.95)
+
+[node name="Prompt" type="Label" parent="Overlay/Choice" unique_id=831587353]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 300.0
+offset_right = 800.0
+offset_bottom = 420.0
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 30
+text = "要说出真相吗？"
+horizontal_alignment = 1
+
+[node name="Yes" type="Button" parent="Overlay/Choice" unique_id=1571203867]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 500.0
+offset_right = 430.0
+offset_bottom = 560.0
+text = "是"
+
+[node name="No" type="Button" parent="Overlay/Choice" unique_id=1928999761]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 500.0
+offset_right = 740.0
+offset_bottom = 560.0
+text = "否"
+
+[node name="Toast" type="Label" parent="Overlay" unique_id=1670605405]
+visible = false
+z_index = 60
+layout_mode = 0
+offset_left = 730.0
+offset_top = 100.0
+offset_right = 1190.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="Fade" type="ColorRect" parent="Overlay" unique_id=1171885019]
+visible = false
+z_index = 100
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="DialogueSystem" parent="Overlay" unique_id=1821200973 instance=ExtResource("2_usul1")]
+z_index = 10
+layout_mode = 1
+
+[node name="FeedToolbar" parent="Overlay" unique_id=1491831638 instance=ExtResource("3_0egci")]
+layout_mode = 1
+
+[node name="ContentFlow" type="Node" parent="." unique_id=1926092644]
+script = ExtResource("4_o6t5g")
+
+[node name="Events" type="Node" parent="." unique_id=1755977683]
+script = ExtResource("5_jfhmg")
+
+[node name="ToastTimer" type="Timer" parent="." unique_id=1780798090]
+wait_time = 2.0
+one_shot = true

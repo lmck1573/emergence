@@ -68,7 +68,6 @@ static func default_state() -> Dictionary:
 		"contents_obtained": [],
 		"contents_fed": [],
 		"fed_items": {},
-		"feed_history": [],
 		"topics_unlocked": [],
 		"topics_completed": [],
 		"events_completed": [],
@@ -104,11 +103,6 @@ static func _validate_save(data: Dictionary) -> bool:
 		return false
 	if not _is_fed_items_map(data["fed_items"]):
 		return false
-	for entry: Variant in data["feed_history"]:
-		if not entry is Dictionary or not entry.get("item_id", "") is String or not entry.get("type", "") is String or not entry.get("fed_at", "") is String:
-			return false
-		if not entry.get("feed_stage", 0) is int:
-			return false
 	if not data["completeness"] is float and not data["completeness"] is int:
 		return false
 	return true
@@ -131,7 +125,10 @@ static func _is_fed_items_map(value: Dictionary) -> bool:
 			return false
 		if not state.get("isFed", false) is bool or not state.get("fedAt", "") is String:
 			return false
-		if not state.get("feedStage", 0) is int:
+		var feed_stage: Variant = state.get("feedStage", 0)
+		if not feed_stage is int and not feed_stage is float:
+			return false
+		if float(int(feed_stage)) != float(feed_stage):
 			return false
 	return true
 

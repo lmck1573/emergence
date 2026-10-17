@@ -10,6 +10,24 @@
 	  "completeness_bonus": 3.96
 	},
 	{
+	  "content_id": "hobby_sweets",
+	  "type": "hobby",
+	  "display_name": "甜品",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	},
+	{
+	  "content_id": "hobby_sunbath",
+	  "type": "hobby",
+	  "display_name": "晒太阳",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	},
+	{
 	  "content_id": "exp_epiphyllum",
 	  "type": "exp",
 	  "display_name": "养昙花",
@@ -26,6 +44,78 @@
 	  "feedable": true,
 	  "feed_dialogue": null,
 	  "completeness_bonus": 3.96
+	},
+	{
+	  "content_id": "exp_couple_bowls",
+	  "type": "exp",
+	  "display_name": "一起购买情侣餐具",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	},
+	{
+	  "content_id": "exp_sunbath",
+	  "type": "exp",
+	  "display_name": "一起晒太阳",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	},
+	{
+	  "content_id": "exp_flowers",
+	  "type": "exp",
+	  "display_name": "爱花",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	},
+	{
+	  "content_id": "exp_lalaland",
+	  "type": "exp",
+	  "display_name": "一起看爱乐之城",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	},
+	{
+	  "content_id": "exp_dumplings",
+	  "type": "exp",
+	  "display_name": "一起包饺子",
+	  "phase": 1,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 3.96
+	},
+	{
+	  "content_id": "work_usb",
+	  "type": "work",
+	  "display_name": "U盘",
+	  "phase": 1,
+	  "feedable": false,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 0
+	},
+	{
+	  "content_id": "clue_cohabitation",
+	  "type": "clue",
+	  "display_name": "同居第一天",
+	  "phase": 1,
+	  "feedable": false,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 0
+	},
+	{
+	  "content_id": "clue_curry_rice",
+	  "type": "clue",
+	  "display_name": "咖喱鸡排蛋包饭",
+	  "phase": 1,
+	  "feedable": false,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 0
 	}
   ]
 }
