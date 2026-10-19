@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://c0xb5bxxtagt0"]
 
-[ext_resource type="Texture2D" uid="uid://d6fhwivpfgie" path="res://artassests/tetsmap.png" id="1_ng1fx"]
+[ext_resource type="Texture2D" uid="uid://b15uuy1fvpckr" path="res://artassests/地图草稿.png" id="1_ppmjs"]
 [ext_resource type="Script" uid="uid://b8b3nklj5q5tw" path="res://scripts/explore/map_point.gd" id="2_reeyo"]
 [ext_resource type="PackedScene" uid="uid://c8v3j0gda0vyv" path="res://scenes/explore/livingroom.tscn" id="3_dha4t"]
 [ext_resource type="PackedScene" uid="uid://dtgrmwlw6t6iy" path="res://scenes/explore/kitchen.tscn" id="4_7dl68"]
 [ext_resource type="PackedScene" uid="uid://xtwe3qlgkhu" path="res://scenes/explore/balcony.tscn" id="5_ppmjs"]
 [ext_resource type="PackedScene" uid="uid://bm1epakqvxbbm" path="res://scenes/ui/ai_interface.tscn" id="6_reeyo"]
 [ext_resource type="PackedScene" uid="uid://w6cyelv363co" path="res://scenes/explore/master_bedroom.tscn" id="7_7dl68"]
+[ext_resource type="PackedScene" uid="uid://dsjiaswd1ckda" path="res://scenes/explore/wife_room.tscn" id="8_f0k58"]
 [ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="8_ppmjs"]
 
 [node name="HouseOverview" type="Node2D" unique_id=1036976434]
@@ -16,41 +17,51 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-color = Color(0.169, 0.169, 0.169, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="Background" type="Sprite2D" parent="." unique_id=386435328]
-position = Vector2(960, 540)
-texture = ExtResource("1_ng1fx")
+[node name="Background" type="TextureRect" parent="." unique_id=386435328]
+offset_left = 448.0
+offset_top = 28.0
+offset_right = 1472.0
+offset_bottom = 1052.0
+mouse_filter = 2
+texture = ExtResource("1_ppmjs")
 
 [node name="客厅" type="Node2D" parent="Background" unique_id=1350699084]
-position = Vector2(-340, 160)
+position = Vector2(788, 325)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("3_dha4t")
 region_id = "livingroom"
 
 [node name="厨房" type="Node2D" parent="Background" unique_id=1502807221]
-position = Vector2(140, 60)
+position = Vector2(623, 843)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("4_7dl68")
 region_id = "kitchen"
 
 [node name="阳台" type="Node2D" parent="Background" unique_id=1542956147]
-position = Vector2(340, 310)
+position = Vector2(763, 118)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("5_ppmjs")
 region_id = "balcony"
 
 [node name="电脑" type="Node2D" parent="Background" unique_id=565965814]
-position = Vector2(0, -40)
+position = Vector2(121, 397)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("6_reeyo")
 region_id = "ai_interface"
 
 [node name="主卧" type="Node2D" parent="Background" unique_id=2129479238]
-position = Vector2(-230, -250)
+position = Vector2(257, 287)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("7_7dl68")
 region_id = "master_bedroom"
+
+[node name="女主房间" type="Node2D" parent="Background" unique_id=1340434065]
+position = Vector2(401, 284)
+script = ExtResource("2_reeyo")
+target_scene = ExtResource("8_f0k58")
+region_id = "wife_room"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=448829495]
 position = Vector2(960, 540)

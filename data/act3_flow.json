@@ -1,0 +1,435 @@
+{
+  "cg_images": {
+    "burning_room": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "break_journal_lock": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "break_drawer_lock": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "opened_journal": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "phone_year4": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "phone_march": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "park_lake": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "park_turn": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "park_birds": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "park_face": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "restaurant": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "hotel_night": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "hotel_day": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "restaurant_usb": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "divorce_drawer": "res://artassests/女主眨眼动画/眨眼1.jpg",
+    "reunion": "res://artassests/女主眨眼动画/眨眼1.jpg"
+  },
+  "routes": {
+    "zero": [
+      {
+        "action": "room",
+        "id": "厨房"
+      },
+      {
+        "action": "click",
+        "label": "女主"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_zero_厨房"
+      },
+      {
+        "action": "leave"
+      },
+      {
+        "action": "room",
+        "id": "阳台"
+      },
+      {
+        "action": "click",
+        "label": "女主"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_zero_阳台"
+      },
+      {
+        "action": "leave"
+      },
+      {
+        "action": "room",
+        "id": "主卧"
+      },
+      {
+        "action": "click",
+        "label": "女主"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_zero_主卧"
+      },
+      {
+        "action": "leave"
+      },
+      {
+        "action": "room",
+        "id": "客厅"
+      },
+      {
+        "action": "click",
+        "label": "女主"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_zero_livingroom"
+      },
+      {
+        "action": "room",
+        "id": "客厅"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_zero_wait"
+      },
+      {
+        "action": "cg",
+        "id": "burning_room"
+      },
+      {
+        "action": "audio",
+        "id": "sfx_fire",
+        "stop_bgm": true
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_zero_wife_room"
+      },
+      {
+        "action": "ending",
+        "id": "love"
+      }
+    ],
+    "positive": [
+      {
+        "action": "room",
+        "id": "厨房"
+      },
+      {
+        "action": "click",
+        "label": "女主"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_truth_厨房"
+      },
+      {
+        "action": "leave"
+      },
+      {
+        "action": "room",
+        "id": "阳台"
+      },
+      {
+        "action": "click",
+        "label": "女主"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_truth_阳台"
+      },
+      {
+        "action": "leave"
+      },
+      {
+        "action": "room",
+        "id": "主卧"
+      },
+      {
+        "action": "click",
+        "label": "女主"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_truth_主卧"
+      },
+      {
+        "action": "leave"
+      },
+      {
+        "action": "room",
+        "id": "客厅"
+      },
+      {
+        "action": "click",
+        "label": "女主"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_truth_livingroom"
+      },
+      {
+        "action": "choice",
+        "prompt": "要让她独自进去吗？",
+        "yes": "alone",
+        "no": "refuse"
+      }
+    ],
+    "refuse": [
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_refuse"
+      },
+      {
+        "action": "room",
+        "id": "厨房"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_tools"
+      },
+      {
+        "action": "room",
+        "id": "女主的房间"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_forced_room"
+      },
+      {
+        "action": "cg",
+        "id": "break_journal_lock"
+      },
+      {
+        "action": "cg",
+        "id": "break_drawer_lock"
+      },
+      {
+        "action": "cg",
+        "id": "opened_journal"
+      },
+      {
+        "action": "click",
+        "label": "笔记本"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_hidden_journal"
+      },
+      {
+        "action": "audio",
+        "id": "sfx_door_open"
+      },
+      {
+        "action": "room",
+        "id": "女主的房间"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_after_journal"
+      },
+      {
+        "action": "black"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_child_decision"
+      },
+      {
+        "action": "ending",
+        "id": "life"
+      }
+    ],
+    "alone": [
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_allow_alone"
+      },
+      {
+        "action": "room",
+        "id": "客厅"
+      },
+      {
+        "action": "wait",
+        "seconds": 5.0
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_waiting_alone"
+      },
+      {
+        "action": "leave"
+      },
+      {
+        "action": "room",
+        "id": "女主的房间"
+      },
+      {
+        "action": "click",
+        "label": "女主"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_missing_submission"
+      },
+      {
+        "action": "caption",
+        "text": "四年前",
+        "seconds": 1.0
+      },
+      {
+        "action": "cg",
+        "id": "phone_year4"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_memory_phone_year4"
+      },
+      {
+        "action": "caption",
+        "text": "第二年三月",
+        "seconds": 1.0
+      },
+      {
+        "action": "cg",
+        "id": "phone_march"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_memory_phone_march"
+      },
+      {
+        "action": "cg",
+        "id": "park_lake"
+      },
+      {
+        "action": "audio",
+        "id": "sfx_park"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_memory_park_lake"
+      },
+      {
+        "action": "cg",
+        "id": "park_turn"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_memory_park_turn"
+      },
+      {
+        "action": "cg",
+        "id": "park_birds"
+      },
+      {
+        "action": "audio",
+        "id": "sfx_birds"
+      },
+      {
+        "action": "cg",
+        "id": "park_face"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_memory_park_face"
+      },
+      {
+        "action": "cg",
+        "id": "restaurant"
+      },
+      {
+        "action": "audio",
+        "id": "sfx_restaurant"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_memory_restaurant"
+      },
+      {
+        "action": "cg",
+        "id": "hotel_night"
+      },
+      {
+        "action": "audio",
+        "id": "sfx_phone_ring"
+      },
+      {
+        "action": "wait",
+        "seconds": 3.0
+      },
+      {
+        "action": "audio",
+        "id": "sfx_phone_answer"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_memory_hotel_night"
+      },
+      {
+        "action": "cg",
+        "id": "hotel_day"
+      },
+      {
+        "action": "audio",
+        "id": "sfx_knock"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_memory_hotel_day"
+      },
+      {
+        "action": "cg",
+        "id": "restaurant_usb"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_memory_restaurant_usb"
+      },
+      {
+        "action": "room",
+        "id": "女主的房间"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_usb_question"
+      },
+      {
+        "action": "black"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_truth_confession"
+      },
+      {
+        "action": "room",
+        "id": "女主的房间"
+      },
+      {
+        "action": "click",
+        "label": "电脑"
+      },
+      {
+        "action": "room",
+        "id": "电脑特写"
+      },
+      {
+        "action": "click",
+        "label": "抽屉"
+      },
+      {
+        "action": "puzzle",
+        "id": "puzzle_act3_drawer_password"
+      },
+      {
+        "action": "cg",
+        "id": "divorce_drawer"
+      },
+      {
+        "action": "dialogue",
+        "id": "dlg_act3_divorce_drawer_reveal"
+      },
+      {
+        "action": "ending",
+        "id": "truth"
+      }
+    ]
+  },
+  "ending_titles": {
+    "love": "ENDING1——堪称执念的爱",
+    "life": "Ending2——新的生命",
+    "truth": "ENDING3——沉默的真相"
+  }
+}

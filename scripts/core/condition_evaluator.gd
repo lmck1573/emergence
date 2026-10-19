@@ -20,8 +20,31 @@ static func evaluate(conditions: Dictionary) -> bool:
 		"content_fed":
 			return GameState.is_content_fed(id)
 		"object_investigated":
-			for step: Dictionary in ContentDB.get_object(id).get("steps", []):
+			var object_data: Dictionary = ContentDB.get_object(id)
+			if object_data.is_empty():
+				return false
+			var steps: Array[Dictionary] = []
+			steps.assign(object_data.get("steps", []))
+			if steps.is_empty():
+				return not GameState.get_object_steps(id).is_empty()
+			for step: Dictionary in steps:
 				if not GameState.get_object_steps(id).has(str(step["step_id"])):
 					return false
-			return not ContentDB.get_object(id).is_empty()
+			return true
+		"object_step_completed":
+			return GameState.get_object_steps(id).has(str(conditions.get("step_id", "")))
+		"topic_completed":
+			return GameState.data.get("topics_completed", []).has(id)
+		"topic_unlocked":
+			return GameState.is_topic_unlocked(id)
+		"event_completed":
+			return GameState.is_event_completed(id)
+		"puzzle_completed":
+			return bool(GameState.data.get("puzzles", {}).get(id, {}).get("completed", false))
+		"player_choice":
+			return GameState.data.get("player_choices", {}).get(id, "") == str(conditions.get("result", ""))
+		"truth_revealed_gte":
+			return GameState.get_truth() >= int(conditions.get("value", 0))
+		"phase_is":
+			return GameState.get_current_phase() == int(conditions.get("value", 0))
 	return false

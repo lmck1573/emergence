@@ -25,6 +25,8 @@ signal dialogue_finished(dialogue_id: String)
 signal topic_requested(topic_id: String)
 ## A toolbar content item was selected.
 signal feed_requested(content_id: String)
+## Request feeding every currently available content item.
+signal feed_all_requested()
 ## A topic completed normally.
 signal topic_completed(topic_id: String)
 ## A truth selection must be presented.
@@ -51,6 +53,8 @@ signal ending_finished()
 signal opening_requested(key: String, text_id: String)
 ## A one-shot audio cue was requested.
 signal audio_cue_requested(cue_id: String)
+## Stop a currently playing one-shot sound cue.
+signal audio_cue_stop_requested(cue_id: String)
 ## A dialogue character sound was requested.
 signal character_sound_requested(speaker: String)
 ## A phase-specific background track was requested.
@@ -61,3 +65,13 @@ signal audio_mute_requested(muted: bool)
 signal audio_mute_changed(muted: bool)
 ## A new game session began.
 signal game_started()
+## Request a scene-independent narrative transition sequence.
+signal transition_requested(transition_id: String)
+## A narrative transition presentation has finished.
+signal transition_finished(transition_id: String)
+## Request a date-password puzzle interface.
+signal puzzle_requested(puzzle_id: String)
+## Request the diary event-list viewer.
+signal diary_viewer_requested()
+## A puzzle was submitted with its result.
+signal puzzle_submitted(puzzle_id: String, answer: String)

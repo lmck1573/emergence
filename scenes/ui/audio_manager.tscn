@@ -1,9 +1,51 @@
 [gd_scene format=3 uid="uid://j4e8rlkq4j6"]
 
 [ext_resource type="Script" uid="uid://bwa8erq0rg8gn" path="res://scripts/autoload/audio_manager.gd" id="1_ycret"]
+[ext_resource type="AudioStream" uid="uid://cj1gshpbcb5id" path="res://音效/bgm/stage_1.mp3" id="2_3ktqa"]
+[ext_resource type="AudioStream" uid="uid://bd6xh6sey8el0" path="res://音效/音效/木板咯吱.mp3" id="2_21d5t"]
+[ext_resource type="AudioStream" uid="uid://bu0qrex65k0p1" path="res://音效/音效/白噪音机械轰鸣.mp3" id="2_dnf3m"]
+[ext_resource type="AudioStream" uid="uid://dabk83urpqemk" path="res://音效/bgm/stage_2.mp3" id="3_dnf3m"]
+[ext_resource type="AudioStream" uid="uid://c6xjehhknxfjl" path="res://音效/音效/心跳.mp3" id="3_q4ugi"]
+[ext_resource type="AudioStream" uid="uid://deonj260dtioi" path="res://音效/音效/耳鸣.mp3" id="4_cp6uu"]
+[ext_resource type="AudioStream" uid="uid://lyafd2uxvunv" path="res://音效/bgm/stage_3.mp3" id="4_u52be"]
+[ext_resource type="AudioStream" uid="uid://cv4oebovrxq6f" path="res://音效/音效/门铃.mp3" id="5_1pujl"]
+[ext_resource type="AudioStream" uid="uid://d1mlo87t7olmt" path="res://音效/音效/男主说话字幕.mp3" id="5_563kv"]
+[ext_resource type="AudioStream" uid="uid://bc1gex0hxlv3r" path="res://音效/音效/火焰燃烧.mp3" id="6_3vmfx"]
+[ext_resource type="AudioStream" uid="uid://bw3ivxul4gq5k" path="res://音效/音效/女主说话字幕.mp3" id="6_do8ig"]
+[ext_resource type="AudioStream" uid="uid://c5o24aynql5mn" path="res://音效/音效/UI-鼠标悬停事件.mp3" id="7_n1cii"]
+[ext_resource type="AudioStream" uid="uid://ck75eebncxmgq" path="res://音效/音效/点击备选.mp3" id="8_067vh"]
+[ext_resource type="AudioStream" uid="uid://dgoaqfo5oqohj" path="res://音效/音效/获得事件.mp3" id="9_6kcnc"]
+[ext_resource type="AudioStream" uid="uid://c1wchwfntdtds" path="res://音效/音效/开门.mp3" id="16_u52be"]
+[ext_resource type="AudioStream" uid="uid://bdghenafnmahy" path="res://音效/音效/公园.mp3" id="17_6kcnc"]
+[ext_resource type="AudioStream" uid="uid://hgxomicty2vt" path="res://音效/音效/鸟扇翅膀.mp3" id="18_imt65"]
+[ext_resource type="AudioStream" uid="uid://bsrqug26nveu8" path="res://音效/音效/餐厅.mp3" id="19_uyaoe"]
+[ext_resource type="AudioStream" uid="uid://btxx4p288f5b0" path="res://音效/音效/手机震动.mp3" id="20_doc03"]
+[ext_resource type="AudioStream" uid="uid://dc1tcy0jh4dk3" path="res://音效/音效/敲门.mp3" id="21_pbe05"]
 
 [node name="AudioManager" type="Node" unique_id=964710217]
 script = ExtResource("1_ycret")
+title_bgm = ExtResource("2_dnf3m")
+phase_one_bgm = ExtResource("2_3ktqa")
+phase_two_bgm = ExtResource("3_dnf3m")
+phase_three_bgm = ExtResource("4_u52be")
+protagonist_character = ExtResource("5_563kv")
+ai_character = ExtResource("6_do8ig")
+system_character = ExtResource("6_do8ig")
+ui_hover = ExtResource("7_n1cii")
+ui_click = ExtResource("8_067vh")
+toast = ExtResource("9_6kcnc")
+floorboard_creak = ExtResource("2_21d5t")
+heartbeat = ExtResource("3_q4ugi")
+tinnitus = ExtResource("4_cp6uu")
+doorbell = ExtResource("5_1pujl")
+fire = ExtResource("6_3vmfx")
+door_open = ExtResource("16_u52be")
+park = ExtResource("17_6kcnc")
+birds = ExtResource("18_imt65")
+restaurant = ExtResource("19_uyaoe")
+phone_ring = ExtResource("20_doc03")
+phone_answer = ExtResource("20_doc03")
+knock = ExtResource("21_pbe05")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1576058029]
 

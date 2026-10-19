@@ -1,0 +1,327 @@
+[gd_scene format=3 uid="uid://b470njqvv5xwh"]
+
+[ext_resource type="Script" uid="uid://c5qtmxuhu3ryf" path="res://scripts/explore/room_controller.gd" id="1_686oq"]
+[ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="2_smo2r"]
+[ext_resource type="Script" uid="uid://bwbdbk7pppgrl" path="res://scripts/explore/interactive_object.gd" id="3_ddhou"]
+[ext_resource type="Texture2D" uid="uid://drxp6nn4y2o82" path="res://artassests/女主电脑特写草稿.png" id="4_room_art"]
+[ext_resource type="Script" uid="uid://sr5ifyckwx2r" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
+
+[sub_resource type="RectangleShape2D" id="PowerButtonShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="LockedDrawerShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="NotebooksShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="LockedEntryShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="FolderGamesShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="FolderSocialShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="FolderBillsShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smo2r"]
+size = Vector2(50, 50)
+
+[node name="ComputerDesk" type="Node2D" unique_id=162387502]
+script = ExtResource("1_686oq")
+
+[node name="GameArea" type="Control" parent="." unique_id=1810455681]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 960.0
+offset_bottom = 960.0
+mouse_filter = 2
+
+[node name="EditorGameAreaGuide" type="ColorRect" parent="GameArea" unique_id=250222751]
+z_index = -100
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 960.0
+mouse_filter = 2
+script = ExtResource("editor_guide_script")
+
+[node name="RoomBackdrop" type="TextureRect" parent="GameArea" unique_id=2043748931]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 960.0
+mouse_filter = 2
+texture = ExtResource("4_room_art")
+
+[node name="Title" type="Label" parent="GameArea" unique_id=965575282]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 28.0
+offset_right = 760.0
+offset_bottom = 88.0
+text = "女主的电脑"
+horizontal_alignment = 1
+
+[node name="MonitorFrame" type="ColorRect" parent="GameArea" unique_id=1253776407]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 110.0
+offset_right = 860.0
+offset_bottom = 680.0
+mouse_filter = 2
+color = Color(0.1254902, 0.15294118, 0.16470589, 1)
+
+[node name="MonitorScreen" type="ColorRect" parent="GameArea" unique_id=1796981108]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 130.0
+offset_right = 840.0
+offset_bottom = 650.0
+mouse_filter = 2
+color = Color(0.07058824, 0.09803922, 0.10980392, 1)
+
+[node name="ScreenTitle" type="Label" parent="GameArea" unique_id=1152238333]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 150.0
+offset_right = 810.0
+offset_bottom = 192.0
+text = "桌面"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="GameArea" unique_id=978641170]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 190.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="GameArea/ReturnButton" unique_id=1468161175]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "返回女主房间"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameBar" type="ColorRect" parent="GameArea" unique_id=1356009536]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 810.0
+offset_right = 320.0
+offset_bottom = 860.0
+mouse_filter = 2
+color = Color(0.22745098, 0.22745098, 0.22745098, 1)
+
+[node name="NameLabel" type="Label" parent="GameArea/NameBar" unique_id=1509231225]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 290.0
+offset_bottom = 45.0
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1788342524]
+position = Vector2(480, 480)
+
+[node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("2_smo2r")]
+
+[node name="PowerButton" type="Area2D" parent="." unique_id=1243738212]
+position = Vector2(820, 620)
+script = ExtResource("3_ddhou")
+object_id = "computer_power_button"
+
+[node name="Marker" type="ColorRect" parent="PowerButton" unique_id=69431666]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerButton" unique_id=1088066389]
+shape = SubResource("PowerButtonShape")
+
+[node name="LockedDrawer" type="Area2D" parent="." unique_id=379998041]
+position = Vector2(700, 760)
+script = ExtResource("3_ddhou")
+object_id = "computer_locked_drawer"
+
+[node name="Marker" type="ColorRect" parent="LockedDrawer" unique_id=271064545]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDrawer" unique_id=744217649]
+shape = SubResource("LockedDrawerShape")
+
+[node name="Notebooks" type="Area2D" parent="." unique_id=2134867525]
+position = Vector2(250, 760)
+script = ExtResource("3_ddhou")
+object_id = "computer_notebooks"
+
+[node name="Marker" type="ColorRect" parent="Notebooks" unique_id=290563080]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notebooks" unique_id=2128535943]
+shape = SubResource("NotebooksShape")
+
+[node name="LockedEntry" type="Area2D" parent="." unique_id=1881102663]
+position = Vector2(480, 400)
+script = ExtResource("3_ddhou")
+object_id = "computer_locked_entry"
+
+[node name="Marker" type="ColorRect" parent="LockedEntry" unique_id=1797132748]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedEntry" unique_id=1309569810]
+shape = SubResource("LockedEntryShape")
+
+[node name="FolderGames" type="Area2D" parent="." unique_id=1036960763]
+position = Vector2(260, 280)
+script = ExtResource("3_ddhou")
+object_id = "computer_folder_games"
+
+[node name="Marker" type="ColorRect" parent="FolderGames" unique_id=318898969]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderGames" unique_id=1345996709]
+shape = SubResource("FolderGamesShape")
+
+[node name="FolderSocial" type="Area2D" parent="." unique_id=1165599021]
+position = Vector2(480, 280)
+script = ExtResource("3_ddhou")
+object_id = "computer_folder_social"
+
+[node name="Marker" type="ColorRect" parent="FolderSocial" unique_id=796828099]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderSocial" unique_id=900130999]
+shape = SubResource("FolderSocialShape")
+
+[node name="FolderBills" type="Area2D" parent="." unique_id=1289172193]
+position = Vector2(700, 280)
+script = ExtResource("3_ddhou")
+object_id = "computer_folder_bills"
+
+[node name="Marker" type="ColorRect" parent="FolderBills" unique_id=1603392029]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderBills" unique_id=1349395363]
+shape = SubResource("FolderBillsShape")
+
+[node name="balcony_lounger" type="Area2D" parent="." unique_id=1566074354]
+position = Vector2(-259, 24)
+script = ExtResource("3_ddhou")
+object_id = "balcony_lounger"
+
+[node name="Marker" type="ColorRect" parent="balcony_lounger" unique_id=466486121]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 25.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcony_lounger" unique_id=1310605940]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_smo2r")
+
+[node name="balcony_lounger" type="Area2D" parent="balcony_lounger" unique_id=894551129]
+position = Vector2(-259, 24)
+script = ExtResource("3_ddhou")
+object_id = "balcony_lounger"
+
+[node name="Marker" type="ColorRect" parent="balcony_lounger/balcony_lounger" unique_id=1894180234]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 25.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcony_lounger/balcony_lounger" unique_id=1932992376]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_smo2r")
+
+[node name="balcony_lounger" type="Area2D" parent="balcony_lounger/balcony_lounger" unique_id=1972694238]
+position = Vector2(-259, 24)
+script = ExtResource("3_ddhou")
+object_id = "balcony_lounger"
+
+[node name="Marker" type="ColorRect" parent="balcony_lounger/balcony_lounger/balcony_lounger" unique_id=2136026444]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 25.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcony_lounger/balcony_lounger/balcony_lounger" unique_id=1141030463]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_smo2r")
+
+[node name="balcony_lounger" type="Area2D" parent="balcony_lounger/balcony_lounger/balcony_lounger" unique_id=1644670593]
+position = Vector2(-259, 24)
+script = ExtResource("3_ddhou")
+object_id = "balcony_lounger"
+
+[node name="Marker" type="ColorRect" parent="balcony_lounger/balcony_lounger/balcony_lounger/balcony_lounger" unique_id=443453940]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 25.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcony_lounger/balcony_lounger/balcony_lounger/balcony_lounger" unique_id=996013664]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_smo2r")
+
+[node name="balcony_lounger" type="Area2D" parent="balcony_lounger/balcony_lounger/balcony_lounger/balcony_lounger" unique_id=1011120714]
+position = Vector2(-259, 24)
+script = ExtResource("3_ddhou")
+object_id = "balcony_lounger"
+
+[node name="Marker" type="ColorRect" parent="balcony_lounger/balcony_lounger/balcony_lounger/balcony_lounger/balcony_lounger" unique_id=1850396042]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 25.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcony_lounger/balcony_lounger/balcony_lounger/balcony_lounger/balcony_lounger" unique_id=1287587058]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_smo2r")

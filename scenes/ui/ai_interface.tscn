@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bq6tll05ertnx" path="res://scripts/ui/ai_interface.gd" id="1_tybk1"]
 [ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="2_t87ol"]
+[ext_resource type="Texture2D" uid="uid://s83ugquekv12" path="res://artassests/AI交互界面草稿.png" id="3_ai_art"]
+[ext_resource type="Texture2D" uid="uid://bwnkxdlc6q3l" path="res://artassests/UI/文件.png" id="4_h4bb8"]
+[ext_resource type="Script" uid="uid://sr5ifyckwx2r" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
 
 [node name="AIInterface" type="Control" unique_id=609504264]
 layout_mode = 3
@@ -18,23 +21,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Background" type="ColorRect" parent="Layout" unique_id=600312392]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-color = Color(0.1254902, 0.15686275, 0.1764706, 1)
-
-[node name="GameArea" type="ColorRect" parent="Layout" unique_id=1803697387]
+[node name="EditorGameAreaGuide" type="ColorRect" parent="Layout" unique_id=1884443234]
+z_index = -100
 layout_mode = 0
 offset_left = 480.0
 offset_top = 60.0
 offset_right = 1440.0
 offset_bottom = 1020.0
 mouse_filter = 2
-color = Color(0.20392157, 0.2784314, 0.30980393, 1)
+script = ExtResource("editor_guide_script")
+
+[node name="Background" type="ColorRect" parent="Layout" unique_id=600312392]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameArea" type="TextureRect" parent="Layout" unique_id=1803697387]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+texture = ExtResource("3_ai_art")
 
 [node name="AIPlaceholder" type="PanelContainer" parent="Layout/GameArea" unique_id=242507773]
+visible = false
 custom_minimum_size = Vector2(260, 340)
 layout_mode = 0
 offset_left = 350.0
@@ -48,32 +62,46 @@ text = "AI形象占位"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AgreementButton" type="Button" parent="Layout/GameArea" unique_id=1305848572]
+[node name="AgreementButton" type="TextureButton" parent="Layout/GameArea" unique_id=1305848572]
 layout_mode = 0
-offset_left = 340.0
-offset_top = 600.0
-offset_right = 620.0
-offset_bottom = 650.0
-text = "Emergence服务协议"
+offset_left = 709.0
+offset_top = 260.00003
+offset_right = 809.0
+offset_bottom = 359.9999
+texture_normal = ExtResource("4_h4bb8")
+texture_pressed = ExtResource("4_h4bb8")
+texture_hover = ExtResource("4_h4bb8")
+texture_disabled = ExtResource("4_h4bb8")
+texture_focused = ExtResource("4_h4bb8")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="GuideButton" type="Button" parent="Layout/GameArea" unique_id=1932703799]
+[node name="GuideButton" type="TextureButton" parent="Layout/GameArea" unique_id=1932703799]
 layout_mode = 0
-offset_left = 340.0
-offset_top = 665.0
-offset_right = 620.0
-offset_bottom = 715.0
-text = "人格计划培育指南"
+offset_left = 675.0
+offset_top = 370.0
+offset_right = 775.0
+offset_bottom = 470.0
+texture_normal = ExtResource("4_h4bb8")
+texture_pressed = ExtResource("4_h4bb8")
+texture_hover = ExtResource("4_h4bb8")
+texture_disabled = ExtResource("4_h4bb8")
+texture_focused = ExtResource("4_h4bb8")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="ReturnButton" type="Button" parent="Layout" unique_id=576749066]
 visible = false
+modulate = Color(0.45, 0.7, 1, 1)
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_left = 480.0
-offset_top = 925.0
-offset_right = 530.0
-offset_bottom = 975.0
+offset_left = 520.0
+offset_top = 100.0
+offset_right = 570.0
+offset_bottom = 150.0
 
 [node name="SaveButton" type="Button" parent="Layout" unique_id=1247842079]
+modulate = Color(0.45, 0.7, 1, 1)
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 720.0
@@ -81,14 +109,29 @@ offset_top = 925.0
 offset_right = 770.0
 offset_bottom = 975.0
 theme_override_font_sizes/font_size = 14
+
+[node name="Label" type="Label" parent="Layout/SaveButton" unique_id=1596574875]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "存档"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CompletenessButton" type="Button" parent="Layout" unique_id=1099689687]
+modulate = Color(0.45, 0.7, 1, 1)
 layout_mode = 0
 offset_left = 1464.0
 offset_top = 160.0
 offset_right = 1714.0
 offset_bottom = 220.0
+
+[node name="Label" type="Label" parent="Layout/CompletenessButton" unique_id=562612575]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "人格完整度：0%"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("2_t87ol")]

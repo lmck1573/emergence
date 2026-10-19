@@ -8,6 +8,7 @@ static var _contents: Dictionary = {}
 static var _topics: Dictionary = {}
 static var _fulltexts: Dictionary = {}
 static var _dialogues: Dictionary = {}
+static var _puzzles: Dictionary = {}
 static var _loaded: bool = false
 
 const TYPE_LABELS: Dictionary = {
@@ -28,6 +29,7 @@ static func _ensure_loaded() -> void:
 	_load_topics()
 	_load_fulltexts()
 	_load_dialogues()
+	_load_puzzles()
 
 
 static func _read_json(path: String) -> Dictionary:
@@ -77,6 +79,12 @@ static func _load_dialogues() -> void:
 	var data: Dictionary = _read_json("res://data/dialogues.json")
 	for dialogue_id: Variant in data.keys():
 		_dialogues[dialogue_id] = data[dialogue_id]
+
+static func _load_puzzles() -> void:
+	var data: Dictionary = _read_json("res://data/puzzles.json")
+	for puzzle: Variant in data.get("puzzles", []):
+		if puzzle is Dictionary:
+			_puzzles[str(puzzle.get("puzzle_id", ""))] = puzzle
 
 
 static func get_object(object_id: String) -> Dictionary:
@@ -149,6 +157,10 @@ static func get_fulltext_pages(text_id: String) -> Array[String]:
 static func get_dialogue(dialogue_id: String) -> Dictionary:
 	_ensure_loaded()
 	return _dialogues.get(dialogue_id, {})
+
+static func get_puzzle(puzzle_id: String) -> Dictionary:
+	_ensure_loaded()
+	return _puzzles.get(puzzle_id, {})
 
 
 static func get_grant_toast_text(grant_id: String) -> String:

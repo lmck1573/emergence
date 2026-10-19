@@ -116,6 +116,60 @@
 	  "feedable": false,
 	  "feed_dialogue": null,
 	  "completeness_bonus": 0
+	},
+	{
+	  "content_id": "hobby_travel",
+	  "type": "hobby",
+	  "display_name": "旅行",
+	  "phase": 2,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 6.6
+	},
+	{
+	  "content_id": "hobby_plush",
+	  "type": "hobby",
+	  "display_name": "可爱的玩偶",
+	  "phase": 2,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 6.6
+	},
+	{
+	  "content_id": "work_diary",
+	  "type": "work",
+	  "display_name": "手账本",
+	  "phase": 2,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 6.6
+	},
+	{
+	  "content_id": "hobby_games",
+	  "type": "hobby",
+	  "display_name": "喜欢的游戏",
+	  "phase": 2,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 6.6
+	},
+	{
+	  "content_id": "work_chat_records",
+	  "type": "work",
+	  "display_name": "删减的聊天记录",
+	  "phase": 2,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 6.6
+	},
+	{
+	  "content_id": "exp_bills",
+	  "type": "exp",
+	  "display_name": "奇怪的账单记录",
+	  "phase": 2,
+	  "feedable": true,
+	  "feed_dialogue": null,
+	  "completeness_bonus": 0
 	}
   ]
 }

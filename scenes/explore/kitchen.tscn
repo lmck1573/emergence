@@ -1,11 +1,33 @@
 [gd_scene format=3 uid="uid://dtgrmwlw6t6iy"]
 
+[ext_resource type="Script" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
+
 [ext_resource type="Script" uid="uid://c5qtmxuhu3ryf" path="res://scripts/explore/room_controller.gd" id="1_q6qei"]
 [ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="2_enacr"]
 [ext_resource type="Script" uid="uid://bwbdbk7pppgrl" path="res://scripts/explore/interactive_object.gd" id="3_c6f7v"]
+[ext_resource type="Texture2D" uid="uid://c4ap61asru12y" path="res://artassests/厨房草稿.png" id="4_room_art"]
+
+[sub_resource type="RectangleShape2D" id="FridgeShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="BowlsShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RecipeShape"]
+size = Vector2(50, 50)
 
 [node name="Kitchen" type="Node2D" unique_id=1971271294]
 script = ExtResource("1_q6qei")
+
+[node name="EditorGameAreaGuide" type="ColorRect" parent="."]
+script = ExtResource("editor_guide_script")
+offset_left = -480.0
+offset_top = -480.0
+offset_right = 480.0
+offset_bottom = 480.0
+mouse_filter = 2
+z_index = -100
+color = Color(1, 1, 1, 1)
 
 [node name="Background" type="ColorRect" parent="." unique_id=431837742]
 anchors_preset = 15
@@ -16,9 +38,9 @@ offset_top = -540.0
 offset_right = 960.0
 offset_bottom = 540.0
 mouse_filter = 2
-color = Color(0.169, 0.169, 0.169, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="GameArea" type="ColorRect" parent="." unique_id=1400089972]
+[node name="GameArea" type="TextureRect" parent="." unique_id=1400089972]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -29,7 +51,7 @@ offset_top = -480.0
 offset_right = 480.0
 offset_bottom = 480.0
 mouse_filter = 2
-color = Color(0.353, 0.478, 0.541, 1)
+texture = ExtResource("4_room_art")
 
 [node name="Title" type="Label" parent="GameArea" unique_id=2018171449]
 layout_mode = 1
@@ -48,11 +70,13 @@ text = "厨房（占位）"
 horizontal_alignment = 1
 
 [node name="ReturnButton" type="Button" parent="GameArea" unique_id=115579900]
+modulate = Color(0.45, 0.7, 1, 1)
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
-offset_top = 865.0
-offset_right = 50.0
-offset_bottom = 915.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 90.0
+offset_bottom = 90.0
 grow_vertical = 0
 
 [node name="NameBar" type="ColorRect" parent="GameArea" unique_id=1544698092]
@@ -75,19 +99,53 @@ vertical_alignment = 1
 
 [node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("2_enacr")]
 
-[node name="kitchen_fridge" type="Node2D" parent="." unique_id=1208020054]
-position = Vector2(-280, -170)
+[node name="kitchen_fridge" type="Area2D" parent="." unique_id=1208020054]
+position = Vector2(-350, 147)
 script = ExtResource("3_c6f7v")
 object_id = "kitchen_fridge"
 
-[node name="kitchen_couple_bowls" type="Node2D" parent="." unique_id=1014766778]
+[node name="Marker" type="ColorRect" parent="kitchen_fridge"]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kitchen_fridge" unique_id=1603879422]
+shape = SubResource("FridgeShape")
+
+[node name="kitchen_couple_bowls" type="Area2D" parent="." unique_id=1014766778]
 position = Vector2(250, -170)
 script = ExtResource("3_c6f7v")
 object_id = "kitchen_couple_bowls"
 
-[node name="kitchen_recipe_book" type="Node2D" parent="." unique_id=1213392977]
-position = Vector2(0, 150)
+[node name="Marker" type="ColorRect" parent="kitchen_couple_bowls"]
+offset_left = -127.0
+offset_top = -63.0
+offset_right = -77.0
+offset_bottom = -13.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kitchen_couple_bowls" unique_id=1746514558]
+position = Vector2(-102, -38)
+shape = SubResource("BowlsShape")
+
+[node name="kitchen_recipe_book" type="Area2D" parent="." unique_id=1213392977]
+position = Vector2(-367, -97)
 script = ExtResource("3_c6f7v")
 object_id = "kitchen_recipe_book"
+
+[node name="Marker" type="ColorRect" parent="kitchen_recipe_book"]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kitchen_recipe_book" unique_id=272696653]
+shape = SubResource("RecipeShape")
 
 [connection signal="pressed" from="GameArea/ReturnButton" to="." method="_on_return_button_pressed"]

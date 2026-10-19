@@ -1,0 +1,51 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
+
+[ext_resource type="Script" path="res://scripts/explore/phase3_doorway.gd" id="1_doorway"]
+[ext_resource type="PackedScene" path="res://scenes/ui/story_ui.tscn" id="2_story_ui"]
+[ext_resource type="Texture2D" path="res://artassests/客厅草稿.png" id="3_livingroom_art"]
+
+[node name="Phase3Doorway" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_doorway")
+
+[node name="EditorGameAreaGuide" type="ColorRect" parent="."]
+script = ExtResource("editor_guide_script")
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+z_index = -100
+color = Color(1, 1, 1, 1)
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CGFallback" type="ColorRect" parent="."]
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+color = Color(0.12, 0.12, 0.12, 1)
+
+[node name="CGPlaceholder" type="TextureRect" parent="."]
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+texture = ExtResource("3_livingroom_art")
+stretch_mode = 0
+
+[node name="StoryUI" parent="." instance=ExtResource("2_story_ui")]

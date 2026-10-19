@@ -9,11 +9,13 @@ class_name FeedToolbar
 @onready var _topic_items: VBoxContainer = $Layout/TopicPanel/PanelContent/ScrollContainer/Items
 @onready var _blocker: Control = $Layout/Blocker
 @onready var _feed_close: Button = $Layout/FeedPanel/PanelContent/Close
+@onready var _feed_all_button: Button = $Layout/FeedPanel/PanelContent/FeedAllButton
 @onready var _topic_close: Button = $Layout/TopicPanel/PanelContent/Close
 @onready var _toolbar: Control = $Layout/Toolbar
 var _own_modal: bool = false
 var _locked: bool = false
 var _ai_scene: bool = false
+var _phase3_scene: bool = false
 
 func _ready() -> void:
 	_feed_panel.hide()
@@ -22,6 +24,7 @@ func _ready() -> void:
 	_feed_button.pressed.connect(_open.bind(true))
 	_topic_button.pressed.connect(_open.bind(false))
 	_feed_close.pressed.connect(_close)
+	_feed_all_button.pressed.connect(_feed_all)
 	_topic_close.pressed.connect(_close)
 	EventBus.modal_changed.connect(set_interaction_locked)
 	EventBus.state_changed.connect(_refresh)
@@ -35,7 +38,14 @@ func _ready() -> void:
 	_refresh_scene_context.call_deferred()
 
 func _refresh_scene_context() -> void:
-	_ai_scene = get_tree().current_scene != null and get_tree().current_scene.scene_file_path == "res://scenes/ui/ai_interface.tscn"
+	if get_tree().current_scene == null:
+		_ai_scene = false
+	else:
+		var scene_path: String = get_tree().current_scene.scene_file_path
+		_phase3_scene = scene_path == "res://scenes/explore/phase3_livingroom.tscn"
+		_ai_scene = scene_path in ["res://scenes/ui/ai_interface.tscn", "res://scenes/ui/ai_interface_phase2.tscn"] or _phase3_scene
+	_feed_button.visible = _ai_scene and not _phase3_scene
+	_topic_button.visible = _ai_scene
 	_refresh()
 
 func set_interaction_locked(locked: bool) -> void:
@@ -54,6 +64,12 @@ func _open(feed: bool) -> void:
 	_topic_panel.visible = not feed
 	_refresh()
 	EventBus.modal_changed.emit(true)
+
+func _feed_all() -> void:
+	if not _own_modal:
+		return
+	_close()
+	EventBus.feed_all_requested.emit()
 
 func _close() -> void:
 	_feed_panel.hide()
@@ -81,6 +97,8 @@ func _refresh() -> void:
 		entry.visible = GameState.is_content_obtained(id) and not GameState.is_content_fed(id) and int(item.get("phase", 0)) == GameState.get_current_phase() and bool(item.get("feedable", false))
 		if not entry.visible:
 			entry.text = ""
+	var feedable_items: Array[Dictionary] = GameState.get_feedable_contents()
+	_feed_all_button.visible = not feedable_items.is_empty()
 	for child: Node in _topic_items.get_children():
 		var entry: Button = child as Button
 		var id: String = String(entry.name)

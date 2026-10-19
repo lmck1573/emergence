@@ -1,11 +1,36 @@
 [gd_scene format=3 uid="uid://xtwe3qlgkhu"]
 
+[ext_resource type="Script" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
+
 [ext_resource type="Script" uid="uid://c5qtmxuhu3ryf" path="res://scripts/explore/room_controller.gd" id="1_knoc3"]
 [ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="2_0syrs"]
 [ext_resource type="Script" uid="uid://bwbdbk7pppgrl" path="res://scripts/explore/interactive_object.gd" id="3_yybmy"]
+[ext_resource type="Texture2D" uid="uid://cx2i2wrdra8wk" path="res://artassests/阳台草稿.png" id="4_room_art"]
+
+[sub_resource type="RectangleShape2D" id="LoungerShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="CushionShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="WindowShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="FlowerpotsShape"]
+size = Vector2(50, 50)
 
 [node name="Balcony" type="Node2D" unique_id=129291497]
 script = ExtResource("1_knoc3")
+
+[node name="EditorGameAreaGuide" type="ColorRect" parent="."]
+script = ExtResource("editor_guide_script")
+offset_left = -480.0
+offset_top = -480.0
+offset_right = 480.0
+offset_bottom = 480.0
+mouse_filter = 2
+z_index = -100
+color = Color(1, 1, 1, 1)
 
 [node name="Background" type="ColorRect" parent="." unique_id=1043652810]
 anchors_preset = 15
@@ -16,9 +41,9 @@ offset_top = -540.0
 offset_right = 960.0
 offset_bottom = 540.0
 mouse_filter = 2
-color = Color(0.169, 0.169, 0.169, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="GameArea" type="ColorRect" parent="." unique_id=1768307264]
+[node name="GameArea" type="TextureRect" parent="." unique_id=1768307264]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -29,7 +54,7 @@ offset_top = -480.0
 offset_right = 480.0
 offset_bottom = 480.0
 mouse_filter = 2
-color = Color(0.416, 0.541, 0.353, 1)
+texture = ExtResource("4_room_art")
 
 [node name="Title" type="Label" parent="GameArea" unique_id=1174288963]
 layout_mode = 1
@@ -48,11 +73,13 @@ text = "阳台（占位）"
 horizontal_alignment = 1
 
 [node name="ReturnButton" type="Button" parent="GameArea" unique_id=938621004]
+modulate = Color(0.45, 0.7, 1, 1)
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
-offset_top = 865.0
-offset_right = 50.0
-offset_bottom = 915.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 90.0
+offset_bottom = 90.0
 grow_vertical = 0
 
 [node name="NameBar" type="ColorRect" parent="GameArea" unique_id=470393369]
@@ -75,24 +102,69 @@ vertical_alignment = 1
 
 [node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("2_0syrs")]
 
-[node name="balcony_lounger" type="Node2D" parent="." unique_id=1821670393]
-position = Vector2(-240, 70)
+[node name="balcony_lounger" type="Area2D" parent="." unique_id=1821670393]
+position = Vector2(-259, 24)
 script = ExtResource("3_yybmy")
 object_id = "balcony_lounger"
 
-[node name="balcony_cushion" type="Node2D" parent="." unique_id=1482926339]
+[node name="Marker" type="ColorRect" parent="balcony_lounger"]
+offset_left = -25.0
+offset_top = -26.0
+offset_right = 25.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcony_lounger" unique_id=1816715290]
+position = Vector2(0, -1)
+shape = SubResource("LoungerShape")
+
+[node name="balcony_cushion" type="Area2D" parent="." unique_id=1482926339]
 position = Vector2(-80, 70)
 script = ExtResource("3_yybmy")
 object_id = "balcony_cushion"
 
-[node name="balcony_window" type="Node2D" parent="." unique_id=66314791]
-position = Vector2(170, -220)
+[node name="Marker" type="ColorRect" parent="balcony_cushion"]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcony_cushion" unique_id=438341486]
+shape = SubResource("CushionShape")
+
+[node name="balcony_window" type="Area2D" parent="." unique_id=66314791]
+position = Vector2(170, -218)
 script = ExtResource("3_yybmy")
 object_id = "balcony_window"
 
-[node name="balcony_flowerpots" type="Node2D" parent="." unique_id=1465733425]
+[node name="Marker" type="ColorRect" parent="balcony_window"]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcony_window" unique_id=1161677700]
+shape = SubResource("WindowShape")
+
+[node name="balcony_flowerpots" type="Area2D" parent="." unique_id=1465733425]
 position = Vector2(220, 210)
 script = ExtResource("3_yybmy")
 object_id = "balcony_flowerpots"
+
+[node name="Marker" type="ColorRect" parent="balcony_flowerpots"]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="balcony_flowerpots" unique_id=1436928742]
+shape = SubResource("FlowerpotsShape")
 
 [connection signal="pressed" from="GameArea/ReturnButton" to="." method="_on_return_button_pressed"]

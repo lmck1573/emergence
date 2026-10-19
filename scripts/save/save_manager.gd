@@ -7,7 +7,25 @@ const BACKUP_PATH: String = "user://save_data.bak"
 const TEMP_PATH: String = "user://save_data.tmp"
 const PREVIOUS_PATH: String = "user://save_data.previous"
 const SAVE_VERSION: int = 1
+const ENDING_PATH: String = "user://ending_record.json"
 static var _save_blocked: bool = false
+
+static func record_ending(ending_id: String) -> void:
+	var file: FileAccess = FileAccess.open(ENDING_PATH, FileAccess.WRITE)
+	if file != null:
+		file.store_string(JSON.stringify({"ending_id": ending_id}))
+		file.close()
+
+static func has_ending_record() -> bool:
+	return FileAccess.file_exists(ENDING_PATH)
+
+static func clear_story() -> bool:
+	for path: String in [SAVE_PATH, BACKUP_PATH, TEMP_PATH, PREVIOUS_PATH, ENDING_PATH]:
+		if FileAccess.file_exists(path):
+			if DirAccess.remove_absolute(ProjectSettings.globalize_path(path)) != OK:
+				return false
+	_save_blocked = false
+	return true
 
 
 static func has_save() -> bool:

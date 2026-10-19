@@ -5,6 +5,27 @@
 [ext_resource type="PackedScene" uid="uid://yg3hd2nusa6g" path="res://scenes/ui/feed_toolbar.tscn" id="3_0egci"]
 [ext_resource type="Script" uid="uid://ctfucqdo0krrs" path="res://scripts/content/content_flow.gd" id="4_o6t5g"]
 [ext_resource type="Script" uid="uid://cdowdcrkqx3d" path="res://scripts/events/event_controller.gd" id="5_jfhmg"]
+[ext_resource type="Script" uid="uid://sr5ifyckwx2r" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
+
+[sub_resource type="Animation" id="Animation_n1y5b"]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PortraitSequence:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 3.4, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_usul1"]
+_data = {
+&"portrait_upper_body": SubResource("Animation_n1y5b")
+}
 
 [node name="StoryUI" type="CanvasLayer" unique_id=729731323]
 script = ExtResource("1_n1y5b")
@@ -17,6 +38,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="EditorGameAreaGuide" type="ColorRect" parent="Overlay" unique_id=46397801]
+z_index = -100
+layout_mode = 0
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+script = ExtResource("editor_guide_script")
 
 [node name="Reader" type="ColorRect" parent="Overlay" unique_id=1332367816]
 visible = false
@@ -129,17 +160,336 @@ layout_mode = 1
 
 [node name="FeedToolbar" parent="Overlay" unique_id=1491831638 instance=ExtResource("3_0egci")]
 layout_mode = 1
+offset_left = -97.0
+offset_top = 29.0
+offset_right = -97.0
+offset_bottom = 29.0
 
 [node name="SoundButton" type="Button" parent="Overlay" unique_id=603812799]
+modulate = Color(0.45, 0.7, 1, 1)
 z_index = 20
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_left = 540.0
-offset_top = 1000.0
-offset_right = 590.0
-offset_bottom = 1050.0
+offset_left = 380.0
+offset_top = 60.0
+offset_right = 430.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 10
+
+[node name="SoundLabel" type="Label" parent="Overlay/SoundButton" unique_id=1365211511]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme_override_font_sizes/font_size = 10
 text = "开"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuzzlePanel" type="ColorRect" parent="Overlay" unique_id=981335349]
+visible = false
+z_index = 70
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0627451, 0.078431375, 0.08627451, 1)
+
+[node name="PuzzleFrame" type="ColorRect" parent="Overlay/PuzzlePanel" unique_id=165904734]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 260.0
+offset_right = 1320.0
+offset_bottom = 820.0
+mouse_filter = 2
+color = Color(0.20392157, 0.2627451, 0.2901961, 1)
+
+[node name="PuzzleTitle" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=906595428]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 670.0
+offset_bottom = 90.0
+text = "输入密码"
+horizontal_alignment = 1
+
+[node name="PasswordLabel" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=963812291]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 125.0
+offset_right = 670.0
+offset_bottom = 175.0
+text = "请输入四位数字密码"
+
+[node name="Digit1" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=1344670870]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 245.0
+offset_right = 135.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit1Up" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=2102245596]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 195.0
+offset_right = 160.0
+offset_bottom = 240.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Digit1Up" unique_id=1499626784]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "↑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit1Down" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=1085483553]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 310.0
+offset_right = 160.0
+offset_bottom = 355.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Digit1Down" unique_id=1592866030]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "↓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit2" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=109886752]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 245.0
+offset_right = 295.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit2Up" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=76719901]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 195.0
+offset_right = 320.0
+offset_bottom = 240.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Digit2Up" unique_id=1622733329]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "↑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit2Down" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=2071761018]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 310.0
+offset_right = 320.0
+offset_bottom = 355.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Digit2Down" unique_id=1510739706]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "↓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit3" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=378669641]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 245.0
+offset_right = 455.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit3Up" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=1138180533]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 360.0
+offset_top = 195.0
+offset_right = 480.0
+offset_bottom = 240.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Digit3Up" unique_id=795077891]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "↑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit3Down" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=1335909029]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 360.0
+offset_top = 310.0
+offset_right = 480.0
+offset_bottom = 355.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Digit3Down" unique_id=932837230]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "↓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit4" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=288288508]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 245.0
+offset_right = 615.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit4Up" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=1245443101]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 520.0
+offset_top = 195.0
+offset_right = 640.0
+offset_bottom = 240.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Digit4Up" unique_id=403114608]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "↑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit4Down" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=1317812677]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 520.0
+offset_top = 310.0
+offset_right = 640.0
+offset_bottom = 355.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Digit4Down" unique_id=1216248640]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "↓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Submit" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=925593746]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 390.0
+offset_right = 310.0
+offset_bottom = 450.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Submit" unique_id=2012522588]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "确认"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel" type="Button" parent="Overlay/PuzzlePanel/PuzzleFrame" unique_id=1552925287]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 410.0
+offset_top = 390.0
+offset_right = 590.0
+offset_bottom = 450.0
+
+[node name="Label" type="Label" parent="Overlay/PuzzlePanel/PuzzleFrame/Cancel" unique_id=626052747]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "返回"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PhaseTransitionAnimation" type="Control" parent="Overlay" unique_id=1593390777]
+visible = false
+z_index = 90
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PortraitSequence" type="TextureRect" parent="Overlay/PhaseTransitionAnimation" unique_id=1619920121]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Overlay/PhaseTransitionAnimation" unique_id=85995417]
+libraries/ = SubResource("AnimationLibrary_usul1")
+
+[node name="DiaryPanel" type="ColorRect" parent="Overlay" unique_id=536337836]
+visible = false
+z_index = 70
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0627451, 0.078431375, 0.09019608, 1)
+
+[node name="DiaryFrame" type="ColorRect" parent="Overlay/DiaryPanel" unique_id=823669247]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 90.0
+offset_right = 1490.0
+offset_bottom = 990.0
+mouse_filter = 2
+color = Color(0.20392157, 0.24705882, 0.2627451, 1)
+
+[node name="DiaryTitle" type="Label" parent="Overlay/DiaryPanel/DiaryFrame" unique_id=304085724]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 1010.0
+offset_bottom = 90.0
+text = "可能有关的重要事件列表"
+horizontal_alignment = 1
+
+[node name="DiaryClose" type="Button" parent="Overlay/DiaryPanel/DiaryFrame" unique_id=1646986506]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 820.0
+offset_top = 780.0
+offset_right = 1020.0
+offset_bottom = 840.0
+
+[node name="Label" type="Label" parent="Overlay/DiaryPanel/DiaryFrame/DiaryClose" unique_id=2075872670]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "返回"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiaryEntries" type="RichTextLabel" parent="Overlay/DiaryPanel/DiaryFrame" unique_id=1381317450]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 120.0
+offset_right = 1000.0
+offset_bottom = 740.0
+mouse_filter = 2
 
 [node name="ContentFlow" type="Node" parent="." unique_id=1926092644]
 script = ExtResource("4_o6t5g")

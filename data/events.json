@@ -1,25 +1,405 @@
 {
   "events": [
     {
-      "event_id": "event_opening_complete",
+      "event_id": "event_phase1_end",
       "trigger": "on_game_state_changed",
-      "priority": 10,
+      "priority": 100,
       "once": true,
       "phase": 1,
       "conditions": {
         "all": [
           {
-            "type": "opening_read",
-            "key": "agreement"
+            "any": [
+              {
+                "type": "player_choice",
+                "id": "event_usb_truth",
+                "result": "yes"
+              },
+              {
+                "type": "player_choice",
+                "id": "event_usb_truth",
+                "result": "no"
+              }
+            ]
           },
           {
-            "type": "opening_read",
-            "key": "guide"
+            "type": "topic_completed",
+            "id": "topic_usb"
           }
         ]
       },
       "effects": [
-        "unlock_region:house_overview"
+        "play_effect:phase1_end_black_flash",
+        "advance_phase:2",
+        "unlock_topic:topic_new_appearance",
+        "unlock_topic:topic_new_stage"
+      ]
+    },
+    {
+      "event_id": "event_diary_password_hint",
+      "trigger": "on_game_state_changed",
+      "priority": 100,
+      "once": true,
+      "phase": 2,
+      "conditions": {
+        "all": [
+          {
+            "type": "content_fed",
+            "id": "work_diary"
+          },
+          {
+            "type": "content_fed",
+            "id": "hobby_travel"
+          },
+          {
+            "type": "topic_completed",
+            "id": "topic_locked_computer"
+          }
+        ]
+      },
+      "effects": [
+        "play_dialogue:dlg_diary_hint",
+        "unlock_puzzle:puzzle_diary_password"
+      ]
+    },
+    {
+      "event_id": "event_unlock_writing_topic",
+      "trigger": "on_game_state_changed",
+      "priority": 85,
+      "once": true,
+      "phase": 2,
+      "conditions": {
+        "all": [
+          {
+            "type": "content_fed",
+            "id": "hobby_games"
+          },
+          {
+            "type": "content_fed",
+            "id": "work_chat_records"
+          },
+          {
+            "type": "content_fed",
+            "id": "exp_bills"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_topic:topic_writing"
+      ]
+    },
+    {
+      "event_id": "event_phase2_end",
+      "trigger": "on_game_state_changed",
+      "priority": 100,
+      "once": true,
+      "phase": 2,
+      "conditions": {
+        "all": [
+          {
+            "type": "topic_completed",
+            "id": "topic_writing"
+          },
+          {
+            "any": [
+              {
+                "type": "player_choice",
+                "id": "event_webnovel_truth",
+                "result": "yes"
+              },
+              {
+                "type": "player_choice",
+                "id": "event_webnovel_truth",
+                "result": "no"
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        "advance_phase:3"
+      ]
+    },
+    {
+      "event_id": "event_act3_start",
+      "trigger": "on_game_state_changed",
+      "priority": 100,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "event_completed",
+            "id": "event_phase2_end"
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "event_id": "event_act3_topics_complete",
+      "trigger": "on_game_state_changed",
+      "priority": 90,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "topic_completed",
+            "id": "topic_dream"
+          },
+          {
+            "type": "topic_completed",
+            "id": "topic_where_did_you_go"
+          }
+        ]
+      },
+      "effects": [
+        "play_dialogue:dlg_act3_after_topics"
+      ]
+    },
+    {
+      "event_id": "event_act3_truth_zero_route",
+      "trigger": "on_game_state_changed",
+      "priority": 80,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "event_completed",
+            "id": "event_act3_topics_complete"
+          },
+          {
+            "type": "player_choice",
+            "id": "event_usb_truth",
+            "result": "no"
+          },
+          {
+            "type": "player_choice",
+            "id": "event_webnovel_truth",
+            "result": "no"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_region:phase3_kitchen"
+      ]
+    },
+    {
+      "event_id": "event_act3_truth_positive_route",
+      "trigger": "on_game_state_changed",
+      "priority": 80,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "event_completed",
+            "id": "event_act3_topics_complete"
+          },
+          {
+            "any": [
+              {
+                "type": "player_choice",
+                "id": "event_usb_truth",
+                "result": "yes"
+              },
+              {
+                "type": "player_choice",
+                "id": "event_webnovel_truth",
+                "result": "yes"
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        "unlock_region:phase3_kitchen"
+      ]
+    },
+    {
+      "event_id": "event_act3_hidden_journal_read",
+      "trigger": "on_game_state_changed",
+      "priority": 75,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "object_investigated",
+            "id": "phase3_hidden_journal"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_puzzle:puzzle_act3_drawer_password"
+      ]
+    },
+    {
+      "event_id": "event_act3_truth_choice_no",
+      "trigger": "on_game_state_changed",
+      "priority": 79,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "player_choice",
+            "id": "event_act3_private_room",
+            "result": "no"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_region:phase3_wife_desk"
+      ]
+    },
+    {
+      "event_id": "event_act3_kitchen_complete",
+      "trigger": "on_game_state_changed",
+      "priority": 65,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "object_investigated",
+            "id": "phase3_heroine_kitchen"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_region:phase3_balcony"
+      ]
+    },
+    {
+      "event_id": "event_act3_balcony_complete",
+      "trigger": "on_game_state_changed",
+      "priority": 64,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "object_investigated",
+            "id": "phase3_heroine_balcony"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_region:phase3_master_bedroom"
+      ]
+    },
+    {
+      "event_id": "event_act3_master_complete",
+      "trigger": "on_game_state_changed",
+      "priority": 63,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "object_investigated",
+            "id": "phase3_heroine_master_bedroom"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_region:phase3_livingroom"
+      ]
+    },
+    {
+      "event_id": "event_act3_livingroom_zero_complete",
+      "trigger": "on_game_state_changed",
+      "priority": 62,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "object_investigated",
+            "id": "phase3_heroine_livingroom"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_region:phase3_wife_room"
+      ]
+    },
+    {
+      "event_id": "event_act3_drawer_opened",
+      "trigger": "on_game_state_changed",
+      "priority": 74,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "puzzle_completed",
+            "id": "puzzle_act3_drawer_password"
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "event_id": "event_act3_child_truth_yes",
+      "trigger": "on_game_state_changed",
+      "priority": 72,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "player_choice",
+            "id": "event_act3_child_revelation",
+            "result": "yes"
+          }
+        ]
+      },
+      "effects": [
+        "play_dialogue:dlg_act3_child_truth"
+      ]
+    },
+    {
+      "event_id": "event_act3_obsessive_ending",
+      "trigger": "on_game_state_changed",
+      "priority": 71,
+      "once": true,
+      "phase": 3,
+      "conditions": {
+        "all": [
+          {
+            "type": "object_investigated",
+            "id": "phase3_heroine_wife_room"
+          }
+        ]
+      },
+      "effects": [
+        "play_dialogue:dlg_act3_zero_wife_room"
+      ]
+    },
+    {
+      "event_id": "event_unlock_wife_room",
+      "trigger": "on_game_state_changed",
+      "priority": 95,
+      "once": true,
+      "phase": 2,
+      "conditions": {
+        "all": [
+          {
+            "type": "topic_completed",
+            "id": "topic_new_stage"
+          },
+          {
+            "type": "topic_completed",
+            "id": "topic_new_appearance"
+          }
+        ]
+      },
+      "effects": [
+        "unlock_region:wife_room"
       ]
     },
     {
@@ -30,14 +410,6 @@
       "phase": 1,
       "conditions": {
         "all": [
-          {
-            "type": "opening_read",
-            "key": "agreement"
-          },
-          {
-            "type": "opening_read",
-            "key": "guide"
-          },
           {
             "type": "object_investigated",
             "id": "livingroom_tv"
@@ -130,6 +502,24 @@
       ]
     },
     {
+      "event_id": "event_computer_unlocked",
+      "trigger": "on_game_state_changed",
+      "priority": 90,
+      "once": true,
+      "phase": 2,
+      "conditions": {
+        "all": [
+          {
+            "type": "puzzle_completed",
+            "id": "puzzle_diary_password"
+          }
+        ]
+      },
+      "effects": [
+        "play_fulltext:ft_computer_unlocked"
+      ]
+    },
+    {
       "event_id": "event_phase1_usb_topic",
       "trigger": "on_game_state_changed",
       "priority": 80,
@@ -148,21 +538,41 @@
       ]
     },
     {
-      "event_id": "event_phase1_end",
+      "event_id": "event_photo_wall_talk",
       "trigger": "on_game_state_changed",
-      "priority": 100,
+      "priority": 60,
+      "once": true,
+      "phase": 2,
+      "conditions": {
+        "all": [
+          {
+            "type": "object_investigated",
+            "id": "wiferoom_photo_wall"
+          }
+        ]
+      },
+      "effects": []
+    },
+    {
+      "event_id": "event_opening_complete",
+      "trigger": "on_game_state_changed",
+      "priority": 10,
       "once": true,
       "phase": 1,
       "conditions": {
         "all": [
           {
-            "type": "content_fed",
-            "id": "work_usb"
+            "type": "opening_read",
+            "key": "agreement"
+          },
+          {
+            "type": "opening_read",
+            "key": "guide"
           }
         ]
       },
       "effects": [
-        "play_effect:black_flash"
+        "unlock_region:house_overview"
       ]
     }
   ]

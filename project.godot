@@ -27,11 +27,14 @@ AudioManager="*res://scenes/ui/audio_manager.tscn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_ai/plugin.cfg")
+
+[input_devices]
+
+pointing/emulate_mouse_from_touch=false
 
 [physics]
 
@@ -42,3 +45,4 @@ enabled=PackedStringArray("res://addons/godot_ai/plugin.cfg")
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

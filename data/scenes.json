@@ -47,6 +47,102 @@
       "parent": "house_overview",
       "unlock_event": "event_unlock_master_bedroom",
       "phase": 1
+    },
+    {
+      "region_id": "wife_room",
+      "display_name": "女主的房间",
+      "scene_path": "res://scenes/explore/wife_room.tscn",
+      "parent": "house_overview",
+      "unlock_event": "event_phase1_end",
+      "phase": 2
+    },
+    {
+      "region_id": "computer_desk",
+      "display_name": "电脑桌",
+      "scene_path": "res://scenes/explore/computer_desk.tscn",
+      "parent": "wife_room",
+      "unlock_event": null,
+      "phase": 2
+    },
+    {
+      "region_id": "phase3_opening",
+      "display_name": "第三幕开场",
+      "scene_path": "res://scenes/explore/phase3_opening.tscn",
+      "parent": null,
+      "unlock_event": "event_act3_start",
+      "phase": 3
+    },
+    {
+      "region_id": "phase3_doorway",
+      "display_name": "房门口",
+      "scene_path": "res://scenes/explore/phase3_doorway.tscn",
+      "parent": "phase3_opening",
+      "unlock_event": null,
+      "phase": 3
+    },
+    {
+      "region_id": "phase3_livingroom",
+      "display_name": "第三幕客厅",
+      "scene_path": "res://scenes/explore/phase3_livingroom.tscn",
+      "parent": "phase3_doorway",
+      "unlock_event": null,
+      "phase": 3
+    },
+    {
+      "region_id": "phase3_next_closeup",
+      "display_name": "第三幕后续特写占位",
+      "scene_path": "res://scenes/explore/phase3_next_closeup.tscn",
+      "parent": "phase3_livingroom",
+      "unlock_event": null,
+      "phase": 3
+    },
+    {
+      "region_id": "phase3_kitchen",
+      "display_name": "第三幕厨房特写",
+      "scene_path": "res://scenes/explore/phase3_kitchen.tscn",
+      "parent": "phase3_livingroom",
+      "unlock_event": "event_act3_topics_complete",
+      "phase": 3
+    },
+    {
+      "region_id": "phase3_balcony",
+      "display_name": "第三幕阳台特写",
+      "scene_path": "res://scenes/explore/phase3_balcony.tscn",
+      "parent": "phase3_kitchen",
+      "unlock_event": null,
+      "phase": 3
+    },
+    {
+      "region_id": "phase3_master_bedroom",
+      "display_name": "第三幕主卧特写",
+      "scene_path": "res://scenes/explore/phase3_master_bedroom.tscn",
+      "parent": "phase3_balcony",
+      "unlock_event": null,
+      "phase": 3
+    },
+    {
+      "region_id": "phase3_wife_room",
+      "display_name": "第三幕女主房间特写",
+      "scene_path": "res://scenes/explore/phase3_wife_room.tscn",
+      "parent": "phase3_master_bedroom",
+      "unlock_event": null,
+      "phase": 3
+    },
+    {
+      "region_id": "phase3_wife_desk",
+      "display_name": "第三幕女主桌面特写",
+      "scene_path": "res://scenes/explore/phase3_wife_desk.tscn",
+      "parent": "phase3_wife_room",
+      "unlock_event": "event_act3_truth_choice_no",
+      "phase": 3
+    },
+    {
+      "region_id": "phase3_memory_phone",
+      "display_name": "第三幕手机回忆特写",
+      "scene_path": "res://scenes/explore/phase3_memory_phone.tscn",
+      "parent": "phase3_wife_room",
+      "unlock_event": null,
+      "phase": 3
     }
   ]
 }

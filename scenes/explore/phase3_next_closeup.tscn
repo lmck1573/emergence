@@ -1,0 +1,101 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
+
+[ext_resource type="Script" path="res://scripts/explore/phase3_next_closeup.gd" id="1_next_closeup"]
+[ext_resource type="PackedScene" path="res://scenes/ui/story_ui.tscn" id="2_story_ui"]
+[ext_resource type="Texture2D" path="res://artassests/主卧草稿.png" id="3_room_art"]
+
+[sub_resource type="RectangleShape2D" id="HeroineHitShape"]
+size = Vector2(300, 540)
+
+[node name="Phase3NextCloseup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_next_closeup")
+
+[node name="EditorGameAreaGuide" type="ColorRect" parent="."]
+script = ExtResource("editor_guide_script")
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+z_index = -100
+color = Color(1, 1, 1, 1)
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameAreaFallback" type="ColorRect" parent="."]
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+color = Color(0.18, 0.18, 0.18, 1)
+
+[node name="GameArea" type="TextureRect" parent="."]
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+texture = ExtResource("3_room_art")
+stretch_mode = 0
+
+[node name="HeroineHitArea" type="Area2D" parent="GameArea"]
+position = Vector2(480, 550)
+
+[node name="InteractionIndicator" type="ColorRect" parent="GameArea/HeroineHitArea"]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0.15, 0.45, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea/HeroineHitArea"]
+shape = SubResource("HeroineHitShape")
+
+[node name="LeaveButton" type="Button" parent="GameArea"]
+modulate = Color(0.45, 0.7, 1, 1)
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 100.0
+offset_bottom = 90.0
+disabled = true
+
+[node name="Label" type="Label" parent="GameArea/LeaveButton"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+text = "离开"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveButton" type="Button" parent="GameArea"]
+modulate = Color(0.45, 0.7, 1, 1)
+offset_left = 240.0
+offset_top = 865.0
+offset_right = 300.0
+offset_bottom = 915.0
+
+[node name="Label" type="Label" parent="GameArea/SaveButton"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+text = "存档"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StoryUI" parent="." instance=ExtResource("2_story_ui")]

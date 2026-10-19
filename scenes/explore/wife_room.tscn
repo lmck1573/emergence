@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://dsjiaswd1ckda"]
+
+[ext_resource type="Script" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
+
+[ext_resource type="Script" uid="uid://c5qtmxuhu3ryf" path="res://scripts/explore/room_controller.gd" id="1_vq2qg"]
+[ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="2_qjio6"]
+[ext_resource type="Script" uid="uid://bwbdbk7pppgrl" path="res://scripts/explore/interactive_object.gd" id="3_cuhxc"]
+[ext_resource type="Texture2D" path="res://artassests/女主的房间草稿.png" id="4_room_art"]
+
+[sub_resource type="RectangleShape2D" id="PhotoWallShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="ToyShape"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="WifeComputerShape"]
+size = Vector2(50, 50)
+
+[node name="WifeRoom" type="Node2D" unique_id=2141358751]
+script = ExtResource("1_vq2qg")
+
+[node name="GameArea" type="Control" parent="." unique_id=1552032323]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="EditorGameAreaGuide" type="ColorRect" parent="GameArea"]
+script = ExtResource("editor_guide_script")
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 960.0
+offset_bottom = 960.0
+mouse_filter = 2
+z_index = -100
+color = Color(1, 1, 1, 1)
+[node name="Background" type="TextureRect" parent="GameArea" unique_id=701573889]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 960.0
+mouse_filter = 2
+texture = ExtResource("4_room_art")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="GameArea" unique_id=843103755]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 40.0
+offset_right = 760.0
+offset_bottom = 100.0
+text = "女主的房间（白盒）"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="GameArea" unique_id=1893566215]
+modulate = Color(0.45, 0.7, 1, 1)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 120.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="GameArea/ReturnButton" unique_id=1908234527]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+text = "返回地图"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameBar" type="ColorRect" parent="GameArea" unique_id=201367748]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 810.0
+offset_right = 300.0
+offset_bottom = 860.0
+mouse_filter = 2
+color = Color(0.22745098, 0.22745098, 0.22745098, 1)
+
+[node name="NameLabel" type="Label" parent="GameArea/NameBar" unique_id=2097796866]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 270.0
+offset_bottom = 50.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2102379225]
+position = Vector2(480, 480)
+
+[node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("2_qjio6")]
+
+[node name="PhotoWall" type="Area2D" parent="." unique_id=485933081]
+position = Vector2(280, 260)
+script = ExtResource("3_cuhxc")
+object_id = "wiferoom_photo_wall"
+
+[node name="Marker" type="ColorRect" parent="PhotoWall"]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoWall"]
+shape = SubResource("PhotoWallShape")
+
+[node name="Toy" type="Area2D" parent="." unique_id=1700564119]
+position = Vector2(600, 300)
+script = ExtResource("3_cuhxc")
+object_id = "wiferoom_toy"
+
+[node name="Marker" type="ColorRect" parent="Toy"]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toy"]
+shape = SubResource("ToyShape")
+
+[node name="Computer" type="Area2D" parent="." unique_id=2107201040]
+position = Vector2(480, 520)
+script = ExtResource("3_cuhxc")
+object_id = "wiferoom_computer"
+
+[node name="Marker" type="ColorRect" parent="Computer"]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 2
+color = Color(0, 0, 1, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer"]
+shape = SubResource("WifeComputerShape")

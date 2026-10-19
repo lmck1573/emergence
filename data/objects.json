@@ -308,8 +308,8 @@
 	  "repeat_text_policy": "last_step"
 	},
 	{
-	  "object_id": "girls_room_photo_wall",
-	  "region_id": "girls_room",
+	  "object_id": "wiferoom_photo_wall",
+	  "region_id": "wife_room",
 	  "display_name": "照片墙",
 	  "click_area": {
 		"x": 0,
@@ -324,7 +324,7 @@
 	  "steps": [
 		{
 		  "step_id": "look",
-		  "text_ref": "ft_girls_room_photo_wall",
+		  "text_ref": "ft_wiferoom_photo_wall",
 		  "operation_label": null,
 		  "grants": [
             "hobby_travel"
@@ -334,8 +334,8 @@
 	  "repeat_text_policy": "last_step"
 	},
 	{
-	  "object_id": "girls_room_dolls",
-	  "region_id": "girls_room",
+	  "object_id": "wiferoom_toy",
+	  "region_id": "wife_room",
 	  "display_name": "玩偶",
 	  "click_area": {
 		"x": 0,
@@ -350,18 +350,18 @@
 	  "steps": [
 		{
 		  "step_id": "look",
-		  "text_ref": "ft_girls_room_dolls",
+		  "text_ref": "ft_wiferoom_toy",
 		  "operation_label": null,
 		  "grants": [
-            "hobby_cute_dolls"
+            "hobby_plush"
 		  ]
 		}
 	  ],
 	  "repeat_text_policy": "last_step"
 	},
 	{
-	  "object_id": "girls_room_pc",
-	  "region_id": "girls_room",
+	  "object_id": "wiferoom_computer",
+	  "region_id": "wife_room",
 	  "display_name": "女主的电脑",
 	  "click_area": {
 		"x": 0,
@@ -376,18 +376,42 @@
 	  "steps": [
 		{
 		  "step_id": "look",
-		  "text_ref": "ft_girls_room_pc",
+		  "text_ref": "ft_wiferoom_computer",
+		  "operation_label": null,
+		  "grants": []
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "computer_power_button",
+	  "region_id": "computer_desk",
+	  "display_name": "电脑开机键",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_click",
+	  "conditions": [
+        "phase2_started"
+	  ],
+	  "steps": [
+		{
+		  "step_id": "look",
+		  "text_ref": "ft_computer_power",
 		  "operation_label": null,
 		  "grants": [
-            "topic_locked_pc"
+            "topic_locked_computer"
 		  ]
 		}
 	  ],
 	  "repeat_text_policy": "last_step"
 	},
 	{
-	  "object_id": "girls_room_locked_drawer",
-	  "region_id": "girls_room",
+	  "object_id": "computer_locked_drawer",
+	  "region_id": "computer_desk",
 	  "display_name": "上锁的抽屉",
 	  "click_area": {
 		"x": 0,
@@ -402,7 +426,7 @@
 	  "steps": [
 		{
 		  "step_id": "look",
-		  "text_ref": "ft_girls_room_locked_drawer",
+		  "text_ref": "ft_computer_drawer",
 		  "operation_label": null,
 		  "grants": [
             "topic_locked_drawer"
@@ -412,8 +436,8 @@
 	  "repeat_text_policy": "last_step"
 	},
 	{
-	  "object_id": "girls_room_journal",
-	  "region_id": "girls_room",
+	  "object_id": "computer_notebooks",
+	  "region_id": "computer_desk",
 	  "display_name": "手账本",
 	  "click_area": {
 		"x": 0,
@@ -428,18 +452,18 @@
 	  "steps": [
 		{
 		  "step_id": "look",
-		  "text_ref": "ft_girls_room_journal",
+		  "text_ref": "ft_computer_notebooks",
 		  "operation_label": null,
 		  "grants": [
-            "work_journal"
+            "work_diary"
 		  ]
 		}
 	  ],
 	  "repeat_text_policy": "last_step"
 	},
 	{
-	  "object_id": "girls_room_pc_unlock",
-	  "region_id": "girls_room",
+	  "object_id": "computer_locked_entry",
+	  "region_id": "computer_desk",
 	  "display_name": "电脑解锁点",
 	  "click_area": {
 		"x": 0,
@@ -456,19 +480,7 @@
 	  "steps": [
 		{
 		  "step_id": "look",
-		  "text_ref": "ft_pc_unlock",
-		  "operation_label": null,
-		  "grants": []
-		},
-		{
-		  "step_id": "password_input",
-		  "text_ref": "ui_password_wheel",
-		  "operation_label": "输入密码",
-		  "grants": []
-		},
-		{
-		  "step_id": "unlocked",
-		  "text_ref": "ft_pc_unlock_after",
+		  "text_ref": "ft_computer_power",
 		  "operation_label": null,
 		  "grants": []
 		}
@@ -476,8 +488,8 @@
 	  "repeat_text_policy": "last_step"
 	},
 	{
-	  "object_id": "pc_folder_games",
-	  "region_id": "girls_room",
+	  "object_id": "computer_folder_games",
+	  "region_id": "computer_desk",
 	  "display_name": "游戏文件夹",
 	  "click_area": {
 		"x": 0,
@@ -492,7 +504,7 @@
 	  "steps": [
 		{
 		  "step_id": "look",
-		  "text_ref": "ft_pc_games",
+		  "text_ref": "ft_folder_games",
 		  "operation_label": null,
 		  "grants": [
             "hobby_games"
@@ -502,8 +514,8 @@
 	  "repeat_text_policy": "last_step"
 	},
 	{
-	  "object_id": "pc_folder_social",
-	  "region_id": "girls_room",
+	  "object_id": "computer_folder_social",
+	  "region_id": "computer_desk",
 	  "display_name": "社交账号",
 	  "click_area": {
 		"x": 0,
@@ -518,19 +530,16 @@
 	  "steps": [
 		{
 		  "step_id": "look",
-		  "text_ref": "ft_pc_social",
+		  "text_ref": "ft_folder_social",
 		  "operation_label": null,
-		  "grants": [
-			"exp_web_novel",
-            "dlg_removed_chat_log"
-		  ]
+		  "grants": []
 		}
 	  ],
 	  "repeat_text_policy": "last_step"
 	},
 	{
-	  "object_id": "pc_folder_bills",
-	  "region_id": "girls_room",
+	  "object_id": "computer_folder_bills",
+	  "region_id": "computer_desk",
 	  "display_name": "账单记录",
 	  "click_area": {
 		"x": 0,
@@ -545,13 +554,157 @@
 	  "steps": [
 		{
 		  "step_id": "look",
-		  "text_ref": "ft_pc_bills",
+		  "text_ref": "ft_folder_bills",
 		  "operation_label": null,
 		  "grants": [
-            "exp_strange_bill"
+            "exp_bills"
 		  ]
 		}
 	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "phase3_heroine_kitchen",
+	  "region_id": "phase3_kitchen",
+	  "display_name": "女主",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "dialogue_ref": "dlg_act3_zero_kitchen",
+	  "dialogue_ref_truth_positive": "dlg_act3_truth_kitchen",
+	  "next_region_after_dialogue": "phase3_balcony",
+	  "steps": [],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "phase3_heroine_balcony",
+	  "region_id": "phase3_balcony",
+	  "display_name": "女主",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "dialogue_ref": "dlg_act3_zero_balcony",
+	  "dialogue_ref_truth_positive": "dlg_act3_truth_balcony",
+	  "next_region_after_dialogue": "phase3_master_bedroom",
+	  "steps": [],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "phase3_heroine_master_bedroom",
+	  "region_id": "phase3_master_bedroom",
+	  "display_name": "女主",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "dialogue_ref": "dlg_act3_zero_master",
+	  "dialogue_ref_truth_positive": "dlg_act3_truth_master",
+	  "next_region_after_dialogue": "phase3_livingroom",
+	  "steps": [],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "phase3_heroine_livingroom",
+	  "region_id": "phase3_livingroom",
+	  "display_name": "女主",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "dialogue_ref_truth_zero": "dlg_act3_zero_livingroom",
+	  "dialogue_ref_truth_positive": "dlg_act3_truth_livingroom",
+	  "next_region_after_dialogue_truth_zero": "phase3_wife_room",
+	  "next_region_after_dialogue_truth_positive": "phase3_wife_room",
+	  "steps": [],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "phase3_heroine_wife_room",
+	  "region_id": "phase3_wife_room",
+	  "display_name": "女主",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "dialogue_ref": "dlg_act3_zero_wife_room",
+	  "dialogue_ref_truth_positive": "dlg_act3_truth_confession",
+	  "steps": [],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "phase3_hidden_journal",
+	  "region_id": "phase3_wife_desk",
+	  "display_name": "手账本",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "steps": [
+		{
+		  "step_id": "open",
+		  "operation_label": null,
+		  "grants": [],
+		  "dialogue_ref": "dlg_act3_hidden_journal"
+		}
+	  ],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "phase3_wife_computer",
+	  "region_id": "phase3_wife_room",
+	  "display_name": "电脑",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "destination_region": "phase3_wife_desk",
+	  "steps": [],
+	  "repeat_text_policy": "last_step"
+	},
+	{
+	  "object_id": "phase3_locked_drawer",
+	  "region_id": "phase3_wife_desk",
+	  "display_name": "上锁的抽屉",
+	  "click_area": {
+		"x": 0,
+		"y": 0,
+		"w": 100,
+		"h": 100
+	  },
+	  "click_feedback": "sfx_none",
+	  "conditions": [],
+	  "puzzle_ref": "puzzle_act3_drawer_password",
+	  "steps": [],
 	  "repeat_text_policy": "last_step"
 	}
   ]

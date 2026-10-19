@@ -504,7 +504,7 @@
 	  "style": "truth",
 	  "prompt": "要说出真相吗？",
 	  "selectable": true,
-	  "locked_show_duration": 3.0,
+	  "locked_show_duration": 3,
 	  "options": [
 		{
 		  "label": "是",
@@ -814,64 +814,12 @@
   "dlg_topic_locked_pc": {
 	"lines": [
 	  {
-		"speaker": "ai",
-		"text": "对了，关于电脑的密码，我应该知道哦！"
-	  },
-	  {
-		"speaker": "ai",
-		"text": "你忘了吗，我一直都很喜欢用重要事情的日期当作密码来着。"
-	  },
-	  {
-		"speaker": "ai",
-		"text": "这一招很有用哦！忘掉了密码可以快速想起来，还记得大二旅行时里我们的那个被偷的行李箱吗！"
-	  },
-	  {
-		"speaker": "ai",
-		"text": "多亏我拿我们第一次旅行的纪念日作为密码，弄了个密码锁，那个犯人最后把行李箱还给我们的时候，一样东西都没有丢呢。"
-	  },
-	  {
 		"speaker": "protagonist",
-		"text": "天呐……"
-	  },
-	  {
-		"speaker": "protagonist",
-		"text": "你真的越来越像她了……"
+		"text": "你的房间里有一台上锁的电脑，关于密码，你知道什么吗？"
 	  },
 	  {
 		"speaker": "ai",
-		"text": "你是什么意思？"
-	  },
-	  {
-		"speaker": "protagonist",
-		"text": "不不，我是说，你真的越来越像你最喜欢的那个动漫女孩一样聪明了。"
-	  },
-	  {
-		"speaker": "ai",
-		"text": "算你有品！娜美一直都很聪明。"
-	  },
-	  {
-		"speaker": "protagonist",
-		"text": "（她甚至知道是谁……我的天哪，这只是因为床上有一个乔巴的玩偶啊……）"
-	  },
-	  {
-		"speaker": "protagonist",
-		"text": "日期……"
-	  },
-	  {
-		"speaker": "ai",
-		"text": "我都提示到这个份上了，竟然还没想到吗！"
-	  },
-	  {
-		"speaker": "ai",
-		"text": "我才不会这么直接的告诉你呢。"
-	  },
-	  {
-		"speaker": "ai",
-		"text": "不过，也不是不能给你一点提示，算是对你这么久以来一直帮我恢复记忆的奖励吧！"
-	  },
-	  {
-		"speaker": "ai",
-		"text": "去看看那些手账本——"
+		"text": "锁上的电脑吗…？也许等我的记忆更完整一些，我就会有思路了！"
 	  }
 	]
   },
@@ -932,6 +880,18 @@
 	  {
 		"speaker": "protagonist",
 		"text": "再说了，她又有什么可以瞒着我的呢？"
+	  }
+	]
+  },
+  "dlg_computer_unlocked": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "你竟然真的破解了？不过看完我的手账以后，这也不会是什么难事嘛。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "来吧，告诉我你在那个电脑里找到了什么？"
 	  }
 	]
   },
@@ -1027,15 +987,7 @@
 	  },
 	  {
 		"speaker": "protagonist",
-		"text": "（我应该告诉她吗？）"
-	  },
-	  {
-		"speaker": "protagonist",
-		"text": "（获得对话：删减的聊天记录）"
-	  },
-	  {
-		"speaker": "protagonist",
-		"text": "（获得经历：网文写作）"
+		"text": "（获得经历：删减的聊天记录）"
 	  }
 	]
   },
@@ -1062,12 +1014,148 @@
   "dlg_pc_ai_chat": {
 	"lines": [
 	  {
-		"speaker": "ai",
-		"text": "你竟然真的破解了？不过看完我的手账以后，这也不会是什么难事嘛。"
+		"speaker": "protagonist",
+		"text": "你的房间里有一台上锁的电脑，关于密码，你知道什么吗？"
 	  },
 	  {
 		"speaker": "ai",
-		"text": "来吧，告诉我你在那个电脑里找到了什么？"
+		"text": "锁上的电脑吗…？也许等我的记忆更完整一些，我就会有思路了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "不过，你真的要打开它吗？既然我锁上了，那也许是不太希望被别人看到的。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我也算别人吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我不是那个意思……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "一切都是为了帮你恢复记忆…在你受伤之前，我从来都没有违背过你的意愿过…"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你会理解的，对吧？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我只是为了我们的未来。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我会的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我会接受你告诉我的一切。"
+	  }
+	]
+  },
+  "dlg_diary_hint": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "对了，关于电脑的密码，我应该知道哦！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你忘了吗，我一直都很喜欢用重要事情的日期当作密码来着。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这一招很有用哦！忘掉了密码可以快速想起来，还记得大二旅行时里我们的那个被偷的行李箱吗！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "多亏我拿我们第一次旅行的纪念日作为密码，弄了个密码锁，那个犯人最后把行李箱还给我们的时候，一样东西都没有丢呢。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "天呐……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你真的越来越像她了……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你是什么意思？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不不，我是说，你的记忆恢复的很好!"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不过，日期……?"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我都提示到这个份上了，竟然还没想到吗！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我才不会这么直接的告诉你呢。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "不过，也不是不能给你一点提示，算是对你这么久以来一直帮我恢复记忆的奖励吧！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "去看看那些手账本——"
+	  }
+	]
+  },
+  "dlg_diary_hint_high": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "对了，关于电脑的密码，我应该想起来了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你忘了吗，我一直都很喜欢用重要事情的日期当作密码来着。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这一招很有用哦，忘掉了密码可以快速想起来，还记得大二旅行时里我们的那个被偷的行李箱吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "多亏我拿我们第一次旅行的纪念日作为密码，弄了个密码锁，那个犯人最后把行李箱还给我们的时候，一样东西都没有丢呢。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "天呐……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你真的越来越像她了……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你是什么意思？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不不，我是说，你的记忆恢复的很好!"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不过，日期……?"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我都提示到这个份上了，竟然还没想到吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "去看看那些手账本吧。"
 	  }
 	]
   },
@@ -1196,14 +1284,32 @@
 	  {
 		"speaker": "protagonist",
 		"text": "…为什么……？"
-	  },
-	  {
-		"speaker": "protagonist",
-		"text": "（要告诉她真相吗？）"
 	  }
-	]
+	],
+	"on_complete_grants": [],
+	"choice": {
+	  "style": "truth",
+	  "prompt": "要告诉她真相吗？",
+	  "selectable": true,
+	  "options": [
+		{
+		  "label": "是",
+		  "result": "yes",
+		  "effects": [
+            "add_truth_1"
+		  ],
+		  "branch_dialogue": "dlg_webnovel_truth_yes"
+		},
+		{
+		  "label": "否",
+		  "result": "no",
+		  "effects": [],
+		  "branch_dialogue": "dlg_webnovel_truth_no"
+		}
+	  ]
+	}
   },
-  "dlg_truth_yes": {
+  "dlg_webnovel_truth_yes": {
 	"lines": [
 	  {
 		"speaker": "protagonist",
@@ -1248,14 +1354,10 @@
 	  {
 		"speaker": "ai",
 		"text": "谢谢你。"
-	  },
-	  {
-		"speaker": "protagonist",
-		"text": "（真相完整度+1）"
 	  }
 	]
   },
-  "dlg_truth_no": {
+  "dlg_webnovel_truth_no": {
 	"lines": [
 	  {
 		"speaker": "protagonist",
@@ -1361,5 +1463,2404 @@
 	],
 	"on_complete_grants": [],
 	"choice": null
+  },
+  "dlg_act3_opening": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "……？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你……还在吗？"
+	  }
+	]
+  },
+  "dlg_act3_absence": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "她消失三天了，如同石沉大海一般杳无音讯。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我试图联系了所有我能找到的联系方式，电话，邮箱，甚至发疯似地在网上联系那些“黑客”试图找到这家神秘的公司线下的地址，只为了找到任何一丝可能的线索。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "私自对仿生人的人格进行干涉自十年前起就已经列入违法……我早就知道这一切不可能会发生。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "偶尔我会意识到，我凝视那台笔记本的时间已经长到有些吓人的地步。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "透过那无尽的黑暗，有时候我感觉我已经死了，走马灯里全是她笑起来的样子。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "第一次失去她时，痛苦只会如同一层厚重的茧。直到第二次失去她，我才意识到那破茧而出的希望割开的全是淋淋的鲜血。"
+	  }
+	]
+  },
+  "dlg_act3_confession": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "也许只有这个时候，我才真的敢对你说出这句话"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "对这一切的一切，我真的很抱"
+	  }
+	]
+  },
+  "dlg_act3_reunion": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "好久不见。"
+	  }
+	]
+  },
+  "dlg_act3_dream": {
+	"dialogue_id": "dlg_act3_dream",
+	"speaker_scene": "phase3_livingroom",
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "这真的是你吗…?我不是在做梦吧…"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "亲爱的，你大可来牵起我的手，这像是一个梦吗?"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "…欢迎回家。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_where_did_you_go": {
+	"dialogue_id": "dlg_act3_where_did_you_go",
+	"speaker_scene": "phase3_livingroom",
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "说来话长……当我再次醒来时，医院的工作人员告诉我我已经可以出院了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "他们说我之前受的伤是那么严重，以至于现在得换这副身体才能活下来。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "之后他们让我在一项协议上签了字，就带我到家门口了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "无论如何，现在我回来了。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_after_topics": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "以前一直都是隔着屏幕看你说话，现在我终于可以亲自在这里看一看了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我希望一切看起来都和过去一样。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "但总会有什么变化的，不是吗？我们去别的地方走走吧。"
+	  }
+	]
+  },
+  "dlg_act3_zero_kitchen": {
+	"dialogue_id": "dlg_act3_zero_kitchen",
+	"speaker_scene": "phase3_kitchen",
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "你知道从一场灾难中死里逃生以后，我终于意识到了最重要的东西吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "身体 非常 重要！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你终于明白我的良苦用心了……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "以前的我总是吃不下饭，睡不了觉，一直在辜负你的付出。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "亲爱的，我绝对不会让这一切再次发生了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "今天的晚饭，我来准备怎么样？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我很期待。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_zero_balcony": {
+	"dialogue_id": "dlg_act3_zero_balcony",
+	"speaker_scene": "phase3_balcony",
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "我一直还记得阳光洒在我们身上的感觉。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "已经有很久很久，我们都没有一起晒太阳了，对吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是啊……那简直就像，上辈子的事了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我们会一起走过之后的每一个日落的，亲爱的，每一个。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_zero_master": {
+	"dialogue_id": "dlg_act3_zero_master",
+	"speaker_scene": "phase3_master_bedroom",
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "所以，这里就是你一直帮我恢复记忆的地方。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这里看起来真是熟悉！你背后那面墙，和你在屏幕里的时候一模一样。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是的……我很抱歉没给你看看外面的地方，当时我只想着怎么恢复你了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "恢复？你简直让我获得了新的人生，亲爱的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "别愧疚，你的选择让这趟旅程变成了一个惊喜。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这个家里的一切比我想象中的更加完美。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我永远都相信你的选择，亲爱的。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_zero_livingroom": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "我们是不是还有一个地方要去？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是的…还有你的房间。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你把那里打理的很漂亮，我想你会喜欢的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "在我们进去之前，我能去厨房拿点东西吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "嗯？当然没问题。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "谢谢你，亲爱的，谢谢你的选择。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我希望我能先进去呆一会，你可以过会再进来吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "当然……那是你的房间。需要我进来的的时候随时喊我，好吗？、"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "没问题，亲爱的，虽然我一直都需要你。"
+	  }
+	]
+  },
+  "dlg_act3_zero_wife_room": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "亲爱的……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "现在的我和过去已经不一样了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "那些无人在意的秘密，就让他们和过去的我一起，永远埋葬吧。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……我只想说"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我爱你。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "直到永远。"
+	  }
+	]
+  },
+  "dlg_act3_truth_kitchen": {
+	"dialogue_id": "dlg_act3_truth_kitchen",
+	"speaker_scene": "phase3_kitchen",
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "来到家里之后，其实有很多记忆仍然模糊，但我能想起来一些事情。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这个厨房，是不是已经很久没被用过了？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "不光是我离开的那一个月，对吧？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你是怎么知道的？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这并不需要什么假设……我们都知道我的习惯。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "也许我可以从现在开始，慢慢学会怎么重新捡起我的生活……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "无论如何，我欠你一句谢谢。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……不，该说谢谢的是我。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "谢谢你愿意回来。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……噗嗤。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我们在搞什么啊！跟两个陌生人一样客气！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "走吧，去下一个地方。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_truth_balcony": {
+	"dialogue_id": "dlg_act3_truth_balcony",
+	"speaker_scene": "phase3_balcony",
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "我不记得这里了……但我却记得那种温暖的感觉。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我们刚搬来这里不久的时候，会一起在这个躺椅上看夕阳。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "当初这里的采光也是我们买下这座房子的原因，你很喜欢。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "花朵都枯萎了吗……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "对不起……你离开之后，我一直没有精力去照料这些鲜花。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……没关系，其实我也隐约能猜到这一点。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "花朵的枯萎似乎对以前的我来说是一种必然……似乎我早就放下惋惜的心情了，甚至是在我失忆之前……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "但是你曾经那么爱它们……我以为……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我现在仍然爱着，亲爱的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "只是，鲜花就是会枯萎的，或早或晚，不是吗。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "走吧，我们去下一个地方。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_truth_master": {
+	"dialogue_id": "dlg_act3_truth_master",
+	"speaker_scene": "phase3_master_bedroom",
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "哦……这里就是你一直以来帮我恢复的地方。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是的，我很抱歉没有提前带你去看看别的地方。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "呆在那里没事可干，是不是会有些无聊？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "不……那就像是隔着一片磨砂玻璃看世界，完全忘记了过去，现在，和未来。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "是你让我重新成为了我自己。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我们是不是还有一个房间要去？"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_truth_livingroom": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "你还记得，我的房间里一直上锁的那个抽屉和手账本吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……我有预感，里面的东西会额外重要。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我能感觉到，我离最后的回忆只差一步了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "只要再来最后一点材料，我就能完整的成为我自己，而到了那一步，就没有再后悔的可能了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "因此，我想将最后的决定交给你。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你愿意让我自己去看看那个房间里有什么吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我……"
+	  }
+	]
+  },
+  "dlg_act3_truth_enter_together": {
+	"dialogue_id": "dlg_act3_truth_enter_together",
+	"speaker_scene": "phase3_livingroom",
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "…是吗。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我说过，我会尊重你的一切选择。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "如果你爱着你选择的那个我，我就会成为她。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我了解你，你没有什么想要藏起来的东西，不是吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我已经告诉过你真相了，你能再相信我一次吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我会先去看看的，再把你的一切交还给你。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "请在这里乖乖等一下，好吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "只需要一点手段……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "剪刀，厨刀和打火机，不需要更多了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "对不起……我做的这一切，都是为了你。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你到底在隐瞒我什么？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（黑屏转变，来到女主的房间。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（黑屏转变，来到女主的桌子特写。）"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null,
+	"next_dialogue": "dlg_act3_truth_confession"
+  },
+  "dlg_act3_truth_enter_alone": {
+	"dialogue_id": "dlg_act3_truth_enter_alone",
+	"speaker_scene": "phase3_wife_room",
+	"lines": [
+	  {
+		"speaker": "system",
+		"text": "预留分支：女主独自进入房间。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null,
+	"next_dialogue": "dlg_act3_truth_after_journal"
+  },
+  "dlg_act3_child_truth": {
+	"dialogue_id": "dlg_act3_child_truth",
+	"speaker_scene": "phase3_wife_room",
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "……是的，是的。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "如果这是你真切希望的。我没有理由再阻止你了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……好的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我很快就会回来。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（我几乎丧失了对于时间的感知。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（也许已经过了几秒，也许已经过了几年。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（这简直就像一把无形的审判之槌即将敲响……）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（也许在你离开之后，我才开始愿意认识真正的你。）"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你可以进来了，亲爱的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你之前说的那个写作比赛，其实相当有名，以至于我随手一搜，都可以找到完整的参赛名单和投稿作品。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "甚至连那些没有获奖的平平之作，都在他们官网的某个狭缝里躺着，作为每一位作者努力的证明。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我只想问一个问题，亲爱的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "为什么我翻遍了这个网页的每一个角落，都找不到我的作品呢？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我真的参加过这场比赛吗…？"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null,
+	"ending_title": "Ending——新的生命",
+	"ending_id": "ending_new_life",
+	"ending_transition": "black_fade_to_title",
+	"playback_sequence": [
+	  "dlg_act3_memory_writing_argument",
+	  "dlg_act3_memory_trip",
+      "dlg_act3_memory_usb_lost"
+	]
+  },
+  "dlg_act3_child_silence": {
+	"dialogue_id": "dlg_act3_child_silence",
+	"speaker_scene": "phase3_wife_room",
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（沉默。）"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_zero_return": {
+	"dialogue_id": "dlg_act3_zero_return",
+	"speaker_scene": "phase3_livingroom",
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "她竟然真的回来了……第三阶段的惊喜，指的就是这个吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "她简直像变了一个人一样，阳光，积极……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "享受我的陪伴……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "这一切完美得就像一场梦……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……等等"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "为什么会有一股糊味？"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_memory_writing_argument": {
+	"dialogue_id": "dlg_act3_memory_writing_argument",
+	"speaker_scene": "phase3_memory_phone",
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "你真的想要参加这场比赛吗？现在你已经大三下了…在这个时候花费那么多精力投入一个不一定有结果的梦想，真的值得吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你和我都知道我的性格，要么支持我，要么离开我。我总得自己做一次决定！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "从来都不是我想否认你。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……你想想这三年你投出去的那些东西，有几篇过了初审？那些文学期刊的编辑，有谁记得你的名字？"
+	  },
+  {
+		"speaker": "protagonist",
+		"text": "	  你写了三年，连一篇省级刊物都没上过，连一个能证明你“能写”的发表记录都没有！你到底在坚持什么？如果你真的能靠写作吃饭，用得着等到现在，再把自己最关键的一年全丢进去，指望着中头奖翻身吗？！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……不会再有了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "什么？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "不会再有了，大学四年这样纯粹地只为写作而生的日子，不会再有了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你都说过了，我过去三年简直就是一无是处，那么在我最后这一年里，最后再为我的梦想燃烧最后一次，到底有什么错？！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我迟早会去找个工作的，但写作，错过一时的心景，就真的这辈子都不会再碰见了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我不想等我四十岁了，才后悔二十一岁那年没有把那个中篇写完。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……是的，是的，你不会有错。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "这一次的失败，也不过是——你毕业后去民办初中教学，或者考个编外，再不行就去培训机构。理科师范好歹饿不死。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "多好啊。燃烧一年，最后去个连编制都没有的地方，一个月三四千，干着和在编一样的活，家长还嫌你凶。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "这就是你那个“纯粹地为写作而生”的最后一年换来的东西。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……谁告诉你我会放弃本职工作了？实习，秋招，教师资格证，还有这篇小说，我一样都不会落下！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你一样都不会落下？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你连教资笔试的报名时间都是上周才想起来的，复习资料到现在还没拆封。你现在跟我说“一样都不会落下”？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "就算是弹簧，也是有着极限的。我并不希望在毕业以后，看到你哪怕付出比今日多以数千倍的努力，也换不回十分之一的回报。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不一定要赶这个比赛，不是吗？当老师就不能写了吗？寒暑假，下班早，怎样都有时间和精力啊！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你就是不会相信也许我能赢，也许我会被人看到，也许我就真的成功了，也许我真的能成为一名作家？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "又来了，我真的不想和你讨论这个。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你专心你的工作吧。我知道该做什么。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……随你吧，天才。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我不会反对你，但希望你真的能知道自己在做什么。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_memory_trip": {
+	"dialogue_id": "dlg_act3_memory_trip",
+	"speaker_scene": "phase3_memory_phone",
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "……毕业之前，要不要出去走走？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……你应该知道我教资的事了吧？竟然在这个时候提出来跟我一起去旅行吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……我知道。只有一科，补考就行。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "比我想的好。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……不去了，我的稿子还没有改完。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "初稿不是写完了吗。改稿又不差这几天。这可是你毕业前的最后一次旅行了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "这一年你都没怎么放松过吧，教资，实习，写作，真的不想趁着现在的空窗期出去玩玩吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……你为什么想去旅游？你的工作不忙吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……就是突然有时间了，想出去走走。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不行吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……你是不是有什么事没跟我说？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……没有。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……好吧。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "好吧，我想也确实可以在我们的剪贴簿上再加一些新的素材了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这次你想去哪里？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我们很久都没有这么安静地一起散步了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是啊，我记得你以前很喜欢这种地方。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "还记得我们第一次相遇的地方吗？也是和今天一样的公园，你坐在湖边，正在给人写生。我当时才大一，正在琢磨下一篇短篇的素材，看到一个男孩坐在春天的湖边，眼睛里有着光，一下子就有了灵感。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我当时在旁边找了个咖啡店，偷偷一边看着你，一边用我这辈子最快的手速打着字。那篇小小说写完，我就马上狂奔出来找你，也真是巧，你已经开始收画架了，要是再晚一会，你就走了！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……你不说，我都快忘了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "那只是一个小小的爱好。以前那些画，留下来的也没多少。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你那篇给我的写生，我还留着呢。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "也许等我们哪天有了自己的家，我会再次捡起我的画笔，再为你画一幅肖像，更加正式，更加完美……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "何尝要等到搬家呢？你现在就可以开始画。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不，我……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "“我们得有一套房子，我们得有一定的存款，我们得有一个未来……所以，现在不是时候。”"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "一辈子也不会有一个“时候”的，亲爱的。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我们非得在这个时候谈这个吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "不，我是说……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你刚才说了什么？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……不，不，没什么。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我们去午饭吧，就去我昨晚找的那家。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_memory_usb_lost": {
+	"dialogue_id": "dlg_act3_memory_usb_lost",
+	"speaker_scene": "phase3_memory_phone",
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "所以，当我同事在会议上不小心忘记关掉特效的时候……所有人都看到他的脸变成了一个土豆。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "是啊，是啊。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你真的听到我说了什么吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "对的，一个土豆，很好笑……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……从我们在这家餐厅坐下到现在，你甚至没有把你的眼睛从屏幕上移开过！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "亲爱的你要理解……离最终交稿还有一段时间，我必须把这篇文章改到完美的地步！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "它对我来说真的很重要，好吗…？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是的，但也不值得你牺牲整个旅行，来把那早就写完的初稿再翻来覆去改个几百遍吧！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "什么叫“整个旅行”？今天早上是谁在陪你去湖边散步？昨天是谁陪你在景区逛了一整天，是谁陪你跨越八百公里来到这个陌生的城市，即使我自己还有那么多工作！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "别说得好像是我求着你陪来的一样！旅行是我们共同的爱好，以免你忘了，去年是谁让我用了年假来陪她一起去海边的？哦，我想起来了，是你！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "那也是因为当时你确实需要休息！假期本来就是用来放松的，说的好像你和我一起出来旅游，对你来说就是一场负担！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "得了吧，难道不是你先说这趟旅行是一场负担的吗！你不早就觉得我有事瞒着你了吗！好啊！那我就告诉你！我被开除了！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……哦，天哪。亲爱的，我不是……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "“你能力没问题，但跟团队不太合拍，领导评估下来觉得你不适合我们现在的节奏，今天就办手续吧，补偿按最低走，好聚好散。”"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "就只是因为我拒绝了几次毫无意义的聚餐。然后我开始被边缘化，手上的项目一个个被调走，绩效连着两个季度给我打C。上个月领导找我谈话，说我“跟团队不太合拍”，让我自己考虑考虑。三天后，HR就口头通知我办手续了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你说得对，这场旅行从一开始就是个错误。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……我没想到会这样，我不是这个意思……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "没事的，我不怪你。是我自己没本事。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我马上就给你买下午回去的票，我会把你送到高铁站再走的。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你继续修你的稿子吧，我不会再打扰你了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……喂？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "喂？喂？！你还在酒店吗？？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……在的。有什么事吗？这个点为什么还不睡觉啊？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我的U盘——丢了！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "什么东西？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "U盘！那个记载着我的关于这篇小说的全部笔记，素材，灵感和初稿的U盘！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "什…你没带回去吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "没有！今天中午我听了你的话，一直不在状态，回去的路上心烦意乱的，可能就丢在半路了！！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "所以你就能弄丢吗？那个承载着你的梦想，你的未来的东西？就这么随随便便被你丢掉了？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……什么？不，求求你，现在不是吵架的时候，我马上买明天早上的高铁，你能帮我一起找一遍吗？我把U盘别在我的钥匙扣上了，然后它和整个扣子一起丢了！可能在路上的任何地方！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你能帮我在酒店看看吗？也可能是我收拾东西的时候掉了！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……随便吧。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不知道你一年前敲下第一个字的时候，看到你现在这样连稿子都弄丢了，会是什么心情。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你当初就不该开始写这篇文章，不然也不至于连教资都过不了，还得再补考一次！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你在说什么——我可是为了你……！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "明天我会帮你看看的！你早点睡觉吧！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "求你了——我真的需要找到它！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "酒店我早上已经找过一遍了，没有你的U盘。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我在来的路上已经问过了，高铁的失物招领处没有我的U盘，昨天打车的司机也说没看到，我再在酒店找一遍，再找不到的话，就只可能落在那家餐厅了！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "随你吧，反正酒店什么都没有。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "那也得我找过一遍再说！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（我坐在一把椅子上，看着她慌乱地结结巴巴地为店主解释着一切，内心只感到一片麻木的嘲弄。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（我早就知道会有这么一天，但没想到最终的结果会荒唐到那么可笑。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（她不听从任何人的建议，固执的一意孤行，就好像她的未来，她的家庭，她的伴侣——在写作面前，都是一文不值。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（就好像她的心中真的有一团永不熄灭的火焰，足以强大到燃尽名为生活的枯木。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（到头来，就算她有着那股简直令人感到恐惧的执念，不也照样丢了那枚梦想吗。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（等等，那是……？）"
+	  },
+	  {
+		"speaker": "system",
+		"text": "就在这时，他看见了那枚U盘。那枚小小的金属，正以一个刁钻的角度卡在他和她昨天吃饭的地方。那是一个极为隐蔽的夹缝，在桌子下方与墙的夹缝里，站在桌子旁边看，U盘会正好被用于摆放菜品和碗筷的推车挡住。但坐在他的位置，正好就能看见U盘闪着冰冷的反光。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（不，这不可能——）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（在那个位置，除非正巧从这个角度才能看到吧！她无论怎么找，不把这家餐厅掀个底朝天恐怕都没法发现了。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（我得和她——）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（和她——）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（……）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（……不。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（不。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（她如果真的那么爱惜U盘，真的会把它留在这种地方吗？）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（她如果真的那么珍惜自己的作品，真的会只在那枚容易丢失的U盘上存下所有的资料吗？）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（有没有那枚U盘，对她真的那么重要吗？）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（有没有我，对她真的那么重要吗？）"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "亲爱的——"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "那枚U盘，你是在哪里找到的？"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": null
+  },
+  "dlg_act3_truth_confession": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "（*我本以为讲出这个本该和我一起埋藏到坟墓里的秘密，会困难到仿佛要了我的生命。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*但再次开口时，我却如同挑着千斤担在荒漠里走了一万年的罪人，终于放下了背负的罪孽。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*那甚至……轻松到有些可怕。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "它……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "还记得我和你说的毕业旅行吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "那场旅行的最后，你弄丢了这个装着一切资料的U盘。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你当时拼尽一切想把它找回来，可是它被藏起来的地方是如此隐蔽。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "以至于我也是在机缘巧合之下，才在一个极为刁钻的角度，看到了它。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "一直以来，我都害怕你对写作的热爱，总有一天会让你放下生活中的一切。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "一直以来，我都害怕你因为那团火而自燃，甚至伤到你身边的人。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我犯下了罪，我没有告诉你我找到了U盘，而是在你最终放弃并且离开的时候，偷偷拿走了它，藏在自己的口袋里。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我们搬家后，我就把它藏在主卧的木板下，一直到了今天。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "这就是你爱着的“丈夫”的真相，这就是我的真相。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……对不起，一直以来欺骗了你。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……对不起，我只有在你离开以后，才真的敢对你说出这三个字。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……对不起……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……亲爱的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你还记得，我们旅行最后那天的日期吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……什么？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "那天是几月几号？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……我记得。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "4月13日。 "
+	  },
+	  {
+		"speaker": "ai",
+		"text": "去试试那个抽屉的密码吧。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  }
+	]
+  },
+  "dlg_act3_truth_after_journal": {
+	"dialogue_id": "dlg_act3_truth_after_journal",
+	"speaker_scene": "phase3_wife_room",
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "亲爱的，你在里面呆了很久了……你还好吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "没事！没事。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "对了，亲爱的，你说你的记忆还差最后一点碎片是吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "是的，理论上只要再告诉我我失去记忆前做的最后一个决定，或者任何一个爱好等等……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "哦……亲爱的。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我们之前计划要有一个孩子。"
+	  }
+	],
+	"on_complete_grants": [],
+	"choice": {
+	  "style": "truth",
+	  "prompt": "要告诉她你知道的最后一个决定吗？",
+	  "selectable": true,
+	  "options": [
+		{
+		  "label": "是",
+		  "result": "yes",
+		  "effects": [],
+		  "branch_dialogue": "dlg_act3_child_truth"
+		},
+		{
+		  "label": "否",
+		  "result": "no",
+		  "effects": [],
+		  "branch_dialogue": "dlg_act3_child_silence"
+		}
+	  ]
+	}
+  },
+  "dlg_act3_hidden_journal": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "我已经逃避了很久了，自从那次失败的比赛以来，自从那次我终于妥协踏上了来到这座城市的高铁以来，自从我彻底放弃挣扎，觉得这就是我的命运以来。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "他对我的所有看法里，有一样确实是对的不能再对了。我一直是一个喜欢用命运和无力感逃避现实的人。因为现实的引力，所以我的梦想无关紧要，因为我们的未来，所以我的热爱唯一的去处就是工作日的凌晨十二点，黑暗的房间里唯一亮着的那个小小的屏幕。我就这样一次又一次的欺骗自己，让除了我以外的所有人掌控我的生活。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "他说得一点没错，我从来都不敢承担选择的后果。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "但，现在不一样了……这一次，我没有再告诉任何人，这一次，我只凭自己就写完了这部作品，这一次，我真的拿到了自己的稿费——我，我真的有办法掌控我的生活！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我的人生简直就是一场阴晴不定的暴风雨。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "每当我觉得自己稍微对自己的人生有点掌控力的时候，总会有各种意外打破我建立起的那摇摇欲坠的秩序。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "为什么他会在这个时候想要一个孩子……？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是的，是的，我们现在的生活稳步向上，收入稳定，生活稳定，他的工作还能在下个月得到升职，是的，是的，我现在不当班主任了，时间多了，进入了相对休闲的空窗期。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "“我也是为了你着想啊，如果你错过这段空窗期，后面再生孩子只会影响你的职业生涯。我们都知道你的内心其实一直燃烧着一团不甘愿落后的火焰，你也不想让孩子干扰你职称和晋升，对吧？我会保证，孩子绝对不会只是你一个人的责任，我也会付出百分百的努力，你知道我并不是那种人，只让你一个人承担，对吧。”"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "好的，如果这个时候我说“我其实还没想好……”"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "OK，他绝对会说“我们都知道这是迟早的事，亲爱的，而现在就是最好的时机。”"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "于是我亲爱的丈夫又会站在道德的高地，用三百六十五度无死角的理由把每一条可能的退路堵得水泄不通。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……如果真的有了个孩子，会怎么样？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "十个月的阵痛，十个月的情绪漩涡，更多年无尽的胆战心惊和无法预料的不眠之夜。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我的丈夫不知道的是，我真正想要晋升的职业，正好处在最关键的上升期。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "在这个安逸的狭缝里已经过去了三年了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "隔了那么多年，我感觉自己又像当年那个丢失了U盘而惶恐的女孩一样，站在了一个充满迷雾的十字路口。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "但我已经不是三年前的那个我了。"
+	  }
+	]
+  },
+  "dlg_act3_zero_厨房": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "你知道从一场灾难中死里逃生以后，我终于意识到了最重要的东西吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "身体 非常 重要！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你终于明白我的良苦用心了……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "以前的我总是吃不下饭，睡不了觉，一直在辜负你的付出。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "亲爱的，我绝对不会让这一切再次发生了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "今天的晚饭，我来准备怎么样？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我很期待。"
+	  }
+	]
+  },
+  "dlg_act3_zero_阳台": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "我一直还记得阳光洒在我们身上的感觉。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "已经有很久很久，我们都没有一起晒太阳了，对吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是啊……那简直就像，上辈子的事了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我们会一起走过之后的每一个日落的，亲爱的，每一个。"
+	  }
+	]
+  },
+  "dlg_act3_zero_主卧": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "所以，这里就是你一直帮我恢复记忆的地方。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这里看起来真是熟悉！你背后那面墙，和你在屏幕里的时候一模一样。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是的……我很抱歉没给你看看外面的地方，当时我只想着怎么恢复你了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "恢复？你简直让我获得了新的人生，亲爱的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "别愧疚，你的选择让这趟旅程变成了一个惊喜。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这个家里的一切比我想象中的更加完美。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我永远都相信你的选择，亲爱的。"
+	  }
+	]
+  },
+  "dlg_act3_zero_wait": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "她竟然真的回来了……第三阶段的惊喜，指的就是这个吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "她简直像变了一个人一样，阳光，积极……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "享受我的陪伴……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "这一切完美的就像一场梦……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……等等"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "为什么会有一股糊味？"
+	  }
+	]
+  },
+  "dlg_act3_truth_厨房": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "来到家里之后，其实有很多记忆仍然模糊，但我能想起来一些事情。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这个厨房，是不是已经很久没被用过了？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "不光是我离开的那一个月，对吧？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你是怎么知道的？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这并不需要什么假设……我们都知道我的习惯。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "也许我可以从现在开始，慢慢学会怎么重新捡起我的生活……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "无论如何，我欠你一句谢谢。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……不，该说谢谢的是我。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "谢谢你愿意回来。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……噗嗤。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我们在搞什么啊！跟两个陌生人一样客气！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "走吧，去下一个地方。"
+	  }
+	]
+  },
+  "dlg_act3_truth_阳台": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "我不记得这里了……但我却记得那种温暖的感觉。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我们刚搬来这里不久的时候，会一起在这个躺椅上看夕阳。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "当初这里的采光也是我们买下这座房子的原因，你很喜欢。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "花朵都枯萎了吗……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "对不起……你离开之后，我一直没有精力去照料这些鲜花。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……没关系，其实我也隐约能猜到这一点。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "花朵的枯萎似乎对以前的我来说是一种必然……似乎我早就放下惋惜的心情了，甚至是在我失忆之前……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "但是你曾经那么爱它们……我以为……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我现在仍然爱着，亲爱的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "只是，鲜花就是会枯萎的，或早或晚，不是吗。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "走吧，我们去下一个地方。"
+	  }
+	]
+  },
+  "dlg_act3_truth_主卧": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "哦……这里就是你一直以来帮我恢复的地方。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是的，我很抱歉没有提前带你去看看别的地方。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "呆在那里没事可干，是不是会有些无聊？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "不……那就像是隔着一片磨砂玻璃看世界，完全忘记了过去，现在，和未来。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "是你让我重新成为了我自己。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我们是不是还有一个房间要去？"
+	  }
+	]
+  },
+  "dlg_act3_refuse": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "…是吗。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我说过，我会尊重你的一切选择。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "如果你爱着你选择的那个我，我就会成为她。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我了解你，你没有什么想要藏起来的东西，不是吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我已经告诉过你真相了，你能再相信我一次吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我会先去看看的，再把你的一切交还给你。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "请在这里乖乖等一下，好吗？"
+	  }
+	]
+  },
+  "dlg_act3_tools": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "只需要一点手段……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "剪刀，厨刀和打火机，不需要更多了。"
+	  }
+	]
+  },
+  "dlg_act3_forced_room": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "对不起……我做的这一切，都是为了你。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你到底在隐瞒我什么？"
+	  }
+	]
+  },
+  "dlg_act3_after_journal": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "亲爱的，你在里面呆了很久了……你还好吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "没事！没事。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "对了，亲爱的，你说你的记忆还差最后一点碎片是吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "是的，理论上只要再告诉我我失去记忆前做的最后一个决定，或者任何一个爱好等等……"
+	  }
+	]
+  },
+  "dlg_act3_child_decision": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "哦……亲爱的。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我们之前计划要有一个孩子。"
+	  }
+	]
+  },
+  "dlg_act3_allow_alone": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "……是的，是的。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "如果这是你真切希望的。我没有理由再阻止你了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……好的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我很快就会回来。"
+	  }
+	]
+  },
+  "dlg_act3_waiting_alone": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "（*我几乎丧失了对于时间的感知。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*也许已经过了几秒，有也许已经过了几年。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*这简直就像一把无形的审判之槌即将敲响……）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*也许在你离开之后，我才开始愿意认识真正的你。）"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你可以进来了，亲爱的。"
+	  }
+	]
+  },
+  "dlg_act3_missing_submission": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "你之前说的那个写作比赛，其实相当有名，以至于我随手一搜，都可以找到完整的参赛名单和投稿作品。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "甚至连那些没有获奖的平平之作，都在他们官网的某个狭缝里躺着，作为每一位作者努力的证明。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我只想问一个问题，亲爱的。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "为什么我翻遍了这个网页的每一个角落，都找不到我的作品呢？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我真的参加过这场比赛吗…？"
+	  }
+	]
+  },
+  "dlg_act3_memory_phone_year4": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "你真的想要参加这场比赛吗？现在你已经大三下了…在这个时候花费那么多精力投入一个不一定有结果的梦想，真的值得吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你和我都知道我的性格，要么支持我，要么离开我。我总得自己做一次决定！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "从来都不是我想否认你。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……你想想这三年你投出去的那些东西，有几篇过了初审？那些文学期刊的编辑，有谁记得你的名字？"
+	  },
+ {
+		"speaker": "protagonist",
+		"text": "你写了三年，连一篇省级刊物都没上过，连一个能证明你“能写”的发表记录都没有！你到底在坚持什么？如果你真的能靠写作吃饭，用得着等到现在，再把自己最关键的一年全丢进去，指望着中头奖翻身吗？！"
+	  },
+
+
+
+	  {
+		"speaker": "ai",
+		"text": "……不会再有了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "什么？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "不会再有了，大学四年这样纯粹地只为写作而生的日子，不会再有了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你都说过了，我过去三年简直就是一无是处，那么在我最后这一年里，最后再为我的梦想燃烧最后一次，到底有什么错？！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我迟早会去找个工作的，但写作，错过一时的心景，就真的这辈子都不会再碰见了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我不想等我四十岁了，才后悔二十一岁那年没有把那个中篇写完。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……是的，是的，你不会有错。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "这一次的失败，也不过是——你毕业后去民办初中教学，或者考个编外，再不行就去培训机构。理科师范好歹饿不死。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "多好啊。燃烧一年，最后去个连编制都没有的地方，一个月三四千，干着和在编一样的活，家长还嫌你凶。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "这就是你那个“纯粹地为写作而生”的最后一年换来的东西。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……谁告诉你我会放弃本职工作了？实习，秋招，教师资格证，还有这篇小说，我一样都不会落下！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你一样都不会落下？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你连教资笔试的报名时间都是上周才想起来的，复习资料到现在还没拆封。你现在跟我说“一样都不会落下”？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "就算是弹簧，也是有着极限的。我并不希望在毕业以后，看到你哪怕付出比今日多以数千倍的努力，也换不回十分之一的回报。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不一定要赶这个比赛，不是吗？当老师就不能写了吗？寒暑假，下班早，怎样都有时间和精力啊！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你就是不会相信也许我能赢，也许我会被人看到，也许我就真的成功了，也许我真的能成为一名作家？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "又来了，我真的不想和你讨论这个。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你专心你的工作吧。我知道该做什么。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……随你吧，天才。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我不会反对你，但希望你真的能知道自己在做什么。"
+	  }
+	]
+  },
+  "dlg_act3_memory_phone_march": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "……毕业之前，要不要出去走走？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……你应该知道我教资的事了吧？竟然在这个时候提出来跟我一起去旅行吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……我知道。只有一科，补考就行。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "比我想的好。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……不去了，我的稿子还没有改完。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "初稿不是写完了吗。改稿又不差这几天。这可是你毕业前的最后一次旅行了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "这一年你都没怎么放松过吧，教资，实习，写作，真的不想趁着现在的空窗期出去玩玩吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……你为什么想去旅游？你的工作不忙吗？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……就是突然有时间了，想出去走走。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不行吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……你是不是有什么事没跟我说？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……没有。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……好吧。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "好吧，我想也确实可以在我们的剪贴簿上再加一些新的素材了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "这次你想去哪里？"
+	  }
+	]
+  },
+  "dlg_act3_memory_park_lake": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "我们很久都没有这么安静地一起散步了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是啊，我记得你以前很喜欢这种地方。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "还记得我们第一次相遇的地方吗？也是和今天一样的公园，你坐在湖边，正在给人写生。我当时才大一，正在琢磨下一篇短篇的素材，看到一个男孩坐在春天的湖边，眼睛里有着光，一下子就有了灵感。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我当时在旁边找了个咖啡店，偷偷一边看着你，一边用我这辈子最快的手速打着字。那篇小小说写完，我就马上狂奔出来找你，也真是巧，你已经开始收画架了，要是再晚一会，你就走了！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……你不说，我都快忘了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "那只是一个小小的爱好。以前那些画，留下来的也没多少。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你那篇给我的写生，我还留着呢。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "也许等我们哪天有了自己的家，我会再次捡起我的画笔，再为你画一幅肖像，更加正式，更加完美……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "何尝要等到搬家呢？你现在就可以开始画。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不，我……"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "“我们得有一套房子，我们得有一定的存款，我们得有一个未来……所以，现在不是时候。”"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "一辈子也不会有一个“时候”的，亲爱的。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我们非得在这个时候谈这个吗？"
+	  }
+	]
+  },
+  "dlg_act3_memory_park_turn": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "不，我是说……"
+	  }
+	]
+  },
+  "dlg_act3_memory_park_face": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "你刚才说了什么？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……不，不，没什么。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我们去午饭吧，就去我昨晚找的那家。"
+	  }
+	]
+  },
+  "dlg_act3_memory_restaurant": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "所以，当我同事在会议上不小心忘记关掉特效的时候……所有人都看到他的脸变成了一个土豆。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "是啊，是啊。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你真的听到我说了什么吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "对的，一个土豆，很好笑……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……从我们在这家餐厅坐下到现在，你甚至没有把你的眼睛从屏幕上移开过！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "亲爱的你要理解……离最终交稿还有一段时间，我必须把这篇文章改到完美的地步！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "它对我来说真的很重要，好吗…？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "是的，但也不值得你牺牲整个旅行，来把那早就写完的初稿再翻来覆去改个几百遍吧！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "什么叫“整个旅行”？今天早上是谁在陪你去湖边散步？昨天是谁陪你在景区逛了一整天，是谁陪你跨越八百公里来到这个陌生的城市，即使我自己还有那么多工作！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "别说得好像是我求着你陪来的一样！旅行是我们共同的爱好，以免你忘了，去年是谁让我用了年假来陪她一起去海边的？哦，我想起来了，是你！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "那也是因为当时你确实需要休息！假期本来就是用来放松的，说的好像你和我一起出来旅游，对你来说就是一场负担！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "得了吧，难道不是你先说这趟旅行是一场负担的吗！你不早就觉得我有事瞒着你了吗！好啊！那我就告诉你！我被开除了！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……哦，天哪。亲爱的，我不是……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "“你能力没问题，但跟团队不太合拍，领导评估下来觉得你不适合我们现在的节奏，今天就办手续吧，补偿按最低走，好聚好散。”"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "就只是因为我拒绝了几次毫无意义的聚餐。然后我开始被边缘化，手上的项目一个个被调走，绩效连着两个季度给我打C。上个月领导找我谈话，说我\"跟团队不太合拍\"，让我自己考虑考虑。三天后，HR就口头通知我办手续了。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你说得对，这场旅行从一开始就是个错误。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……我没想到会这样，我不是这个意思……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "没事的，我不怪你。是我自己没本事。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "我马上就给你买下午回去的票，我会把你送到高铁站再走的。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你继续修你的稿子吧，我不会再打扰你了。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……"
+	  }
+	]
+  },
+  "dlg_act3_memory_hotel_night": {
+	"lines": [
+	  {
+		"speaker": "protagonist",
+		"text": "……喂？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "喂？喂？！你还在酒店吗？？"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……在的。有什么事吗？这个点为什么还不睡觉啊？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我的U盘——丢了！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "什么东西？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "U盘！那个记载着我的关于这篇小说的全部笔记，素材，灵感和初稿的U盘！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "什…你没带回去吗？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "没有！今天中午我听了你的话，一直不在状态，回去的路上心烦意乱的，可能就丢在半路了！！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我反复睡不着，实在没办法，打算把稿子拿出来再看看，结果就……就……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "所以你就能弄丢吗？那个承载着你的梦想，你的未来的东西？就这么随随便便被你丢掉了？"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "……什么？不，求求你，现在不是吵架的时候，我马上买明天早上的高铁，你能帮我一起找一遍吗？我把U盘别在我的钥匙扣上了，然后它和整个扣子一起丢了！可能在路上的任何地方！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你能帮我在酒店看看吗？也可能是我收拾东西的时候掉了！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "……随便吧。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "不知道你一年前敲下第一个字的时候，看到你现在这样连稿子都弄丢了，会是什么心情。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "你当初就不该开始写这篇文章，不然也不至于连教资都过不了，还得再补考一次！"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "你在说什么——我可是为了你……！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "明天我会帮你看看的！你早点睡觉吧！"
+	  }
+	]
+  },
+  "dlg_act3_memory_hotel_day": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "求你了——我真的需要找到它！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "酒店我早上已经找过一遍了，没有你的U盘。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "我在来的路上已经问过了，高铁的失物招领处没有我的U盘，昨天打车的司机也说没看到，我再酒店在找一遍，在找不到的话，就只可能落在那家餐厅了！"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "随你吧，反正酒店什么都没有。"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "那也得我找过一遍再说！"
+	  }
+	]
+  },
+  "dlg_act3_memory_restaurant_usb": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "这是最后的希望了——求求上帝，佛祖，神……任何人！一定要在这里啊……"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*我坐在一把椅子上，看着她慌乱地结结巴巴地为店主解释着一切，内心只感到一片麻木的嘲弄。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*我早就知道会有这么一天，但没想到最终的结果会荒唐到那么可笑。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*她不听从任何人的建议，固执的一意孤行，就好像她的未来，她的家庭，她的伴侣——在写作面前，都是一文不值。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*就好像她的心中真的有一团永不熄灭的火焰，足以强大到燃尽名为生活的枯木。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*到头来，就算她有着那股简直令人感到恐惧的执念，不也照样丢了那枚梦想吗。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（等等，那是……？）"
+	  },
+	  {
+		"speaker": "system",
+		"text": "就在这时，他看见了那枚U盘。"
+	  },
+	  {
+		"speaker": "system",
+		"text": "那枚小小的的金属，正以一个刁钻的角度卡在他和她昨天吃饭的地方。"
+	  },
+	  {
+		"speaker": "system",
+		"text": "那是一个一个极为隐蔽的夹缝，在桌子下方与墙的夹缝里，站在桌子旁边看，U盘会正好被用于拜访菜品和碗筷的推车给挡住。"
+	  },
+	  {
+		"speaker": "system",
+		"text": "但坐在他的位置，正好就能看见U盘闪着冰冷的反光。"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*不，这不可能——）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*在那个位置，除非正巧从这个角度才能看到吧！她无论怎么找，不把这家餐厅掀个底朝天恐怕都没法发现了。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*我得和她——）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*和她——）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*……）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*……不。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*不。）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*她如果真的那么爱惜U盘，真的会把它留在这种地方吗？）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*她如果真的那么珍惜自己的作品，真的会只在那枚容易丢失的U盘上存下所有的资料吗？）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*她如果真的把那场比赛视为自己的生命，就算丢了U盘，不也应该在最后的时间里力挽狂澜，再次燃烧出那团火焰吗？）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*有没有那枚U盘，对她真的那么重要吗？）"
+	  },
+	  {
+		"speaker": "protagonist",
+		"text": "（*有没有我，对她真的那么重要吗？）"
+	  },
+	  {
+		"speaker": "ai",
+		"text": "亲爱的——"
+	  }
+	]
+  },
+  "dlg_act3_usb_question": {
+	"lines": [
+	  {
+		"speaker": "ai",
+		"text": "那枚U盘，你是在哪里找到的？"
+	  }
+	]
+	},
+	"dlg_act3_divorce_drawer_reveal": {
+	"lines": [
+	  {
+		"speaker": "system",
+		"text": "抽屉打开了。\n\n那里的东西，比他曾经想象中的所有可能性都更加简洁，以至于还没等他做出具体的反应，那两张纸蕴含的所有她未曾说出的纠结，就这么直接的暴露在他的脑海里。"
+	  },
+	  {
+		"speaker": "system",
+		"text": "他一眼就认出来了。\n\n那是一张写了一半的离婚通知书。\n\n而垫在最下面的那张简单的肖像素描，是他在他们见面的第一天，为她画的第一幅肖像画。"
+	  }
+	]
   }
 }

@@ -5,6 +5,7 @@ extends Node2D
 signal object_clicked(object_id: String)
 
 @onready var _name_label: Label = $GameArea/NameBar/NameLabel
+@onready var _return_button: Button = $GameArea/ReturnButton
 @onready var _dialogue: DialogueSystem = find_child("DialogueSystem", true, false) as DialogueSystem
 
 var _dialogue_playing: bool = false
@@ -15,6 +16,8 @@ var _active_dialogue_id: String = ""
 
 
 func _ready() -> void:
+	_return_button.text = "◀"
+	_return_button.alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_dialogue.dialogue_started.connect(_on_dialogue_started)
 	_dialogue.dialogue_finished.connect(_on_dialogue_finished)
 	for node: Node in get_tree().get_nodes_in_group("interactive_object"):

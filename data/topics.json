@@ -9,7 +9,7 @@
 	},
 	{
 	  "topic_id": "topic_missing_you",
-	  "display_name": "对你的思念",
+	  "display_name": "对她的思念",
 	  "phase": 1,
 	  "dialogue": "dlg_topic_missing_you",
 	  "unlocked_by": "livingroom_document"
@@ -27,6 +27,76 @@
 	  "phase": 1,
 	  "dialogue": "dlg_topic_usb",
 	  "unlocked_by": "event_phase1_usb_topic"
+	},
+	{
+	  "topic_id": "topic_new_appearance",
+	  "display_name": "新的外貌",
+	  "phase": 2,
+	  "dialogue": "dlg_new_appearance",
+	  "unlocked_by": "event_phase1_end"
+	},
+	{
+	  "topic_id": "topic_new_stage",
+	  "display_name": "新的阶段",
+	  "phase": 2,
+	  "dialogue": "dlg_new_phase",
+	  "unlocked_by": "event_phase1_end"
+	},
+	{
+	  "topic_id": "topic_travel",
+	  "display_name": "旅行",
+	  "phase": 2,
+	  "dialogue": "dlg_topic_travel",
+	  "unlocked_by": "wiferoom_photo_wall"
+	},
+	{
+	  "topic_id": "topic_locked_computer",
+	  "display_name": "锁上的电脑",
+	  "phase": 2,
+	  "dialogue": "dlg_topic_locked_pc",
+	  "unlocked_by": "computer_power_button"
+	},
+	{
+	  "topic_id": "topic_locked_drawer",
+	  "display_name": "锁上的抽屉",
+	  "phase": 2,
+	  "dialogue": null,
+	  "unlocked_by": "computer_locked_drawer"
+	},
+	{
+	  "topic_id": "topic_handwriting",
+	  "display_name": "手账本",
+	  "phase": 2,
+	  "dialogue": "dlg_topic_handwriting",
+	  "unlocked_by": "computer_notebooks"
+	},
+	{
+	  "topic_id": "topic_games",
+	  "display_name": "游戏",
+	  "phase": 2,
+	  "dialogue": "dlg_topic_games",
+	  "unlocked_by": "computer_folder_games"
+	},
+	{
+	  "topic_id": "topic_writing",
+	  "display_name": "网文写作",
+	  "phase": 2,
+	  "dialogue": "dlg_topic_writing",
+	  "unlocked_by": "event_unlock_writing_topic"
+	},
+	{
+	  "topic_id": "topic_dream",
+	  "display_name": "我在做梦吗?",
+	  "phase": 3,
+	  "dialogue": "dlg_act3_dream",
+	  "unlocked_by": "event_act3_start"
+	},
+	{
+	  "topic_id": "topic_where_did_you_go",
+	  "display_name": "你去哪了?",
+	  "phase": 3,
+	  "dialogue": "dlg_act3_where_did_you_go",
+	  "unlocked_by": "event_act3_start"
 	}
   ]
 }

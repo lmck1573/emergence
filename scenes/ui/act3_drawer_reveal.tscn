@@ -1,0 +1,95 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/act3_drawer_reveal.gd" id="1_reveal"]
+
+[node name="Act3DrawerReveal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_reveal")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameFrame" type="ColorRect" parent="."]
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+color = Color(0.105, 0.085, 0.07, 1)
+
+[node name="DrawerInterior" type="ColorRect" parent="GameFrame"]
+offset_left = 70.0
+offset_top = 110.0
+offset_right = 890.0
+offset_bottom = 890.0
+mouse_filter = 2
+color = Color(0.16, 0.12, 0.09, 1)
+
+[node name="SketchPaper" type="ColorRect" parent="GameFrame/DrawerInterior"]
+offset_left = 120.0
+offset_top = 145.0
+offset_right = 610.0
+offset_bottom = 680.0
+mouse_filter = 2
+color = Color(0.83, 0.81, 0.75, 1)
+
+[node name="NoticePaper" type="ColorRect" parent="GameFrame/DrawerInterior"]
+offset_left = 350.0
+offset_top = 80.0
+offset_right = 760.0
+offset_bottom = 510.0
+mouse_filter = 2
+color = Color(0.92, 0.9, 0.84, 1)
+
+[node name="NoticeTitle" type="Label" parent="GameFrame/DrawerInterior/NoticePaper"]
+offset_left = 40.0
+offset_top = 34.0
+offset_right = 370.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 30
+text = "离婚通知书"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoticeLine1" type="ColorRect" parent="GameFrame/DrawerInterior/NoticePaper"]
+offset_left = 48.0
+offset_top = 135.0
+offset_right = 360.0
+offset_bottom = 139.0
+color = Color(0.31, 0.3, 0.28, 0.6)
+
+[node name="NoticeLine2" type="ColorRect" parent="GameFrame/DrawerInterior/NoticePaper"]
+offset_left = 48.0
+offset_top = 180.0
+offset_right = 345.0
+offset_bottom = 184.0
+color = Color(0.31, 0.3, 0.28, 0.6)
+
+[node name="NoticeLine3" type="ColorRect" parent="GameFrame/DrawerInterior/NoticePaper"]
+offset_left = 48.0
+offset_top = 225.0
+offset_right = 315.0
+offset_bottom = 229.0
+color = Color(0.31, 0.3, 0.28, 0.6)
+
+[node name="Sketch" type="Line2D" parent="GameFrame/DrawerInterior"]
+position = Vector2(135, 165)
+points = PackedVector2Array(155, 80, 124, 105, 109, 151, 119, 194, 101, 227, 135, 245, 154, 235, 176, 245, 205, 226, 187, 193, 197, 150, 179, 107, 155, 80, 137, 133, 154, 154, 173, 132, 182, 162, 154, 177, 127, 161, 135, 219, 155, 228, 176, 216)
+width = 3.0
+default_color = Color(0.16, 0.15, 0.14, 0.9)
+
+[node name="DrawerCG" type="TextureRect" parent="."]
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+stretch_mode = 0

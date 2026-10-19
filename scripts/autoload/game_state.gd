@@ -43,12 +43,13 @@ func grant_content(ids: Array[String]) -> void:
 	if changed:
 		commit()
 
-func unlock_topic(topic_id: String) -> bool:
+func unlock_topic(topic_id: String, notify: bool = true) -> bool:
 	if ContentDB.get_topic(topic_id).is_empty() or is_topic_unlocked(topic_id):
 		return false
 	data["topics_unlocked"].append(topic_id)
 	topic_unlocked.emit(topic_id)
-	EventBus.toast_requested.emit(ContentDB.get_grant_toast_text(topic_id))
+	if notify:
+		EventBus.toast_requested.emit(ContentDB.get_grant_toast_text(topic_id))
 	commit()
 	return true
 
@@ -145,13 +146,49 @@ func add_truth(n: int) -> void:
 func get_feed_progress() -> Dictionary:
 	var count: int = 0
 	for content_id: String in _strings(data.get("contents_fed", [])):
-		if bool(ContentDB.get_content(content_id).get("feedable", false)):
+		var content: Dictionary = ContentDB.get_content(content_id)
+		if int(content.get("phase", 0)) == get_current_phase() and bool(content.get("feedable", false)):
 			count += 1
 	return {"feed_stage": get_current_phase(), "fed_count": count,
 		"total_count": ContentDB.get_feed_item_count(get_current_phase())}
 
 func is_event_completed(event_id: String) -> bool:
 	return data.get("events_completed", []).has(event_id)
+
+func complete_event(event_id: String) -> void:
+	if is_event_completed(event_id):
+		return
+	data["events_completed"].append(event_id)
+	commit()
+
+func complete_puzzle(puzzle_id: String) -> void:
+	var puzzle_state: Dictionary = data["puzzles"].get(puzzle_id, {})
+	if bool(puzzle_state.get("completed", false)):
+		return
+	puzzle_state["completed"] = true
+	data["puzzles"][puzzle_id] = puzzle_state
+	commit()
+
+func reset_phase_collections(completed_phase: int) -> void:
+	var kept_contents: Array[String] = []
+	var kept_topics: Array[String] = []
+	for content_id: String in _strings(data.get("contents_obtained", [])):
+		if int(ContentDB.get_content(content_id).get("phase", 0)) != completed_phase:
+			kept_contents.append(content_id)
+	for topic_id: String in _strings(data.get("topics_unlocked", [])):
+		if int(ContentDB.get_topic(topic_id).get("phase", 0)) != completed_phase:
+			kept_topics.append(topic_id)
+	data["contents_obtained"] = kept_contents
+	data["topics_unlocked"] = kept_topics
+	commit()
+
+func reset_phase_completeness(next_phase: int) -> void:
+	var phase_bounds: Dictionary = {2: [40.0, 80.0], 3: [80.0, 100.0]}
+	var bounds: Array = phase_bounds.get(next_phase, [])
+	if bounds.size() != 2:
+		return
+	data["completeness"] = float(bounds[0])
+	commit()
 
 func is_region_unlocked(region_id: String) -> bool:
 	var region: Dictionary = ContentDB.get_region(region_id)

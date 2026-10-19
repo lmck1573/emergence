@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS truth=0 allow=false ending=love
+PASS truth=1 allow=false ending=life
+PASS truth=2 allow=false ending=life
+PASS truth=2 allow=true ending=truth

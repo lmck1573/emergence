@@ -1,0 +1,48 @@
+{
+  "puzzles": [
+    {
+      "puzzle_id": "puzzle_diary_password",
+      "type": "number_wheel",
+      "digits": 4,
+      "answer": "1224",
+      "unlock_event": "event_diary_password_hint",
+      "on_complete_fulltext": "ft_computer_unlocked",
+      "on_complete_effects": [],
+      "diary_entries": [
+        {
+          "date": "03.22",
+          "text": "正式住进了我们买的房子里……说实话，比我想象中的好，二室二厅，我得规划一下怎么布置我的房间了！"
+        },
+        {
+          "date": "4.14",
+          "text": "他第一次做番茄炒蛋，很难吃，但他却要教我做。"
+        },
+        {
+          "date": "5.30",
+          "text": "今天又买了很多甜品。但其实我不太喜欢，只是因为甜到齁的味觉能麻木一下大脑的神经。这份工作真的太累了，每天下班都有些身心俱疲。"
+        },
+        {
+          "date": "8.21",
+          "text": "照顾了一整年，小月月终于开了（大哭）今晚的月亮正好满盈如镜，阳台的视野正好，月光下她简直像在微微散着辉光，不愧我守到了凌晨两点！"
+        },
+        {
+          "date": "12.24",
+          "text": "他竟然真的送了我一整台台式……而且我完全不知道！天哪，这是最棒的一次平安夜！"
+        },
+        {
+          "date": "1.12",
+          "text": "终于拉着那个无聊的人看了爱乐之城，看他最后的表情，我知道没有人能拒绝这部电影啊！"
+        }
+      ]
+    },
+    {
+      "puzzle_id": "puzzle_act3_drawer_password",
+      "type": "number_wheel",
+      "digits": 4,
+      "answer": "0413",
+      "unlock_event": "event_act3_hidden_journal_read",
+      "on_complete_effects": [],
+      "diary_entries": []
+    }
+  ]
+}

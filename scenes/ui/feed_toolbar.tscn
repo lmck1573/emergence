@@ -102,6 +102,39 @@ visible = false
 layout_mode = 2
 text = "exp_dumplings"
 
+[node name="hobby_travel" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=1861719722]
+visible = false
+layout_mode = 2
+
+[node name="hobby_plush" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=670526751]
+visible = false
+layout_mode = 2
+
+[node name="work_diary" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=505294210]
+visible = false
+layout_mode = 2
+
+[node name="hobby_games" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=1244467960]
+visible = false
+layout_mode = 2
+
+[node name="work_chat_records" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=1825463045]
+visible = false
+layout_mode = 2
+
+[node name="exp_webnovel" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=2005020718]
+visible = false
+layout_mode = 2
+
+[node name="exp_bills" type="Button" parent="Layout/FeedPanel/PanelContent/ScrollContainer/Items" unique_id=191769294]
+visible = false
+layout_mode = 2
+
+[node name="FeedAllButton" type="Button" parent="Layout/FeedPanel/PanelContent" unique_id=1989150301]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "一键投喂"
+
 [node name="Close" type="Button" parent="Layout/FeedPanel/PanelContent" unique_id=2022474687]
 layout_mode = 2
 text = "退出"
@@ -152,6 +185,50 @@ text = "topic_her_taste"
 visible = false
 layout_mode = 2
 text = "topic_usb"
+
+[node name="topic_new_appearance" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1475057737]
+visible = false
+layout_mode = 2
+
+[node name="topic_new_stage" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=2093275591]
+visible = false
+layout_mode = 2
+
+[node name="topic_travel" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=114238479]
+visible = false
+layout_mode = 2
+
+[node name="topic_locked_computer" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=215352079]
+visible = false
+layout_mode = 2
+
+[node name="topic_handwriting" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=813423314]
+visible = false
+layout_mode = 2
+
+[node name="topic_games" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1111880457]
+visible = false
+layout_mode = 2
+
+[node name="topic_chat_log_truth" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1890252819]
+visible = false
+layout_mode = 2
+
+[node name="topic_chat_log_lie" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1095009039]
+visible = false
+layout_mode = 2
+
+[node name="topic_writing" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1466582425]
+visible = false
+layout_mode = 2
+
+[node name="topic_dream" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items"]
+visible = false
+layout_mode = 2
+
+[node name="topic_where_did_you_go" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items"]
+visible = false
+layout_mode = 2
 
 [node name="Close" type="Button" parent="Layout/TopicPanel/PanelContent" unique_id=1898309420]
 layout_mode = 2
