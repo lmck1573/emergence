@@ -9,6 +9,7 @@ func _run() -> void:
 	state.data["phase"] = 2
 	state.data["current_scene"] = "computer_desk"
 	state.data["events_completed"] = ["event_computer_unlocked"]
+	state.data["flags"]["wife_room_entered"] = true
 	change_scene_to_file("res://scenes/explore/computer_locked.tscn")
 	for index: int in range(6): await process_frame
 	assert(current_scene.get_node("LockedEntry").visible, "Password marker missing")
@@ -17,6 +18,19 @@ func _run() -> void:
 	for key: String in ["LockedDrawer", "Notebooks", "balcony_lounger"]:
 		assert(current_scene.get_node(key).visible, "Other point missing: " + key)
 		assert(current_scene.get_node(key).input_pickable)
+	current_scene.call("_on_return_button_pressed")
+	for index: int in range(6): await process_frame
+	assert(current_scene.scene_file_path.ends_with("wife_room.tscn"), "Locked computer should return to wife's room")
+	assert(state.data["current_scene"] == "wife_room")
+	current_scene.call("_clicked", "wiferoom_computer", "")
+	for index: int in range(6): await process_frame
+	assert(current_scene.scene_file_path.ends_with("computer_desk.tscn"), "First visit should show desktop before power-on")
+	state.data["objects"]["computer_power_button"] = ["look"]
+	current_scene.call("_on_return_button_pressed")
+	for index: int in range(6): await process_frame
+	current_scene.call("_clicked", "wiferoom_computer", "")
+	for index: int in range(6): await process_frame
+	assert(current_scene.scene_file_path.ends_with("computer_locked.tscn"), "Re-entry should show the locked screen directly")
 	state.data["puzzles"]["puzzle_diary_password"] = {"unlocked": true, "completed": true}
 	current_scene.call("refresh_computer_picture")
 	for index: int in range(8): await process_frame
@@ -28,6 +42,12 @@ func _run() -> void:
 	for key: String in ["LockedDrawer", "Notebooks", "balcony_lounger"]:
 		assert(current_scene.get_node(key).visible, "Other point missing: " + key)
 		assert(current_scene.get_node(key).input_pickable)
+	current_scene.call("_on_return_button_pressed")
+	for index: int in range(6): await process_frame
+	assert(current_scene.scene_file_path.ends_with("wife_room.tscn"), "Unlocked computer should return to wife's room")
+	current_scene.call("_clicked", "wiferoom_computer", "")
+	for index: int in range(6): await process_frame
+	assert(current_scene.scene_file_path.ends_with("computer_unlocked.tscn"), "Re-entry should show the latest unlocked screen directly")
 	var old: Node = current_scene
 	root.remove_child(old)
 	old.call("refresh_computer_picture")

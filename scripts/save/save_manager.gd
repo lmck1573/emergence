@@ -6,21 +6,21 @@ const SAVE_PATH: String = "user://save_data.json"
 const BACKUP_PATH: String = "user://save_data.bak"
 const TEMP_PATH: String = "user://save_data.tmp"
 const PREVIOUS_PATH: String = "user://save_data.previous"
+const RECOVERY_TEMP_PATH: String = "user://save_data.recovery"
 const SAVE_VERSION: int = 1
-const ENDING_PATH: String = "user://ending_record.json"
 static var _save_blocked: bool = false
 
 static func record_ending(ending_id: String) -> void:
-	var file: FileAccess = FileAccess.open(ENDING_PATH, FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open("user://ending_record.json", FileAccess.WRITE)
 	if file != null:
 		file.store_string(JSON.stringify({"ending_id": ending_id}))
 		file.close()
 
 static func has_ending_record() -> bool:
-	return FileAccess.file_exists(ENDING_PATH)
+	return FileAccess.file_exists("user://ending_record.json")
 
 static func clear_story() -> bool:
-	for path: String in [SAVE_PATH, BACKUP_PATH, TEMP_PATH, PREVIOUS_PATH, ENDING_PATH]:
+	for path: String in [SAVE_PATH, BACKUP_PATH, TEMP_PATH, PREVIOUS_PATH, RECOVERY_TEMP_PATH, "user://ending_record.json"]:
 		if FileAccess.file_exists(path):
 			if DirAccess.remove_absolute(ProjectSettings.globalize_path(path)) != OK:
 				return false
@@ -34,28 +34,27 @@ static func has_save() -> bool:
 
 static func load_save() -> Dictionary:
 	_save_blocked = false
-	if not has_save():
-		return {}
-	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.READ)
-	if file == null:
-		push_error("SaveManager cannot open save: %s" % FileAccess.get_open_error())
-		return {}
-	var parser := JSON.new()
-	var error: Error = parser.parse(file.get_as_text())
-	file.close()
-	if error != OK or not parser.data is Dictionary:
-		_reject_save("Invalid save JSON: %s" % parser.get_error_message())
-		return {}
-	var data: Dictionary = parser.data
-	if data.get("save_version", -1) == SAVE_VERSION:
-		var defaults: Dictionary = default_state()
-		for key: String in defaults:
-			if not data.has(key):
-				data[key] = defaults[key]
-	if not _validate_save(data) or data["save_version"] != SAVE_VERSION:
-		_reject_save("Invalid save fields or unsupported save version")
-		return {}
-	return data
+	var found_invalid: bool = false
+	for path: String in [SAVE_PATH, TEMP_PATH, RECOVERY_TEMP_PATH, PREVIOUS_PATH, BACKUP_PATH]:
+		if not FileAccess.file_exists(path):
+			continue
+		var data: Dictionary = _read_valid_save(path)
+		if data.is_empty():
+			found_invalid = true
+			if path == SAVE_PATH and not FileAccess.file_exists(BACKUP_PATH):
+				var backup_error: Error = DirAccess.copy_absolute(ProjectSettings.globalize_path(SAVE_PATH), ProjectSettings.globalize_path(BACKUP_PATH))
+				if backup_error != OK:
+					push_error("SaveManager could not preserve invalid primary save: %s" % backup_error)
+			continue
+		if path != SAVE_PATH:
+			if not _promote_recovered_save(path):
+				push_error("SaveManager loaded recovery copy but could not restore the primary save")
+				_save_blocked = true
+		return data
+	if found_invalid:
+		_save_blocked = true
+		push_error("SaveManager found no valid save copy; preserved all recovery files and blocked writes")
+	return {}
 
 
 static func save(data: Dictionary) -> bool:
@@ -151,46 +150,97 @@ static func _is_fed_items_map(value: Dictionary) -> bool:
 	return true
 
 
-static func _reject_save(reason: String) -> void:
-	var source: String = ProjectSettings.globalize_path(SAVE_PATH)
-	var backup: String = ProjectSettings.globalize_path(BACKUP_PATH)
-	if FileAccess.file_exists(BACKUP_PATH):
-		_save_blocked = true
-		push_error("%s; existing backup preserved and writes blocked" % reason)
-		return
-	var error: Error = DirAccess.copy_absolute(source, backup)
-	if error != OK:
-		_save_blocked = true
-		push_error("%s; backup failed (%s), writes blocked" % [reason, error])
-		return
-	push_error("%s; invalid save backed up to save_data.bak" % reason)
-
-
 static func _replace_save_file() -> bool:
 	var save_file: String = ProjectSettings.globalize_path(SAVE_PATH)
 	var temp_file: String = ProjectSettings.globalize_path(TEMP_PATH)
 	var previous_file: String = ProjectSettings.globalize_path(PREVIOUS_PATH)
 	var had_save: bool = FileAccess.file_exists(SAVE_PATH)
-	if had_save:
-		if FileAccess.file_exists(PREVIOUS_PATH):
-			var cleanup_error: Error = DirAccess.remove_absolute(previous_file)
-			if cleanup_error != OK:
-				push_error("SaveManager cannot clean previous temporary backup: %s" % cleanup_error)
-				return false
-		var copy_error: Error = DirAccess.copy_absolute(save_file, previous_file)
-		if copy_error != OK:
-			push_error("SaveManager cannot protect existing save: %s" % copy_error)
-			return false
-		var remove_error: Error = DirAccess.remove_absolute(save_file)
-		if remove_error != OK:
-			push_error("SaveManager cannot replace existing save: %s" % remove_error)
-			return false
-	var rename_error: Error = DirAccess.rename_absolute(temp_file, save_file)
-	if rename_error != OK:
-		if had_save:
-			DirAccess.copy_absolute(previous_file, save_file)
-		push_error("SaveManager cannot commit new save: %s" % rename_error)
+	if not had_save:
+		var first_promote_error: Error = DirAccess.rename_absolute(temp_file, save_file)
+		if first_promote_error == OK:
+			return true
+		push_error("SaveManager cannot commit new save: %s" % first_promote_error)
 		return false
-	if had_save:
-		DirAccess.remove_absolute(previous_file)
-	return true
+	if FileAccess.file_exists(PREVIOUS_PATH):
+		var cleanup_error: Error = DirAccess.remove_absolute(previous_file)
+		if cleanup_error != OK:
+			push_error("SaveManager cannot rotate previous save: %s" % cleanup_error)
+			return false
+	var backup_error: Error = DirAccess.copy_absolute(save_file, previous_file)
+	if backup_error != OK:
+		push_error("SaveManager cannot protect existing save: %s" % backup_error)
+		return false
+	var remove_error: Error = DirAccess.remove_absolute(save_file)
+	if remove_error != OK:
+		push_error("SaveManager cannot replace existing save: %s" % remove_error)
+		return false
+	var promote_error: Error = DirAccess.rename_absolute(temp_file, save_file)
+	if promote_error == OK:
+		return true
+	var recovery_error: Error = DirAccess.copy_absolute(previous_file, save_file)
+	if recovery_error != OK:
+		push_error("SaveManager commit failed (%s) and rollback failed (%s)" % [promote_error, recovery_error])
+		return false
+	push_error("SaveManager cannot commit new save: %s" % promote_error)
+	return false
+
+static func _read_valid_save(path: String) -> Dictionary:
+	var file: FileAccess = FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		return {}
+	var parser: JSON = JSON.new()
+	var error: Error = parser.parse(file.get_as_text())
+	file.close()
+	if error != OK or not parser.data is Dictionary:
+		return {}
+	var data: Dictionary = parser.data
+	if data.get("save_version", -1) == SAVE_VERSION:
+		var defaults: Dictionary = default_state()
+		for key: String in defaults:
+			if not data.has(key): data[key] = defaults[key]
+	if not _validate_save(data) or data["save_version"] != SAVE_VERSION:
+		return {}
+	return data
+
+static func _promote_recovered_save(source: String) -> bool:
+	var target: String = ProjectSettings.globalize_path(SAVE_PATH)
+	var source_path: String = ProjectSettings.globalize_path(source)
+	var recovery_temp: String = ProjectSettings.globalize_path(RECOVERY_TEMP_PATH)
+	if source != RECOVERY_TEMP_PATH:
+		if FileAccess.file_exists(RECOVERY_TEMP_PATH):
+			var stale_recovery_error: Error = DirAccess.remove_absolute(recovery_temp)
+			if stale_recovery_error != OK:
+				return false
+		var copy_error: Error = DirAccess.copy_absolute(source_path, recovery_temp)
+		if copy_error != OK:
+			return false
+	var preserved_previous: bool = false
+	var previous_path: String = ProjectSettings.globalize_path(PREVIOUS_PATH)
+	if FileAccess.file_exists(SAVE_PATH):
+		var primary_valid: bool = not _read_valid_save(SAVE_PATH).is_empty()
+		if primary_valid:
+			if FileAccess.file_exists(PREVIOUS_PATH):
+				var clear_previous_error: Error = DirAccess.remove_absolute(previous_path)
+				if clear_previous_error != OK:
+					DirAccess.remove_absolute(recovery_temp)
+					return false
+			var preserve_error: Error = DirAccess.copy_absolute(target, previous_path)
+			if preserve_error != OK:
+				DirAccess.remove_absolute(recovery_temp)
+				return false
+			preserved_previous = true
+		var remove_error: Error = DirAccess.remove_absolute(target)
+		if remove_error != OK:
+			if preserved_previous:
+				DirAccess.copy_absolute(previous_path, target)
+			DirAccess.remove_absolute(recovery_temp)
+			return false
+	var promote_error: Error = DirAccess.rename_absolute(recovery_temp, target)
+	if promote_error == OK:
+		return true
+	var fallback_error: Error = DirAccess.copy_absolute(recovery_temp, target)
+	DirAccess.remove_absolute(recovery_temp)
+	return fallback_error == OK
+
+static func _reject_save(reason: String) -> void:
+	push_error(reason)

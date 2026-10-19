@@ -1,0 +1,57 @@
+[gd_scene format=3]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwhad"]
+bg_color = Color(0.105882354, 0.43137255, 0.96862745, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebr8j"]
+bg_color = Color(0.105882354, 0.43137255, 0.96862745, 0.5)
+
+[node name="Phase3WifeRoomCloseup" type="Control" unique_id=1117680095]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Background" type="ColorRect" parent="." unique_id=623037842]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameArea" type="TextureRect" parent="." unique_id=1950237189]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="HeroineInteraction" type="Button" parent="GameArea" unique_id=1006154177]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 525.0
+offset_right = 505.0
+offset_bottom = 575.0
+tooltip_text = "女主"
+theme_override_styles/normal = SubResource("StyleBoxFlat_wwhad")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wwhad")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wwhad")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wwhad")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wwhad")
+metadata/preserve_button_background = true
+
+[node name="ComputerInteraction" type="Button" parent="GameArea" unique_id=317192973]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 500.0
+offset_right = 690.0
+offset_bottom = 550.0
+tooltip_text = "电脑"
+theme_override_styles/normal = SubResource("StyleBoxFlat_ebr8j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ebr8j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ebr8j")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ebr8j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ebr8j")
+metadata/preserve_button_background = true

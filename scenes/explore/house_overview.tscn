@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0xb5bxxtagt0"]
 
-[ext_resource type="Texture2D" uid="uid://b15uuy1fvpckr" path="res://artassests/地图草稿.png" id="1_ppmjs"]
+[ext_resource type="Texture2D" uid="uid://cmi4qxl2uy0ph" path="res://artassests/地图完整.PNG" id="1_ppmjs"]
 [ext_resource type="Script" uid="uid://b8b3nklj5q5tw" path="res://scripts/explore/map_point.gd" id="2_reeyo"]
 [ext_resource type="PackedScene" uid="uid://c8v3j0gda0vyv" path="res://scenes/explore/livingroom.tscn" id="3_dha4t"]
 [ext_resource type="PackedScene" uid="uid://dtgrmwlw6t6iy" path="res://scenes/explore/kitchen.tscn" id="4_7dl68"]
@@ -28,37 +28,37 @@ mouse_filter = 2
 texture = ExtResource("1_ppmjs")
 
 [node name="客厅" type="Node2D" parent="Background" unique_id=1350699084]
-position = Vector2(788, 325)
+position = Vector2(698, 692)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("3_dha4t")
 region_id = "livingroom"
 
 [node name="厨房" type="Node2D" parent="Background" unique_id=1502807221]
-position = Vector2(623, 843)
+position = Vector2(177, 627)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("4_7dl68")
 region_id = "kitchen"
 
 [node name="阳台" type="Node2D" parent="Background" unique_id=1542956147]
-position = Vector2(763, 118)
+position = Vector2(905, 745)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("5_ppmjs")
 region_id = "balcony"
 
 [node name="电脑" type="Node2D" parent="Background" unique_id=565965814]
-position = Vector2(121, 397)
+position = Vector2(633, 145)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("6_reeyo")
 region_id = "ai_interface"
 
 [node name="主卧" type="Node2D" parent="Background" unique_id=2129479238]
-position = Vector2(257, 287)
+position = Vector2(762, 264)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("7_7dl68")
 region_id = "master_bedroom"
 
 [node name="女主房间" type="Node2D" parent="Background" unique_id=1340434065]
-position = Vector2(401, 284)
+position = Vector2(706, 374)
 script = ExtResource("2_reeyo")
 target_scene = ExtResource("8_f0k58")
 region_id = "wife_room"

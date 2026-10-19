@@ -27,12 +27,26 @@ func _run() -> void:
 			if current_scene == null: continue
 			if current_scene.scene_file_path.ends_with("start_screen.tscn"):
 				break
+			var ending_drawer: Button = current_scene.find_child("DrawerInteraction", true, false) as Button
+			if ending_drawer != null and not ending_drawer.disabled:
+				ending_drawer.emit_signal("pressed")
+			var true_ending_scene: Node = null
+			for node: Node in get_nodes_in_group("true_ending_computer_test"):
+				true_ending_scene = node
+			if true_ending_scene != null and not bool(true_ending_scene.get("_puzzle_solved")):
+				ending_drawer = true_ending_scene.find_child("DrawerInteraction", true, false) as Button
+				if ending_drawer != null and not ending_drawer.disabled:
+					ending_drawer.emit_signal("pressed")
+				var ui: Node = true_ending_scene.find_child("StoryUI", true, false)
+				if ui != null and not str(ui.get("_puzzle_id")).is_empty():
+					EventBus.puzzle_submitted.emit("puzzle_act3_drawer_password", "0413")
+					ui.call("_close_puzzle")
 			var view: Control = null
 			for node: Node in get_nodes_in_group("act3_test_view"):
 				view = node as Control
 			if view != null:
-				if view.target.visible and not view.target.disabled: view.activated.emit()
-				elif view.leave.visible and not view.leave.disabled: view.activated.emit()
+				if view.target.visible and not view.target.disabled: view.target.emit_signal("pressed")
+				elif view.leave.visible and not view.leave.disabled: view.leave.emit_signal("pressed")
 				elif view.no.visible: view.decision.emit("yes" if _allow and view.yes.visible else "no")
 			var ui: Node = current_scene.find_child("StoryUI", true, false)
 			if ui != null:

@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://w6cyelv363co"]
 
-[ext_resource type="Script" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
-
 [ext_resource type="Script" uid="uid://c5qtmxuhu3ryf" path="res://scripts/explore/room_controller.gd" id="1_efqqh"]
 [ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="2_rg6um"]
 [ext_resource type="Script" uid="uid://bwbdbk7pppgrl" path="res://scripts/explore/interactive_object.gd" id="3_me7kd"]
-[ext_resource type="Texture2D" path="res://artassests/主卧草稿.png" id="4_room_art"]
+[ext_resource type="Texture2D" uid="uid://20uog8n4herp" path="res://artassests/主卧草稿.png" id="4_room_art"]
+[ext_resource type="Script" uid="uid://sr5ifyckwx2r" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
 
 [sub_resource type="RectangleShape2D" id="FloorboardShape"]
 size = Vector2(50, 50)
@@ -13,15 +12,14 @@ size = Vector2(50, 50)
 [node name="Kitchen" type="Node2D" unique_id=1971271294]
 script = ExtResource("1_efqqh")
 
-[node name="EditorGameAreaGuide" type="ColorRect" parent="."]
-script = ExtResource("editor_guide_script")
+[node name="EditorGameAreaGuide" type="ColorRect" parent="." unique_id=1224342798]
+z_index = -100
 offset_left = -480.0
 offset_top = -480.0
 offset_right = 480.0
 offset_bottom = 480.0
 mouse_filter = 2
-z_index = -100
-color = Color(1, 1, 1, 1)
+script = ExtResource("editor_guide_script")
 
 [node name="Background" type="ColorRect" parent="." unique_id=431837742]
 anchors_preset = 15
@@ -46,7 +44,6 @@ offset_right = 480.0
 offset_bottom = 480.0
 mouse_filter = 2
 texture = ExtResource("4_room_art")
-stretch_mode = 0
 
 [node name="Title" type="Label" parent="GameArea" unique_id=2018171449]
 layout_mode = 1
@@ -95,11 +92,11 @@ vertical_alignment = 1
 [node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("2_rg6um")]
 
 [node name="master_floorboard" type="Area2D" parent="." unique_id=906982254]
-position = Vector2(0, 100)
+position = Vector2(-34, 410)
 script = ExtResource("3_me7kd")
 object_id = "master_floorboard"
 
-[node name="Marker" type="ColorRect" parent="master_floorboard"]
+[node name="Marker" type="ColorRect" parent="master_floorboard" unique_id=1812702739]
 offset_left = -25.0
 offset_top = -25.0
 offset_right = 25.0
@@ -107,7 +104,7 @@ offset_bottom = 25.0
 mouse_filter = 2
 color = Color(0, 0, 1, 0.2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="master_floorboard"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="master_floorboard" unique_id=924504912]
 shape = SubResource("FloorboardShape")
 
 [connection signal="pressed" from="GameArea/ReturnButton" to="." method="_on_return_button_pressed"]

@@ -14,6 +14,9 @@ func _ready() -> void:
 	_computer_screen_open = scene_file_path in ["res://scenes/explore/computer_locked.tscn", "res://scenes/explore/computer_unlocked.tscn"]
 	_set_return_glyph()
 	if scene_file_path in ["res://scenes/explore/computer_desk.tscn", "res://scenes/explore/computer_locked.tscn", "res://scenes/explore/computer_unlocked.tscn"]:
+		GameState.data["current_scene"] = scene_file_path.get_file().get_basename()
+		GameState.commit()
+	if scene_file_path in ["res://scenes/explore/computer_desk.tscn", "res://scenes/explore/computer_locked.tscn", "res://scenes/explore/computer_unlocked.tscn"]:
 		_computer_fallback = ($GameArea/RoomBackdrop as TextureRect).texture
 	EventBus.state_changed.connect(refresh_computer_picture, CONNECT_DEFERRED)
 	refresh_computer_picture.call_deferred()
@@ -68,9 +71,14 @@ func _clicked(id: String, _dialogue: String) -> void:
 		return
 	_name_label.text = ""
 	if id == "wiferoom_computer":
-		GameState.data["current_scene"] = "computer_desk"
+		var power_started: bool = not GameState.get_object_steps("computer_power_button").is_empty()
+		var puzzle_state: Dictionary = GameState.data.get("puzzles", {}).get("puzzle_diary_password", {})
+		var destination: String = "computer_desk"
+		if power_started:
+			destination = "computer_unlocked" if bool(puzzle_state.get("completed", false)) else "computer_locked"
+		GameState.data["current_scene"] = destination
 		GameState.commit()
-		get_tree().change_scene_to_file("res://scenes/explore/computer_desk.tscn")
+		get_tree().change_scene_to_file("res://scenes/explore/%s.tscn" % destination)
 		return
 	if id == "computer_locked_entry":
 		var password_state: Dictionary = GameState.data.get("puzzles", {}).get("puzzle_diary_password", {})
@@ -163,8 +171,10 @@ func _closed(text_id: String) -> void:
 func _on_return_button_pressed() -> void:
 	if _blocked:
 		return
-	if _computer_screen_open:
-		get_tree().change_scene_to_file("res://scenes/explore/computer_desk.tscn")
+	if scene_file_path in ["res://scenes/explore/computer_desk.tscn", "res://scenes/explore/computer_locked.tscn", "res://scenes/explore/computer_unlocked.tscn"]:
+		GameState.data["current_scene"] = "wife_room"
+		GameState.commit()
+		get_tree().change_scene_to_file("res://scenes/explore/wife_room.tscn")
 		return
 	var current_id: String = str(GameState.data.get("current_scene", "house_overview"))
 	var region: Dictionary = ContentDB.get_region(current_id)
@@ -217,4 +227,6 @@ func _open_computer_screen() -> void:
 	_computer_changing = true
 	var puzzle: Dictionary = GameState.data.get("puzzles", {}).get("puzzle_diary_password", {})
 	var destination: String = "computer_unlocked" if bool(puzzle.get("completed", false)) else "computer_locked"
+	GameState.data["current_scene"] = destination
+	GameState.commit()
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/explore/%s.tscn" % destination)

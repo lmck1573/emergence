@@ -21,9 +21,15 @@ func _ready() -> void:
 	if data.is_empty():
 		data = SaveManager.default_state()
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_PAUSED or what == NOTIFICATION_WM_GO_BACK_REQUEST or what == NOTIFICATION_WM_CLOSE_REQUEST:
+		if not data.is_empty() and is_inside_tree() and not get_tree().has_meta("act3_test"):
+			save()
+
 func commit() -> void:
-	# State changes notify the UI; only the manual save button writes to disk.
 	EventBus.state_changed.emit()
+	if not data.is_empty() and is_inside_tree() and not get_tree().has_meta("act3_test"):
+		save()
 
 func save() -> bool:
 	return SaveManager.save(data)
@@ -180,7 +186,6 @@ func reset_phase_collections(completed_phase: int) -> void:
 			kept_topics.append(topic_id)
 	data["contents_obtained"] = kept_contents
 	data["topics_unlocked"] = kept_topics
-	commit()
 
 func reset_phase_completeness(next_phase: int) -> void:
 	var phase_bounds: Dictionary = {2: [40.0, 80.0], 3: [80.0, 100.0]}

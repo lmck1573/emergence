@@ -92,4 +92,15 @@ func _enter_game() -> void:
 		if ResourceLoader.exists(path):
 			get_tree().change_scene_to_file(path)
 			return
+	if GameState.get_current_phase() == 2:
+		var phase2_scene: String = str(GameState.data.get("current_scene", "ai_interface_phase2"))
+		var phase2_puzzle: Dictionary = GameState.data.get("puzzles", {}).get("puzzle_diary_password", {})
+		var phase2_path: String = "res://scenes/ui/ai_interface_phase2.tscn"
+		if phase2_scene in ["computer_desk", "computer_locked", "computer_unlocked"]:
+			phase2_path = "res://scenes/explore/%s.tscn" % phase2_scene
+			if phase2_scene == "computer_locked" and bool(phase2_puzzle.get("completed", false)):
+				phase2_path = "res://scenes/explore/computer_unlocked.tscn"
+		if ResourceLoader.exists(phase2_path):
+			get_tree().change_scene_to_file(phase2_path)
+			return
 	get_tree().change_scene_to_file("res://scenes/ui/ai_interface.tscn")

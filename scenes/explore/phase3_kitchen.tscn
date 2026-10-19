@@ -1,54 +1,80 @@
-[gd_scene format=3 uid="uid://cftjr7n26cm1n"]
+[gd_scene format=3]
 
-[ext_resource type="Script" uid="uid://i7n7gwkamstt" path="res://scripts/explore/phase3_kitchen.gd" id="1_kitchen"]
-[ext_resource type="Texture2D" uid="uid://qj304q3aop6n" path="res://artassests/场景特写/第二阶段人格培养界面.png" id="2_simfq"]
-[ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="2_story_ui"]
-[ext_resource type="Texture2D" uid="uid://b7rtmwqi5xjwu" path="res://artassests/第三阶段CG/手机聊天界面.png" id="3_rwav5"]
-[ext_resource type="Texture2D" uid="uid://c4ap61asru12y" path="res://artassests/厨房草稿.png" id="4_kitchen_art"]
-[ext_resource type="Script" uid="uid://sr5ifyckwx2r" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
+[ext_resource type="Script" path="res://scripts/explore/phase3_kitchen.gd" id="1_kitchen"]
+[ext_resource type="Script" path="res://scripts/ui/editor_game_area_guide.gd" id="1_i40h2"]
+[ext_resource type="Texture2D" path="res://artassests/地图完整.PNG" id="2_map"]
+[ext_resource type="PackedScene" path="res://scenes/ui/story_ui.tscn" id="3_simfq"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/客厅1.png" id="4_livingroom"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/厨房1.png" id="5_kitchen"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/烟台1.png" id="6_balcony"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/主卧1.png" id="7_bedroom"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/女主的房间1.png" id="8_wife_room"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/女主电脑特写1.png" id="9_computer"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/女主电脑特写2.png" id="10_computer_locked"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/女主电脑特写3.png" id="11_computer_unlocked"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/第二阶段人格培养界面.png" id="12_ai"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/客厅2.png" id="13_livingroom_act3"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/厨房2.png" id="14_kitchen_act3"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/阳台2.png" id="15_balcony_act3"]
+[ext_resource type="Texture2D" path="res://artassests/场景特写/女主的房间2.png" id="16_wife_room_act3"]
+[ext_resource type="Texture2D" path="res://artassests/第三阶段CG/电脑黑屏.png" id="17_computer_black"]
+[ext_resource type="Texture2D" path="res://artassests/第三阶段CG/手机聊天界面.png" id="18_phone"]
 
-[node name="Phase3Kitchen" type="Control" unique_id=2102091568]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3csx"]
+bg_color = Color(0.105882354, 0.43137255, 0.96862745, 0.5)
+
+[node name="Phase3Kitchen" type="Control" unique_id=942535491]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_kitchen")
-ai_phase2 = ExtResource("2_simfq")
-phone_year4 = ExtResource("3_rwav5")
-phone_march = ExtResource("3_rwav5")
+house_overview = ExtResource("2_map")
+livingroom = ExtResource("4_livingroom")
+kitchen = ExtResource("5_kitchen")
+balcony = ExtResource("6_balcony")
+master_bedroom = ExtResource("7_bedroom")
+wife_room = ExtResource("8_wife_room")
+computer_desk = ExtResource("9_computer")
+computer_locked = ExtResource("10_computer_locked")
+computer_unlocked = ExtResource("11_computer_unlocked")
+ai_phase2 = ExtResource("12_ai")
+phase3_livingroom = ExtResource("13_livingroom_act3")
+phase3_kitchen = ExtResource("14_kitchen_act3")
+phase3_balcony = ExtResource("15_balcony_act3")
+phase3_master_bedroom = ExtResource("7_bedroom")
+phase3_wife_room = ExtResource("16_wife_room_act3")
+phase3_computer_black = ExtResource("17_computer_black")
+phone_year4 = ExtResource("18_phone")
+phone_march = ExtResource("18_phone")
 
-[node name="EditorGameAreaGuide" type="ColorRect" parent="." unique_id=781967429]
+[node name="EditorGameAreaGuide" type="ColorRect" parent="." unique_id=1093591257]
 z_index = -100
 layout_mode = 0
 offset_left = 480.0
 offset_top = 60.0
 offset_right = 1440.0
 offset_bottom = 1020.0
-mouse_filter = 2
-script = ExtResource("editor_guide_script")
+script = ExtResource("1_i40h2")
 
-[node name="Background" type="ColorRect" parent="." unique_id=939906993]
-layout_mode = 1
-anchors_preset = 15
+[node name="Background" type="ColorRect" parent="." unique_id=706116584]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="GameArea" type="TextureRect" parent="." unique_id=1038640966]
+[node name="GameArea" type="TextureRect" parent="." unique_id=320680184]
 layout_mode = 0
 offset_left = 480.0
 offset_top = 60.0
 offset_right = 1440.0
 offset_bottom = 1020.0
+texture = ExtResource("5_kitchen")
+expand_mode = 1
 mouse_filter = 2
-texture = ExtResource("4_kitchen_art")
 
-[node name="SaveButton" type="Button" parent="GameArea" unique_id=505285525]
+[node name="SaveButton" type="Button" parent="GameArea" unique_id=1303905140]
 modulate = Color(0.45, 0.7, 1, 1)
 layout_mode = 0
 offset_left = 240.0
@@ -56,7 +82,7 @@ offset_top = 865.0
 offset_right = 300.0
 offset_bottom = 915.0
 
-[node name="Label" type="Label" parent="GameArea/SaveButton" unique_id=146783724]
+[node name="Label" type="Label" parent="GameArea/SaveButton" unique_id=523192944]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -64,4 +90,18 @@ text = "存档"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StoryUI" parent="." unique_id=1842009828 instance=ExtResource("2_story_ui")]
+[node name="HeroineInteraction" type="Button" parent="GameArea" unique_id=590473542]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 525.0
+offset_right = 505.0
+offset_bottom = 575.0
+tooltip_text = "女主"
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3csx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s3csx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s3csx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_s3csx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s3csx")
+metadata/preserve_button_background = true
+
+[node name="StoryUI" type="CanvasLayer" parent="." unique_id=729731323 instance=ExtResource("3_simfq")]

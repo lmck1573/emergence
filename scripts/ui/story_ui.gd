@@ -34,6 +34,8 @@ var _toast_queue: Array[String] = []
 var _ending: bool = false
 var _inspection_dialogue: String = ""
 var _muted: bool = false
+var _global_save: Button
+var _global_save_default_position: Vector2
 ## Canonical dialogue ranges exclude script directions and split investigation steps.
 const INVESTIGATION_DIALOGUES: Dictionary = {
 	"ft_livingroom_tv": ["dlg_tv", 0, 3],
@@ -63,6 +65,8 @@ func _ready() -> void:
 	_toast.add_theme_color_override("font_color", Color.BLACK)
 	var global_save: Button = preload("res://scripts/ui/global_save_button.gd").new()
 	$Overlay.add_child(global_save)
+	_global_save = global_save
+	_global_save_default_position = global_save.position
 	var developer_mode: Node = preload("res://scripts/ui/developer_test_mode.gd").new()
 	add_child(developer_mode)
 	EventBus.fulltext_requested.connect(_open_text)
@@ -278,11 +282,14 @@ func _close_puzzle() -> void:
 func _show_choice(event_id: String, choice: Dictionary) -> void:
 	_event_id = event_id
 	_prompt.text = str(choice.get("prompt", ""))
+	if event_id in ["event_usb_truth", "event_webnovel_truth"]:
+		_global_save.position = _choice.position + Vector2(_choice.size.x - _global_save.size.x - 30.0, 30.0)
 	_choice.show()
 	EventBus.modal_changed.emit(true)
 
 func _choose(option: String) -> void:
 	_choice.hide()
+	_global_save.position = _global_save_default_position
 	EventBus.choice_made.emit(_event_id, option)
 
 func _show_toast(message: String) -> void:

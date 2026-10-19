@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpsq4"]
+bg_color = Color(0.105882354, 0.43137255, 0.96862745, 0.5)
+
+[node name="Phase3BalconyCloseup" type="Control" unique_id=134623885]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Background" type="ColorRect" parent="." unique_id=734574774]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameArea" type="TextureRect" parent="." unique_id=1084452761]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="HeroineInteraction" type="Button" parent="GameArea" unique_id=90047313]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 525.0
+offset_right = 505.0
+offset_bottom = 575.0
+tooltip_text = "女主"
+theme_override_styles/normal = SubResource("StyleBoxFlat_dpsq4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dpsq4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpsq4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dpsq4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dpsq4")
+metadata/preserve_button_background = true

@@ -1,0 +1,44 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/explore/phase3_true_ending_computer.gd" id="1_k3oc7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwini"]
+bg_color = Color(0.105882354, 0.43137255, 0.96862745, 0.5)
+
+[node name="Phase3TrueEndingComputer" type="Control" unique_id=964165664]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_k3oc7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2083953457]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameArea" type="TextureRect" parent="." unique_id=761215288]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 60.0
+offset_right = 1440.0
+offset_bottom = 1020.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="DrawerInteraction" type="Button" parent="GameArea" unique_id=1628792759]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 343.0
+offset_right = 872.0
+offset_bottom = 393.0
+tooltip_text = "抽屉"
+theme_override_styles/normal = SubResource("StyleBoxFlat_mwini")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mwini")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mwini")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mwini")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mwini")
+metadata/preserve_button_background = true
+

@@ -1,11 +1,10 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dj2r6sue8j8mb"]
 
-[ext_resource type="Script" path="res://scripts/explore/room_controller.gd" id="1_26udh"]
-[ext_resource type="Script" path="res://scripts/ui/editor_game_area_guide.gd" id="2_b83yd"]
-[ext_resource type="Texture2D" path="res://artassests/女主电脑特写草稿.png" id="3_6qjxh"]
-[ext_resource type="PackedScene" path="res://scenes/ui/story_ui.tscn" id="4_knssn"]
-[ext_resource type="Script" path="res://scripts/ui/story_ui.gd" id="5_ad4kf"]
-[ext_resource type="Script" path="res://scripts/explore/interactive_object.gd" id="6_4nfkl"]
+[ext_resource type="Script" uid="uid://c5qtmxuhu3ryf" path="res://scripts/explore/room_controller.gd" id="1_26udh"]
+[ext_resource type="Script" uid="uid://sr5ifyckwx2r" path="res://scripts/ui/editor_game_area_guide.gd" id="2_b83yd"]
+[ext_resource type="Texture2D" uid="uid://drxp6nn4y2o82" path="res://artassests/女主电脑特写草稿.png" id="3_6qjxh"]
+[ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="4_knssn"]
+[ext_resource type="Script" uid="uid://bwbdbk7pppgrl" path="res://scripts/explore/interactive_object.gd" id="6_4nfkl"]
 
 [sub_resource type="RectangleShape2D" id="LockedDrawerShape"]
 size = Vector2(50, 50)
@@ -80,11 +79,10 @@ vertical_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1788342524]
 position = Vector2(480, 480)
 
-[node name="StoryUI" type="CanvasLayer" parent="." unique_id=729731323 instance=ExtResource("4_knssn")]
-script = ExtResource("5_ad4kf")
+[node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("4_knssn")]
 
 [node name="LockedDrawer" type="Area2D" parent="." unique_id=379998041]
-position = Vector2(700, 760)
+position = Vector2(868, 439)
 script = ExtResource("6_4nfkl")
 object_id = "computer_locked_drawer"
 
@@ -100,7 +98,7 @@ color = Color(0, 0, 1, 0.2)
 shape = SubResource("LockedDrawerShape")
 
 [node name="Notebooks" type="Area2D" parent="." unique_id=2134867525]
-position = Vector2(250, 760)
+position = Vector2(314, 643)
 script = ExtResource("6_4nfkl")
 object_id = "computer_notebooks"
 
@@ -116,7 +114,7 @@ color = Color(0, 0, 1, 0.2)
 shape = SubResource("NotebooksShape")
 
 [node name="LockedEntry" type="Area2D" parent="." unique_id=1881102663]
-position = Vector2(480, 400)
+position = Vector2(338, 292)
 script = ExtResource("6_4nfkl")
 object_id = "computer_locked_entry"
 

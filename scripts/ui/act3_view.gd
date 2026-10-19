@@ -34,7 +34,7 @@ func _ready() -> void:
 	target.position = Vector2(455, 525)
 	target.size = Vector2(50, 50)
 	_target_style = StyleBoxFlat.new()
-	_target_style.bg_color = Color(27.0 / 255.0, 110.0 / 255.0, 247.0 / 255.0, 0.2)
+	_target_style.bg_color = Color(27.0 / 255.0, 110.0 / 255.0, 247.0 / 255.0, 0.5)
 	for state: String in ["normal", "hover", "pressed", "disabled", "focus"]:
 		target.add_theme_stylebox_override(state, _target_style)
 	target.set_meta("preserve_button_background", true)
@@ -96,9 +96,9 @@ func black() -> void:
 	_cover.show()
 	clear_controls()
 
-func show_target(label: String) -> void:
+func show_target(label: String, at: Vector2 = Vector2(455, 525)) -> void:
 	target.tooltip_text = label
-	target.position = Vector2(455, 525)
+	target.position = at
 	target.size = Vector2(50, 50)
 	for state: String in ["normal", "hover", "pressed", "disabled", "focus"]:
 		target.add_theme_stylebox_override(state, _target_style)

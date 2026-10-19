@@ -65,6 +65,7 @@ text = "女主的电脑"
 horizontal_alignment = 1
 
 [node name="MonitorFrame" type="ColorRect" parent="GameArea" unique_id=1253776407]
+visible = false
 layout_mode = 0
 offset_left = 100.0
 offset_top = 110.0
@@ -74,6 +75,7 @@ mouse_filter = 2
 color = Color(0.1254902, 0.15294118, 0.16470589, 1)
 
 [node name="MonitorScreen" type="ColorRect" parent="GameArea" unique_id=1796981108]
+visible = false
 layout_mode = 0
 offset_left = 120.0
 offset_top = 130.0
@@ -130,7 +132,7 @@ position = Vector2(480, 480)
 [node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("2_smo2r")]
 
 [node name="PowerButton" type="Area2D" parent="." unique_id=1243738212]
-position = Vector2(820, 620)
+position = Vector2(861, 65)
 script = ExtResource("3_ddhou")
 object_id = "computer_power_button"
 
@@ -146,7 +148,7 @@ color = Color(0, 0, 1, 0.2)
 shape = SubResource("PowerButtonShape")
 
 [node name="LockedDrawer" type="Area2D" parent="." unique_id=379998041]
-position = Vector2(700, 760)
+position = Vector2(852, 466)
 script = ExtResource("3_ddhou")
 object_id = "computer_locked_drawer"
 
@@ -162,7 +164,7 @@ color = Color(0, 0, 1, 0.2)
 shape = SubResource("LockedDrawerShape")
 
 [node name="Notebooks" type="Area2D" parent="." unique_id=2134867525]
-position = Vector2(250, 760)
+position = Vector2(312, 670)
 script = ExtResource("3_ddhou")
 object_id = "computer_notebooks"
 
