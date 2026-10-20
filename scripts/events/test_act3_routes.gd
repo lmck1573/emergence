@@ -48,8 +48,16 @@ func _run() -> void:
 				if view.target.visible and not view.target.disabled: view.target.emit_signal("pressed")
 				elif view.leave.visible and not view.leave.disabled: view.leave.emit_signal("pressed")
 				elif view.no.visible: view.decision.emit("yes" if _allow and view.yes.visible else "no")
+			var dialogue_button: BaseButton = current_scene.find_child("TopicButton", true, false) as BaseButton
+			if dialogue_button != null and dialogue_button.visible and not dialogue_button.disabled:
+				var dialogue_system: Control = current_scene.find_child("DialogueSystem", true, false) as Control
+				if dialogue_system != null and not bool(dialogue_system.get("_is_playing")) and (view == null or (not view.target.visible and not view.leave.visible and not view.yes.visible)):
+					dialogue_button.emit_signal("pressed")
 			var ui: Node = current_scene.find_child("StoryUI", true, false)
 			if ui != null:
+				var leave_button: TextureButton = ui.get_node("Overlay/LeaveButton") as TextureButton
+				if leave_button.visible and not leave_button.disabled:
+					leave_button.emit_signal("pressed")
 				var dialogue: Control = ui.get_node("Overlay/DialogueSystem") as Control
 				if bool(dialogue.get("_is_playing")): dialogue.call("_advance")
 				var puzzle: String = str(ui.get("_puzzle_id"))

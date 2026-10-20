@@ -21,15 +21,8 @@ func _ready() -> void:
 	if data.is_empty():
 		data = SaveManager.default_state()
 
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_APPLICATION_PAUSED or what == NOTIFICATION_WM_GO_BACK_REQUEST or what == NOTIFICATION_WM_CLOSE_REQUEST:
-		if not data.is_empty() and is_inside_tree() and not get_tree().has_meta("act3_test"):
-			save()
-
 func commit() -> void:
 	EventBus.state_changed.emit()
-	if not data.is_empty() and is_inside_tree() and not get_tree().has_meta("act3_test"):
-		save()
 
 func save() -> bool:
 	return SaveManager.save(data)

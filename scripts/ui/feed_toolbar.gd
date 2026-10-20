@@ -1,8 +1,8 @@
 extends Control
 class_name FeedToolbar
 ## Fixed scene-authored entries, populated only by setting visibility and text.
-@onready var _feed_button: Button = $Layout/Toolbar/Buttons/FeedButton
-@onready var _topic_button: Button = $Layout/Toolbar/Buttons/TopicButton
+@onready var _feed_button: BaseButton = $Layout/Toolbar/Buttons/FeedButton
+@onready var _topic_button: BaseButton = $Layout/Toolbar/Buttons/TopicButton
 @onready var _feed_panel: PanelContainer = $Layout/FeedPanel
 @onready var _topic_panel: PanelContainer = $Layout/TopicPanel
 @onready var _feed_items: VBoxContainer = $Layout/FeedPanel/PanelContent/ScrollContainer/Items
@@ -22,7 +22,7 @@ func _ready() -> void:
 	_topic_panel.hide()
 	_blocker.hide()
 	_feed_button.pressed.connect(_open.bind(true))
-	_topic_button.pressed.connect(_open.bind(false))
+	_topic_button.pressed.connect(_on_topic_button_pressed)
 	_feed_close.pressed.connect(_close)
 	_feed_all_button.pressed.connect(_feed_all)
 	_topic_close.pressed.connect(_close)
@@ -42,11 +42,19 @@ func _refresh_scene_context() -> void:
 		_ai_scene = false
 	else:
 		var scene_path: String = get_tree().current_scene.scene_file_path
-		_phase3_scene = scene_path == "res://scenes/explore/phase3_livingroom.tscn"
+		_phase3_scene = scene_path in ["res://scenes/explore/phase3_livingroom.tscn", "res://scenes/explore/phase3_kitchen.tscn"]
 		_ai_scene = scene_path in ["res://scenes/ui/ai_interface.tscn", "res://scenes/ui/ai_interface_phase2.tscn"] or _phase3_scene
 	_feed_button.visible = _ai_scene and not _phase3_scene
 	_topic_button.visible = _ai_scene
 	_refresh()
+
+func _on_topic_button_pressed() -> void:
+	if not _ai_scene or _locked:
+		return
+	if _phase3_scene and get_tree().current_scene.scene_file_path.ends_with("phase3_kitchen.tscn"):
+		EventBus.act3_dialogue_requested.emit()
+		return
+	_open(false)
 
 func set_interaction_locked(locked: bool) -> void:
 	_locked = locked

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bwbdbk7pppgrl" path="res://scripts/explore/interactive_object.gd" id="2_kpaca"]
 [ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="3_eou28"]
 [ext_resource type="Texture2D" uid="uid://lwibaik73rpo" path="res://artassests/客厅草稿.png" id="4_room_art"]
+[ext_resource type="Texture2D" uid="uid://38502va5j23c" path="res://artassests/UI/5fab6f49bc4f18364bd90c01f3cfa7ec.png" id="5_oyixw"]
 [ext_resource type="Script" uid="uid://sr5ifyckwx2r" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
 
 [sub_resource type="RectangleShape2D" id="TVShape"]
@@ -104,21 +105,24 @@ grow_vertical = 2
 vertical_alignment = 1
 
 [node name="电视" type="Area2D" parent="." unique_id=878156614]
-position = Vector2(-383, -64)
+position = Vector2(-333, -278)
 script = ExtResource("2_kpaca")
 object_id = "livingroom_tv"
 dialogue_id = "dlg_tv"
 
-[node name="Marker" type="ColorRect" parent="电视" unique_id=1082395133]
+[node name="Marker" type="TextureRect" parent="电视" unique_id=1837497713]
 offset_left = -25.0
 offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-color = Color(0, 0, 1, 0.2)
+texture = ExtResource("5_oyixw")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="电视" unique_id=941077679]
 shape = SubResource("TVShape")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
 
 [node name="空花盆" type="Area2D" parent="." unique_id=968610841]
 position = Vector2(-168, -18)
@@ -126,50 +130,62 @@ script = ExtResource("2_kpaca")
 object_id = "livingroom_empty_pot"
 dialogue_id = "dlg_flowerpot"
 
-[node name="Marker" type="ColorRect" parent="空花盆" unique_id=396366871]
-offset_left = -25.0
-offset_top = -25.0
-offset_right = 25.0
-offset_bottom = 25.0
+[node name="Marker" type="TextureRect" parent="空花盆" unique_id=339158173]
+self_modulate = Color(0.36367702, 0.36367702, 0.36367702, 1)
+offset_left = -96.0
+offset_top = -215.0
+offset_right = -46.0
+offset_bottom = -165.0
 mouse_filter = 2
-color = Color(0, 0, 1, 0.2)
+texture = ExtResource("5_oyixw")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="空花盆" unique_id=716548956]
+position = Vector2(-71, -190)
 shape = SubResource("PotShape")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
 
 [node name="茶几上的文件" type="Area2D" parent="." unique_id=616641140]
-position = Vector2(57, 237)
+position = Vector2(16, 182)
 script = ExtResource("2_kpaca")
 object_id = "livingroom_document"
 dialogue_id = "dlg_death_cert"
 
-[node name="Marker" type="ColorRect" parent="茶几上的文件" unique_id=771306399]
+[node name="Marker" type="TextureRect" parent="茶几上的文件" unique_id=703683541]
 offset_left = -25.0
 offset_top = -25.0
 offset_right = 25.0
 offset_bottom = 25.0
 mouse_filter = 2
-color = Color(0, 0, 1, 0.2)
+texture = ExtResource("5_oyixw")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="茶几上的文件" unique_id=2112442104]
 shape = SubResource("DocumentShape")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
 
 [node name="茶叶蛋" type="Area2D" parent="." unique_id=444401237]
-position = Vector2(-161, 224)
+position = Vector2(-225, 250)
 script = ExtResource("2_kpaca")
 object_id = "livingroom_tea_egg"
 dialogue_id = "dlg_tea_egg"
 
-[node name="Marker" type="ColorRect" parent="茶叶蛋" unique_id=1252766463]
+[node name="Marker" type="TextureRect" parent="茶叶蛋" unique_id=1253684206]
 offset_left = -25.0
-offset_top = -25.0
+offset_top = -55.0
 offset_right = 25.0
-offset_bottom = 25.0
+offset_bottom = -5.0
 mouse_filter = 2
-color = Color(0, 0, 1, 0.2)
+texture = ExtResource("5_oyixw")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="茶叶蛋" unique_id=1473414858]
+position = Vector2(0, -31)
 shape = SubResource("EggShape")
+debug_color = Color(0, 0.60038817, 0.70000815, 0)
 
 [node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("3_eou28")]
 

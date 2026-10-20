@@ -61,7 +61,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventScreenTouch:
 		var touch_event: InputEventScreenTouch = event as InputEventScreenTouch
 		pressed = touch_event.pressed
-		local_position = get_global_transform_with_canvas().affine_inverse() * touch_event.position
+		local_position = to_local(get_global_mouse_position()) if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) else get_global_transform_with_canvas().affine_inverse() * touch_event.position
 	if not pressed or local_position.length() > radius:
 		return
 	get_viewport().set_input_as_handled()

@@ -28,8 +28,7 @@ var _eye_textures: Array[Texture2D] = []
 
 func _ready() -> void:
 	_eye_textures = preload("res://scripts/ui/game_picture_catalog.gd").frames("ai_eye_animation", EYE_TEXTURES)
-	_return_button.text = "◀"
-	_return_button.alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_return_button.hide()
 	set_process(scene_file_path == "res://scenes/ui/ai_interface.tscn")
 	if is_processing():
 		_game_area.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -40,6 +39,7 @@ func _ready() -> void:
 	GameState.completeness_changed.connect(_refresh_completeness)
 	EventBus.state_changed.connect(_refresh)
 	EventBus.modal_changed.connect(_lock)
+	EventBus.leave_pressed.connect(_return)
 	_save_button.pressed.connect(_save)
 	_return_button.pressed.connect(_return)
 	_agreement.pressed.connect(func() -> void: EventBus.opening_requested.emit("agreement", "ft_opening_agreement"))
@@ -75,8 +75,7 @@ func _refresh() -> void:
 	var can_return_to_map: bool = GameState.is_region_unlocked("house_overview")
 	if GameState.get_current_phase() == 2:
 		can_return_to_map = can_return_to_map and GameState.is_event_completed("event_unlock_wife_room")
-	_return_button.visible = not _blocked and can_return_to_map
-	_return_button.disabled = _blocked or not _return_button.visible
+	EventBus.leave_visibility_requested.emit(can_return_to_map)
 
 func _refresh_completeness(value: float) -> void:
 	_completeness_label.text = "人格完整度：%.1f%%" % value
@@ -98,6 +97,8 @@ func _save() -> void:
 	EventBus.toast_requested.emit("已保存" if GameState.save() else "保存失败")
 
 func _return() -> void:
+	if _blocked:
+		return
 	GameState.data["current_scene"] = "house_overview"
 	GameState.commit()
 	get_tree().change_scene_to_file("res://scenes/explore/house_overview.tscn")

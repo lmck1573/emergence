@@ -16,8 +16,9 @@ var _active_dialogue_id: String = ""
 
 
 func _ready() -> void:
-	_return_button.text = "◀"
-	_return_button.alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_return_button.hide()
+	EventBus.leave_pressed.connect(_on_return_button_pressed)
+	EventBus.leave_visibility_requested.emit(true)
 	_dialogue.dialogue_started.connect(_on_dialogue_started)
 	_dialogue.dialogue_finished.connect(_on_dialogue_finished)
 	for node: Node in get_tree().get_nodes_in_group("interactive_object"):
@@ -30,6 +31,8 @@ func _ready() -> void:
 
 
 func _on_return_button_pressed() -> void:
+	if _dialogue_playing:
+		return
 	get_tree().change_scene_to_file("res://scenes/explore/house_overview.tscn")
 
 

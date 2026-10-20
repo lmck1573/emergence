@@ -70,10 +70,30 @@ func _on_input_event(_viewport: Viewport, event: InputEvent, _shape_index: int) 
 		var mouse_event: InputEventMouseButton = event as InputEventMouseButton
 		pressed = mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed
 	elif event is InputEventScreenTouch:
-		pressed = (event as InputEventScreenTouch).pressed
+		var touch_event: InputEventScreenTouch = event as InputEventScreenTouch
+		pressed = touch_event.pressed and _contains_screen_position(touch_event.position)
 	if not pressed:
 		return
 	get_viewport().set_input_as_handled()
 	var feedback: String = str(ContentDB.get_object(object_id).get("click_feedback", "sfx_click"))
 	EventBus.audio_cue_requested.emit("sfx_click" if feedback == "sfx_none" else feedback)
 	clicked.emit(object_id, dialogue_id)
+
+
+func contains_screen_position(screen_position: Vector2) -> bool:
+	var local_position: Vector2 = get_global_transform_with_canvas().affine_inverse() * screen_position
+	var shape_node: CollisionShape2D = get_node_or_null("CollisionShape2D") as CollisionShape2D
+	if shape_node == null or shape_node.disabled or shape_node.shape == null:
+		return false
+	var shape_position: Vector2 = shape_node.transform.affine_inverse() * local_position
+	if shape_node.shape is RectangleShape2D:
+		var rectangle: RectangleShape2D = shape_node.shape as RectangleShape2D
+		return Rect2(-rectangle.size * 0.5, rectangle.size).has_point(shape_position)
+	if shape_node.shape is CircleShape2D:
+		var circle: CircleShape2D = shape_node.shape as CircleShape2D
+		return shape_position.length() <= circle.radius
+	return false
+
+
+func _contains_screen_position(screen_position: Vector2) -> bool:
+	return contains_screen_position(screen_position)

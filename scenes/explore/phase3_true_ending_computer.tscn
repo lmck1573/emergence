@@ -1,6 +1,7 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bkd1c120kfps8"]
 
-[ext_resource type="Script" path="res://scripts/explore/phase3_true_ending_computer.gd" id="1_k3oc7"]
+[ext_resource type="Script" uid="uid://syi2ewy66gid" path="res://scripts/explore/phase3_true_ending_computer.gd" id="1_k3oc7"]
+[ext_resource type="Texture2D" uid="uid://cakd0ovi2j2n4" path="res://artassests/场景特写/女主电脑特写3.png" id="2_k7l6c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwini"]
 bg_color = Color(0.105882354, 0.43137255, 0.96862745, 0.5)
@@ -26,6 +27,7 @@ offset_top = 60.0
 offset_right = 1440.0
 offset_bottom = 1020.0
 mouse_filter = 2
+texture = ExtResource("2_k7l6c")
 expand_mode = 1
 
 [node name="DrawerInteraction" type="Button" parent="GameArea" unique_id=1628792759]
@@ -41,4 +43,3 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_mwini")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_mwini")
 theme_override_styles/focus = SubResource("StyleBoxFlat_mwini")
 metadata/preserve_button_background = true
-

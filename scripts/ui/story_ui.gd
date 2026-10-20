@@ -13,8 +13,9 @@ extends CanvasLayer
 @onready var _toast: Label = $Overlay/Toast
 @onready var _timer: Timer = $ToastTimer
 @onready var _fade: ColorRect = $Overlay/Fade
-@onready var _sound_button: Button = $Overlay/SoundButton
-@onready var _sound_label: Label = $Overlay/SoundButton/SoundLabel
+@onready var _sound_button: BaseButton = $Overlay/SoundButton
+@onready var _global_save: TextureButton = $Overlay/SaveButton
+@onready var _leave_button: TextureButton = $Overlay/LeaveButton
 @onready var _dialogue: DialogueSystem = $Overlay/DialogueSystem
 @onready var _puzzle_panel: ColorRect = $Overlay/PuzzlePanel
 @onready var _diary_panel: ColorRect = $Overlay/DiaryPanel
@@ -34,8 +35,11 @@ var _toast_queue: Array[String] = []
 var _ending: bool = false
 var _inspection_dialogue: String = ""
 var _muted: bool = false
-var _global_save: Button
 var _global_save_default_position: Vector2
+var _save_choice_active: bool = false
+var _save_scene_available: bool = true
+var _modal_blocked: bool = false
+var _leave_available: bool = false
 ## Canonical dialogue ranges exclude script directions and split investigation steps.
 const INVESTIGATION_DIALOGUES: Dictionary = {
 	"ft_livingroom_tv": ["dlg_tv", 0, 3],
@@ -60,17 +64,16 @@ func _ready() -> void:
 		_fade.show()
 		_reveal_phase2.call_deferred()
 	_sound_button.add_to_group("act3_ending_ui")
-	_sound_button.size = Vector2(100.0, 50.0)
-	_sound_button.custom_minimum_size = _sound_button.size
+	_global_save.add_to_group("act3_ending_ui")
 	_toast.add_theme_color_override("font_color", Color.BLACK)
-	var global_save: Button = preload("res://scripts/ui/global_save_button.gd").new()
-	$Overlay.add_child(global_save)
-	_global_save = global_save
-	_global_save_default_position = global_save.position
+	_global_save_default_position = _global_save.position
+	_leave_button.pressed.connect(_on_leave_pressed)
 	var developer_mode: Node = preload("res://scripts/ui/developer_test_mode.gd").new()
 	add_child(developer_mode)
 	EventBus.fulltext_requested.connect(_open_text)
 	EventBus.choice_requested.connect(_show_choice)
+	EventBus.save_visibility_requested.connect(_set_save_scene_available)
+	EventBus.leave_visibility_requested.connect(_set_leave_available)
 	EventBus.toast_requested.connect(_show_toast)
 	EventBus.ending_requested.connect(_end)
 	EventBus.command_requested.connect(_command)
@@ -282,13 +285,15 @@ func _close_puzzle() -> void:
 func _show_choice(event_id: String, choice: Dictionary) -> void:
 	_event_id = event_id
 	_prompt.text = str(choice.get("prompt", ""))
-	if event_id in ["event_usb_truth", "event_webnovel_truth"]:
+	_save_choice_active = event_id in ["event_usb_truth", "event_webnovel_truth"]
+	if _save_choice_active:
 		_global_save.position = _choice.position + Vector2(_choice.size.x - _global_save.size.x - 30.0, 30.0)
 	_choice.show()
 	EventBus.modal_changed.emit(true)
 
 func _choose(option: String) -> void:
 	_choice.hide()
+	_save_choice_active = false
 	_global_save.position = _global_save_default_position
 	EventBus.choice_made.emit(_event_id, option)
 
@@ -298,7 +303,23 @@ func _show_toast(message: String) -> void:
 		_pop_toast()
 
 func _on_modal_changed(blocked: bool) -> void:
+	_modal_blocked = blocked
 	_sound_button.visible = not blocked
+	_global_save.visible = _save_scene_available and (not blocked or _save_choice_active)
+	_leave_button.visible = _leave_available and not blocked
+
+func _set_save_scene_available(available: bool) -> void:
+	_save_scene_available = available
+	_global_save.visible = available and (not _modal_blocked or _save_choice_active)
+
+func _set_leave_available(available: bool) -> void:
+	_leave_available = available
+	_leave_button.visible = available and not _modal_blocked
+
+func _on_leave_pressed() -> void:
+	if _modal_blocked or not _leave_available:
+		return
+	EventBus.leave_pressed.emit()
 
 func _toggle_sound() -> void:
 	EventBus.audio_mute_requested.emit(not _muted)
@@ -308,7 +329,13 @@ func _on_audio_mute_changed(muted: bool) -> void:
 	_sync_sound_button()
 
 func _sync_sound_button() -> void:
-	_sound_label.text = "音效：关" if _muted else "音效：开"
+	_sound_button.tooltip_text = "音效：关" if _muted else "音效：开"
+	if _sound_button is TextureButton:
+		var texture_button: TextureButton = _sound_button as TextureButton
+		var sound_texture: Texture2D = load("res://artassests/UI/音效：关.png" if _muted else "res://artassests/UI/音效：开.png") as Texture2D
+		texture_button.texture_normal = sound_texture
+		texture_button.texture_hover = sound_texture
+		texture_button.texture_pressed = sound_texture
 
 func _pop_toast() -> void:
 	if _toast_queue.is_empty():

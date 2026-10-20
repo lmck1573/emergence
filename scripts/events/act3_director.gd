@@ -10,6 +10,7 @@ var _dialogue_done: String = ""
 var _command_done: String = ""
 var _puzzle_done: String = ""
 var _current_room_id: String = ""
+var _act3_dialogue_requested: bool = false
 
 func _ready() -> void:
 	_data = JSON.parse_string(FileAccess.get_file_as_string("res://data/act3_flow.json")) as Dictionary
@@ -18,6 +19,7 @@ func _ready() -> void:
 	EventBus.dialogue_finished.connect(func(id: String) -> void: _dialogue_done = id)
 	EventBus.command_finished.connect(func(id: String) -> void: _command_done = id)
 	EventBus.puzzle_submitted.connect(_puzzle_submitted)
+	EventBus.act3_dialogue_requested.connect(_on_act3_dialogue_requested)
 	_route = str(GameState.data["flags"].get("act3_route", "zero" if GameState.get_truth() == 0 else "positive"))
 	_cursor = int(GameState.data["flags"].get("act3_cursor", 0))
 	_restore_image()
@@ -76,24 +78,34 @@ func _run() -> void:
 					EventBus.audio_cue_requested.emit("sfx_phone_ring")
 					get_tree().create_timer(3.0).timeout.connect(_stop_phone_cue.bind("sfx_phone_ring"))
 				if action == "cg" and str(step.get("id", "")) != "divorce_drawer":
+					EventBus.save_visibility_requested.emit(false)
 					_view.show_continue_area()
 					await _view.activated
 					_view.target.hide()
+					EventBus.save_visibility_requested.emit(true)
+				elif action == "cg":
+					EventBus.save_visibility_requested.emit(false)
 			"dialogue":
 				_dialogue_done = ""
 				var id: String = str(step["id"])
 				EventBus.dialogue_requested.emit(id)
 				while _dialogue_done != id: await get_tree().process_frame
 			"click":
-				_view.show_target(str(step["label"]))
-				var interaction_rect: Rect2 = _get_room_interaction_rect(_current_room_id, str(step["label"]))
-				if interaction_rect.size != Vector2.ZERO:
-					_view.target.position = interaction_rect.position
-					_view.target.size = interaction_rect.size
-				await _view.activated
+				if str(step["label"]) == "女主":
+					_act3_dialogue_requested = false
+					while not _act3_dialogue_requested:
+						await get_tree().process_frame
+				else:
+					_view.show_target(str(step["label"]))
+					var interaction_rect: Rect2 = _get_room_interaction_rect(_current_room_id, str(step["label"]))
+					if interaction_rect.size != Vector2.ZERO:
+						_view.target.position = interaction_rect.position
+						_view.target.size = interaction_rect.size
+					await _view.activated
 			"leave":
-				_view.leave.show()
-				await _view.activated
+				EventBus.leave_visibility_requested.emit(true)
+				await EventBus.leave_pressed
+				EventBus.leave_visibility_requested.emit(false)
 			"choice":
 				_view.caption.text = str(step["prompt"])
 				_view._choice_backdrop.show()
@@ -151,6 +163,9 @@ func _run() -> void:
 
 func _stop_phone_cue(id: String) -> void:
 	EventBus.audio_cue_stop_requested.emit(id)
+
+func _on_act3_dialogue_requested() -> void:
+	_act3_dialogue_requested = true
 
 func _reopen_drawer() -> void:
 	EventBus.puzzle_requested.emit("puzzle_act3_drawer_password")

@@ -1,5 +1,6 @@
 extends Control
 ## Third-phase kitchen landing scene.
+const PHASE3_PLACEHOLDER_CG: Texture2D = preload("res://artassests/女主眨眼动画/眨眼1.jpg")
 
 @export_group("统一画面：封面与动画")
 @export var title_image: Texture2D
@@ -25,32 +26,32 @@ extends Control
 @export var phase3_balcony: Texture2D
 @export var phase3_master_bedroom: Texture2D
 @export var phase3_wife_room: Texture2D
-@export var phase3_computer_desk: Texture2D
-@export var phase3_computer_black: Texture2D
-@export var phase3_cultivation: Texture2D
-@export var reunion: Texture2D
+@export var phase3_computer_desk: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var phase3_computer_black: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var phase3_cultivation: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var reunion: Texture2D = PHASE3_PLACEHOLDER_CG
 
 @export_group("结局CG：堪称执念的爱")
-@export var burning_room: Texture2D
+@export var burning_room: Texture2D = PHASE3_PLACEHOLDER_CG
 @export_group("结局CG：新的生命")
-@export var break_journal_lock: Texture2D
-@export var break_drawer_lock: Texture2D
-@export var opened_journal: Texture2D
+@export var break_journal_lock: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var break_drawer_lock: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var opened_journal: Texture2D = PHASE3_PLACEHOLDER_CG
 @export_group("真结局CG：手机回忆")
-@export var phone_year4: Texture2D
-@export var phone_march: Texture2D
+@export var phone_year4: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var phone_march: Texture2D = PHASE3_PLACEHOLDER_CG
 @export_group("真结局CG：公园")
-@export var park_lake: Texture2D
-@export var park_turn: Texture2D
-@export var park_birds: Texture2D
-@export var park_face: Texture2D
+@export var park_lake: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var park_turn: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var park_birds: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var park_face: Texture2D = PHASE3_PLACEHOLDER_CG
 @export_group("真结局CG：餐厅与酒店")
-@export var restaurant: Texture2D
-@export var hotel_night: Texture2D
-@export var hotel_day: Texture2D
-@export var restaurant_usb: Texture2D
+@export var restaurant: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var hotel_night: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var hotel_day: Texture2D = PHASE3_PLACEHOLDER_CG
+@export var restaurant_usb: Texture2D = PHASE3_PLACEHOLDER_CG
 @export_group("真结局CG：抽屉")
-@export var divorce_drawer: Texture2D
+@export var divorce_drawer: Texture2D = PHASE3_PLACEHOLDER_CG
 
 @onready var _save_button: Button = $GameArea/SaveButton
 var _blocked: bool = false

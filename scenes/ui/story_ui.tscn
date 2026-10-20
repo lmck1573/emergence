@@ -4,7 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://b8qu3vf4io3ay" path="res://scenes/ui/dialogue_system.tscn" id="2_usul1"]
 [ext_resource type="PackedScene" uid="uid://yg3hd2nusa6g" path="res://scenes/ui/feed_toolbar.tscn" id="3_0egci"]
 [ext_resource type="Script" uid="uid://ctfucqdo0krrs" path="res://scripts/content/content_flow.gd" id="4_o6t5g"]
+[ext_resource type="Texture2D" uid="uid://dyv2mdc6fqlya" path="res://artassests/UI/音效：开.png" id="5_0egci"]
 [ext_resource type="Script" uid="uid://cdowdcrkqx3d" path="res://scripts/events/event_controller.gd" id="5_jfhmg"]
+[ext_resource type="Texture2D" uid="uid://bfnqw5nfy0225" path="res://artassests/UI/存档.png" id="8_pb1m2"]
+[ext_resource type="Texture2D" uid="uid://c54qb6yc283df" path="res://artassests/UI/离开.png" id="8_t08et"]
+[ext_resource type="Script" uid="uid://cbbncluwcmnda" path="res://scripts/ui/global_save_button.gd" id="9_cvsyv"]
 [ext_resource type="Script" uid="uid://sr5ifyckwx2r" path="res://scripts/ui/editor_game_area_guide.gd" id="editor_guide_script"]
 
 [sub_resource type="Animation" id="Animation_n1y5b"]
@@ -160,30 +164,23 @@ layout_mode = 1
 
 [node name="FeedToolbar" parent="Overlay" unique_id=1491831638 instance=ExtResource("3_0egci")]
 layout_mode = 1
-offset_left = -97.0
-offset_top = 29.0
-offset_right = -97.0
-offset_bottom = 29.0
+offset_left = -1.0
+offset_top = 8.0
+offset_right = -1.0
+offset_bottom = 8.0
 
-[node name="SoundButton" type="Button" parent="Overlay" unique_id=603812799]
-modulate = Color(0.45, 0.7, 1, 1)
+[node name="SoundButton" type="TextureButton" parent="Overlay" unique_id=492750530]
 z_index = 20
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_left = 380.0
-offset_top = 60.0
-offset_right = 430.0
-offset_bottom = 110.0
-theme_override_font_sizes/font_size = 10
-
-[node name="SoundLabel" type="Label" parent="Overlay/SoundButton" unique_id=1365211511]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme_override_font_sizes/font_size = 10
-text = "开"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 295.0
+offset_top = 74.0
+offset_right = 345.0
+offset_bottom = 124.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("5_0egci")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="PuzzlePanel" type="ColorRect" parent="Overlay" unique_id=981335349]
 visible = false
@@ -431,6 +428,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="PortraitSequence" type="TextureRect" parent="Overlay/PhaseTransitionAnimation" unique_id=1619920121]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -490,6 +488,33 @@ offset_top = 120.0
 offset_right = 1000.0
 offset_bottom = 740.0
 mouse_filter = 2
+
+[node name="SaveButton" type="TextureButton" parent="Overlay" unique_id=1392916988]
+z_index = 100
+layout_mode = 0
+offset_left = 116.0
+offset_top = 73.0
+offset_right = 166.0
+offset_bottom = 123.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("8_pb1m2")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("9_cvsyv")
+
+[node name="LeaveButton" type="TextureButton" parent="Overlay" unique_id=609548100]
+modulate = Color(0.97, 0.97, 0.97, 1)
+z_index = 100
+layout_mode = 0
+offset_left = 502.0
+offset_top = 76.0
+offset_right = 552.0
+offset_bottom = 126.0
+scale = Vector2(3, 3)
+tooltip_text = "离开当前场景"
+texture_normal = ExtResource("8_t08et")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="ContentFlow" type="Node" parent="." unique_id=1926092644]
 script = ExtResource("4_o6t5g")

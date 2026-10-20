@@ -42,7 +42,7 @@ func _ready() -> void:
 	add_child(target)
 	leave = _button("◀", Vector2(40, 40))
 	leave.alignment = HORIZONTAL_ALIGNMENT_CENTER
-	leave.pressed.connect(func() -> void: activated.emit())
+	leave.hide()
 	caption = Label.new()
 	caption.size = size
 	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

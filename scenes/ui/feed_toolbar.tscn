@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://yg3hd2nusa6g"]
 
 [ext_resource type="Script" uid="uid://bfe2mfrueljlc" path="res://scripts/ui/feed_toolbar.gd" id="1_feed"]
+[ext_resource type="Texture2D" uid="uid://qj304q3aop6n" path="res://artassests/场景特写/第二阶段人格培养界面.png" id="2_vmo3t"]
+[ext_resource type="Texture2D" uid="uid://dxujs5ie7mpv7" path="res://artassests/UI/投喂UI.jpg" id="3_lci7t"]
+[ext_resource type="Texture2D" uid="uid://c7tfaerepg514" path="res://artassests/UI/对话UI.png" id="4_xybev"]
 
-[node name="FeedToolbar" type="Control" unique_id=1491831638]
+[node name="Control" type="Control" unique_id=1491831638]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +20,22 @@ anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Layout" unique_id=515287752]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -480.0
+offset_right = 480.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vmo3t")
 
 [node name="Blocker" type="Control" parent="Layout" unique_id=311753420]
 visible = false
@@ -222,11 +241,11 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[node name="topic_dream" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items"]
+[node name="topic_dream" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=2045729324]
 visible = false
 layout_mode = 2
 
-[node name="topic_where_did_you_go" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items"]
+[node name="topic_where_did_you_go" type="Button" parent="Layout/TopicPanel/PanelContent/ScrollContainer/Items" unique_id=1647262498]
 visible = false
 layout_mode = 2
 
@@ -236,10 +255,11 @@ text = "退出"
 
 [node name="Toolbar" type="Control" parent="Layout" unique_id=92646083]
 anchors_preset = 0
-offset_left = 600.0
-offset_top = 925.0
-offset_right = 710.0
-offset_bottom = 975.0
+offset_left = 523.0
+offset_top = 850.0
+offset_right = 633.0
+offset_bottom = 900.0
+scale = Vector2(3, 3)
 mouse_filter = 2
 
 [node name="Buttons" type="HBoxContainer" parent="Layout/Toolbar" unique_id=2028528664]
@@ -247,16 +267,18 @@ layout_mode = 0
 mouse_filter = 2
 theme_override_constants/separation = 10
 
-[node name="FeedButton" type="Button" parent="Layout/Toolbar/Buttons" unique_id=1534051005]
+[node name="FeedButton" type="TextureButton" parent="Layout/Toolbar/Buttons" unique_id=1487575139]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 tooltip_text = "投喂已获得的经历、爱好或作品"
-theme_override_font_sizes/font_size = 14
-text = "投喂"
+texture_normal = ExtResource("3_lci7t")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="TopicButton" type="Button" parent="Layout/Toolbar/Buttons" unique_id=1833947260]
+[node name="TopicButton" type="TextureButton" parent="Layout/Toolbar/Buttons" unique_id=1341201526]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 tooltip_text = "选择已解锁的话题重复对话"
-theme_override_font_sizes/font_size = 14
-text = "对话"
+texture_normal = ExtResource("4_xybev")
+ignore_texture_size = true
+stretch_mode = 5

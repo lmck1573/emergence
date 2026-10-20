@@ -41,15 +41,7 @@ static func load_save() -> Dictionary:
 		var data: Dictionary = _read_valid_save(path)
 		if data.is_empty():
 			found_invalid = true
-			if path == SAVE_PATH and not FileAccess.file_exists(BACKUP_PATH):
-				var backup_error: Error = DirAccess.copy_absolute(ProjectSettings.globalize_path(SAVE_PATH), ProjectSettings.globalize_path(BACKUP_PATH))
-				if backup_error != OK:
-					push_error("SaveManager could not preserve invalid primary save: %s" % backup_error)
 			continue
-		if path != SAVE_PATH:
-			if not _promote_recovered_save(path):
-				push_error("SaveManager loaded recovery copy but could not restore the primary save")
-				_save_blocked = true
 		return data
 	if found_invalid:
 		_save_blocked = true

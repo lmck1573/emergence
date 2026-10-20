@@ -29,6 +29,14 @@ signal feed_requested(content_id: String)
 signal feed_all_requested()
 ## A topic completed normally.
 signal topic_completed(topic_id: String)
+## The player requested the current third-phase character dialogue.
+signal act3_dialogue_requested()
+## A scene presentation controls whether manual saving is currently available.
+signal save_visibility_requested(visible: bool)
+## The current scene allows the shared navigation leave control to be shown.
+signal leave_visibility_requested(visible: bool)
+## The player activated the shared navigation leave control.
+signal leave_pressed()
 ## A truth selection must be presented.
 signal choice_requested(event_id: String, choice: Dictionary)
 ## The player made a valid choice.

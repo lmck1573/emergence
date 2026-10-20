@@ -12,7 +12,7 @@ var _computer_changing: bool = false
 
 func _ready() -> void:
 	_computer_screen_open = scene_file_path in ["res://scenes/explore/computer_locked.tscn", "res://scenes/explore/computer_unlocked.tscn"]
-	_set_return_glyph()
+	_return_button.hide()
 	if scene_file_path in ["res://scenes/explore/computer_desk.tscn", "res://scenes/explore/computer_locked.tscn", "res://scenes/explore/computer_unlocked.tscn"]:
 		GameState.data["current_scene"] = scene_file_path.get_file().get_basename()
 		GameState.commit()
@@ -21,6 +21,8 @@ func _ready() -> void:
 	EventBus.state_changed.connect(refresh_computer_picture, CONNECT_DEFERRED)
 	refresh_computer_picture.call_deferred()
 	EventBus.modal_changed.connect(_lock)
+	EventBus.leave_pressed.connect(_on_return_button_pressed)
+	EventBus.leave_visibility_requested.emit(true)
 	EventBus.investigation_next.connect(_next)
 	EventBus.investigation_previous.connect(_previous)
 	EventBus.fulltext_finished.connect(_closed)
@@ -40,20 +42,9 @@ func _ready() -> void:
 	if not _return_button.pressed.is_connected(_on_return_button_pressed):
 		_return_button.pressed.connect(_on_return_button_pressed)
 
-func _set_return_glyph() -> void:
-	_return_button.alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var label: Label = _return_button.get_node_or_null("Label") as Label
-	if label != null:
-		_return_button.text = ""
-		label.text = "◀"
-		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	else:
-		_return_button.text = "◀"
-
 func _lock(blocked: bool) -> void:
 	_blocked = blocked
-	_return_button.disabled = blocked
+	_return_button.hide()
 	if blocked:
 		_name_label.text = ""
 	elif _computer_screen_open:

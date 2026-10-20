@@ -1,33 +1,35 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dkwc7f36xvfu5"]
 
-[ext_resource type="Script" path="res://scripts/explore/phase3_kitchen.gd" id="1_kitchen"]
-[ext_resource type="Script" path="res://scripts/ui/editor_game_area_guide.gd" id="1_i40h2"]
-[ext_resource type="Texture2D" path="res://artassests/地图完整.PNG" id="2_map"]
-[ext_resource type="PackedScene" path="res://scenes/ui/story_ui.tscn" id="3_simfq"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/客厅1.png" id="4_livingroom"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/厨房1.png" id="5_kitchen"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/烟台1.png" id="6_balcony"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/主卧1.png" id="7_bedroom"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/女主的房间1.png" id="8_wife_room"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/女主电脑特写1.png" id="9_computer"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/女主电脑特写2.png" id="10_computer_locked"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/女主电脑特写3.png" id="11_computer_unlocked"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/第二阶段人格培养界面.png" id="12_ai"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/客厅2.png" id="13_livingroom_act3"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/厨房2.png" id="14_kitchen_act3"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/阳台2.png" id="15_balcony_act3"]
-[ext_resource type="Texture2D" path="res://artassests/场景特写/女主的房间2.png" id="16_wife_room_act3"]
-[ext_resource type="Texture2D" path="res://artassests/第三阶段CG/电脑黑屏.png" id="17_computer_black"]
-[ext_resource type="Texture2D" path="res://artassests/第三阶段CG/手机聊天界面.png" id="18_phone"]
+[ext_resource type="Script" uid="uid://sr5ifyckwx2r" path="res://scripts/ui/editor_game_area_guide.gd" id="1_i40h2"]
+[ext_resource type="Script" uid="uid://i7n7gwkamstt" path="res://scripts/explore/phase3_kitchen.gd" id="1_kitchen"]
+[ext_resource type="Texture2D" uid="uid://cmi4qxl2uy0ph" path="res://artassests/地图完整.PNG" id="2_map"]
+[ext_resource type="PackedScene" uid="uid://d2knf2vsdlute" path="res://scenes/ui/story_ui.tscn" id="3_simfq"]
+[ext_resource type="Texture2D" uid="uid://dir77i2ook3lq" path="res://artassests/场景特写/客厅1.png" id="4_livingroom"]
+[ext_resource type="Texture2D" uid="uid://cjxr8opiph1if" path="res://artassests/场景特写/厨房1.png" id="5_kitchen"]
+[ext_resource type="Texture2D" uid="uid://bug3fum7ls6b6" path="res://artassests/场景特写/烟台1.png" id="6_balcony"]
+[ext_resource type="Texture2D" uid="uid://dno7n63td0xyl" path="res://artassests/场景特写/主卧1.png" id="7_bedroom"]
+[ext_resource type="Texture2D" uid="uid://beo2epto86d1k" path="res://artassests/场景特写/女主的房间1.png" id="8_wife_room"]
+[ext_resource type="Texture2D" uid="uid://et3snac410b2" path="res://artassests/场景特写/女主电脑特写1.png" id="9_computer"]
+[ext_resource type="Texture2D" uid="uid://b3mhs3yuavaw0" path="res://artassests/场景特写/女主电脑特写2.png" id="10_computer_locked"]
+[ext_resource type="Texture2D" uid="uid://cakd0ovi2j2n4" path="res://artassests/场景特写/女主电脑特写3.png" id="11_computer_unlocked"]
+[ext_resource type="Texture2D" uid="uid://7nah4apn60b8" path="res://artassests/场景特写/第二阶段人格培养界面.png" id="12_ai"]
+[ext_resource type="Texture2D" uid="uid://jytiuxt0e328" path="res://artassests/场景特写/客厅2.png" id="13_livingroom_act3"]
+[ext_resource type="Texture2D" uid="uid://pf6avu0wthk4" path="res://artassests/场景特写/厨房2.png" id="14_kitchen_act3"]
+[ext_resource type="Texture2D" uid="uid://cyc5v76jxyp3e" path="res://artassests/场景特写/阳台2.png" id="15_balcony_act3"]
+[ext_resource type="Texture2D" uid="uid://c11kcvbtjaoha" path="res://artassests/场景特写/女主的房间2.png" id="16_wife_room_act3"]
+[ext_resource type="Texture2D" uid="uid://cpjujdndu16bf" path="res://artassests/第三阶段CG/电脑黑屏.png" id="17_computer_black"]
+[ext_resource type="Texture2D" uid="uid://b7rtmwqi5xjwu" path="res://artassests/第三阶段CG/手机聊天界面.png" id="18_phone"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3csx"]
 bg_color = Color(0.105882354, 0.43137255, 0.96862745, 0.5)
 
 [node name="Phase3Kitchen" type="Control" unique_id=942535491]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_kitchen")
 house_overview = ExtResource("2_map")
 livingroom = ExtResource("4_livingroom")
@@ -70,9 +72,9 @@ offset_left = 480.0
 offset_top = 60.0
 offset_right = 1440.0
 offset_bottom = 1020.0
+mouse_filter = 2
 texture = ExtResource("5_kitchen")
 expand_mode = 1
-mouse_filter = 2
 
 [node name="SaveButton" type="Button" parent="GameArea" unique_id=1303905140]
 modulate = Color(0.45, 0.7, 1, 1)
@@ -104,4 +106,4 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_s3csx")
 theme_override_styles/focus = SubResource("StyleBoxFlat_s3csx")
 metadata/preserve_button_background = true
 
-[node name="StoryUI" type="CanvasLayer" parent="." unique_id=729731323 instance=ExtResource("3_simfq")]
+[node name="StoryUI" parent="." unique_id=729731323 instance=ExtResource("3_simfq")]
